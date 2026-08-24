@@ -10,7 +10,7 @@ real motor over Web Bluetooth → RNBD451 → UART → SAME70 → CAN → ODrive
 twin follows the *encoder's* reported position — the model moves because the
 metal moved, not because we assumed it would.
 
-![J2 rotor eccentric](docs/j2_eccentric_6902.png)
+![The twin](docs/twin.png)
 
 ## What's here
 
