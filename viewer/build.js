@@ -547,7 +547,7 @@ async function pollStatus() {
         return;
       }
       if (['idle', 'done', 'error'].includes(s.state)) { clearInterval(pollTimer); pollTimer = null; }
-    } catch (e) { /* server restarting */ }
+    } catch (e) { clearInterval(pollTimer); pollTimer = null; /* no print pipeline on this server */ }
   };
   pollTimer = setInterval(tick, 2000);
   tick();
