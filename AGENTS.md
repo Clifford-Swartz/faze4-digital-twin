@@ -5,8 +5,7 @@ Instructions for AI coding agents (and impatient humans) working in this repo.
 ## Zero-hardware quickstart
 
 ```
-python viewer/serve.py
-# open http://localhost:8347/viewer/index.html
+python viewer/serve.py          # opens the browser itself; --no-browser to suppress
 ```
 
 Python 3.10+, stdlib only. The full arm renders, joint sliders

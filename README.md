@@ -33,8 +33,10 @@ metal moved, not because we assumed it would.
 
 ```
 python viewer/serve.py
-# open http://localhost:8347/viewer/index.html
 ```
+
+That's it — it opens the viewer in your browser by itself
+(`--no-browser` to suppress, `--host 0.0.0.0` for network use).
 
 No dependencies, no configuration, no accounts — stdlib Python only.
 
@@ -59,7 +61,7 @@ Description=FAZE4 digital twin
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/pi/faze4-digital-twin/viewer/serve.py --host 0.0.0.0
+ExecStart=/usr/bin/python3 /home/pi/faze4-digital-twin/viewer/serve.py --host 0.0.0.0 --no-browser
 Restart=on-failure
 
 [Install]

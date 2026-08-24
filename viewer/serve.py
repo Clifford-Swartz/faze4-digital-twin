@@ -9,6 +9,8 @@ meshes, data, and the assembly-instruction pages.
 """
 import argparse
 import http.server
+import threading
+import webbrowser
 import os
 import socketserver
 
@@ -34,9 +36,14 @@ if __name__ == "__main__":
     ap.add_argument("--host", default="127.0.0.1",
                     help="bind address; use 0.0.0.0 to reach it from other devices (Pi setups)")
     ap.add_argument("--port", type=int, default=8347)
+    ap.add_argument("--no-browser", action="store_true",
+                    help="don't auto-open the viewer (headless / Pi service use)")
     args = ap.parse_args()
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer((args.host, args.port), Handler) as httpd:
         shown = "localhost" if args.host == "127.0.0.1" else args.host
-        print(f"FAZE4 twin: http://{shown}:{args.port}/viewer/index.html")
+        url = f"http://{shown}:{args.port}/viewer/index.html"
+        print(f"FAZE4 twin: {url}")
+        if not args.no_browser and args.host == "127.0.0.1":
+            threading.Timer(0.5, webbrowser.open, [url]).start()
         httpd.serve_forever()
