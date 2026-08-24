@@ -26,6 +26,8 @@ metal moved, not because we assumed it would.
 - `viewer/assets/` — converted meshes for every printed part (stock FAZE4 and
   rebuild parts), plus the upstream assembly instructions as page images.
 - `viewer/data/` — the assembly graph and transform data the twin is built from.
+- `firmware/` — the SAME70 Zephyr apps: the BLE↔CAN teleop bridge plus bench
+  tools (CAN sniffer, standalone cruise test). See `firmware/README.md`.
 
 ## Run it
 
