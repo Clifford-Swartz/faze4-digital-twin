@@ -1,0 +1,34 @@
+/*
+ * Enable MCAN1 on the SAM E70 Xplained Ultra: PC12 (RX) / PC14 (TX) are wired
+ * to the board's onboard ATA6561/6563 CAN transceiver and the 3-pin CAN
+ * header (CAN_H | GND | CAN_L). Split termination is permanently on-board,
+ * so this node is one physical end of the bus.
+ *
+ * (We build against the plain sam_e70_xplained board definition; this overlay
+ * is the XULT delta that matters for CAN.)
+ */
+
+/ {
+	chosen {
+		zephyr,canbus = &can1;
+	};
+};
+
+&pinctrl {
+	can1_default: can1_default {
+		group1 {
+			pinmux = <PC12C_CAN1_RX>, <PC14C_CAN1_TX>;
+		};
+	};
+};
+
+&can1 {
+	status = "okay";
+	pinctrl-0 = <&can1_default>;
+	pinctrl-names = "default";
+	bitrate = <250000>;
+
+	can-transceiver {
+		max-bitrate = <5000000>;
+	};
+};

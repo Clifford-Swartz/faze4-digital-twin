@@ -1,0 +1,21 @@
+/*
+ * RNBD451 on UART3: PD28 (RX) = EXT1 pin 9, PD30 (TX) = EXT2 pin 3.
+ * Deliberately NOT the mikroBUS/EXT-standard UART (USART0/PB00-PB01) - those
+ * nets are shared with the EDBG's data-gateway lines and driving them wedges
+ * the debugger's VCOM/SWD. UART3's pins carry no debug roles.
+ */
+
+&pinctrl {
+	uart3_default: uart3_default {
+		group1 {
+			pinmux = <PD28A_UART3_RXD>, <PD30A_UART3_TXD>;
+		};
+	};
+};
+
+&uart3 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart3_default>;
+	pinctrl-names = "default";
+};

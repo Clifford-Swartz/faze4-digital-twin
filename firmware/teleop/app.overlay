@@ -1,0 +1,44 @@
+/*
+ * Teleop bridge: BLE (RNBD451 on UART3) in, CANSimple out.
+ * UART3: PD28 RX = EXT1 pin 9, PD30 TX = EXT2 pin 3 (non-DGI pins; do not
+ * move back to USART0 - it shares nets with the EDBG debugger).
+ * CAN1: PC12/PC14 through the onboard transceiver, 250 kbit/s.
+ */
+
+/ {
+	chosen {
+		zephyr,canbus = &can1;
+	};
+};
+
+&pinctrl {
+	can1_default: can1_default {
+		group1 {
+			pinmux = <PC12C_CAN1_RX>, <PC14C_CAN1_TX>;
+		};
+	};
+
+	uart3_default: uart3_default {
+		group1 {
+			pinmux = <PD28A_UART3_RXD>, <PD30A_UART3_TXD>;
+		};
+	};
+};
+
+&can1 {
+	status = "okay";
+	pinctrl-0 = <&can1_default>;
+	pinctrl-names = "default";
+	bitrate = <250000>;
+
+	can-transceiver {
+		max-bitrate = <5000000>;
+	};
+};
+
+&uart3 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart3_default>;
+	pinctrl-names = "default";
+};

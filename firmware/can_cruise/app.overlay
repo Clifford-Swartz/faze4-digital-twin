@@ -1,0 +1,28 @@
+/* can_cruise: CAN1 PC12/PC14 through the onboard transceiver, 250 kbit/s. */
+
+/ {
+	chosen {
+		zephyr,canbus = &can1;
+	};
+};
+
+&pinctrl {
+	can1_default: can1_default {
+		group1 {
+			pinmux = <PC12C_CAN1_RX>, <PC14C_CAN1_TX>;
+		};
+	};
+
+};
+
+&can1 {
+	status = "okay";
+	pinctrl-0 = <&can1_default>;
+	pinctrl-names = "default";
+	bitrate = <250000>;
+
+	can-transceiver {
+		max-bitrate = <5000000>;
+	};
+};
+
