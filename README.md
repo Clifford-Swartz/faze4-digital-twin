@@ -36,9 +36,7 @@ python viewer/serve.py
 # open http://localhost:8347/viewer/index.html
 ```
 
-No dependencies for viewing. The print pipeline needs `trimesh`, a slicer
-install, and your printer credentials in `viewer/printers_local.json`
-(gitignored — see the placeholder block at the top of `serve.py`).
+No dependencies, no configuration, no accounts — stdlib Python only.
 
 BLE teleop needs the bench hardware (RNBD451 module + SAME70 + ODrive S1) and a
 Web-Bluetooth-capable browser.

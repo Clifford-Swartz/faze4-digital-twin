@@ -9,7 +9,7 @@ python viewer/serve.py
 # open http://localhost:8347/viewer/index.html
 ```
 
-Python 3.10+, stdlib only for viewing. The full arm renders, joint sliders
+Python 3.10+, stdlib only. The full arm renders, joint sliders
 move it with gear-ratio-faithful kinematics, all pages work offline. No node,
 no build step, no package install.
 
@@ -38,34 +38,6 @@ visualizer), `encoder.html` (encoder bench).
 - Data JSONs are fetched with cache-busting query params already.
 - Meshes in `viewer/assets/` are in assembly coordinates, often far from the
   origin — don't assume parts are origin-centered.
-
-## Print pipeline (needs hardware + extras)
-
-Requires `trimesh`, a slicer install (Bambu Studio and/or OrcaSlicer-Flashforge
-profiles — paths at the top of serve.py), and printer credentials in
-`viewer/printers_local.json`:
-
-```json
-{"ad5m": {"ip": "...", "code": "...", "serial": "..."},
- "p1s":  {"ip": "...", "code": "...", "serial": "..."}}
-```
-
-Flow (one job at a time, human confirm gate in the middle):
-
-```
-POST /print            {"printer": "ad5m", "file": "path/under/repo.stl", "material": "PLA"}
-GET  /print/status     → {"state": "slicing" | "await_confirm" | "printing" | "error", ...}
-POST /print/confirm    → uploads + starts
-POST /print/cancel
-```
-
-STLs are re-centered onto the plate automatically. **The status dict reports
-what was SENT, not what the printer did** — after confirming, verify against
-the printer's own API (the FlashForge answers
-`POST http://<ip>:8898/detail` with `{"serialNumber": ..., "checkCode": ...}`).
-A FlashForge can accept a job, heat, and quietly abort (stale FINISHED dialog
-on its screen, filament runout) — poll `status`/`printLayer` to confirm
-plastic is actually moving.
 
 ## BLE teleop (needs the bench)
 
