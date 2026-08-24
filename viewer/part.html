@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>part viewer</title>
+<link rel="icon" href="data:,">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; overflow:hidden; background:#16181d; }
+  #hud { position:fixed; top:10px; left:12px; color:#d6dae2;
+         font:13px/1.5 "Segoe UI",system-ui,sans-serif; text-shadow:0 1px 3px #000; }
+  #hud .dim { color:#8b93a3; font-size:11.5px; }
+  #hud button { background:#262a33; color:#d6dae2; border:1px solid #343a46;
+                border-radius:6px; padding:4px 10px; font:inherit; cursor:pointer; margin-right:6px; }
+</style>
+<script type="importmap">{ "imports": { "three": "./lib/three.module.js" } }</script>
+</head>
+<body>
+<div id="hud">
+  <div id="name">loading…</div>
+  <div class="dim" id="dims"></div>
+  <div style="margin-top:6px">
+    <button id="wire">wireframe</button>
+    <button id="topv">top</button>
+    <button id="botv">bottom</button>
+    <span class="dim">drag = orbit · wheel = zoom · right-drag = pan</span>
+  </div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from './lib/OrbitControls.js';
+import { STLLoader } from './lib/STLLoader.js';
+
+const stl = new URLSearchParams(location.search).get('stl') || '/cad/j1/stl/j1_motor_mount_v1.stl';
+document.getElementById('name').textContent = stl.split('/').pop();
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x16181d);
+const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 5000);
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(devicePixelRatio);
+document.body.appendChild(renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+scene.add(new THREE.HemisphereLight(0xffffff, 0x334, 1.0));
+const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(1,-1.2,1.6); scene.add(key);
+const fill = new THREE.DirectionalLight(0x88aaff, 0.35); fill.position.set(-1,1,-0.5); scene.add(fill);
+
+let mesh, R = 50;
+new STLLoader().load(stl, geo => {
+  geo.computeVertexNormals();
+  geo.computeBoundingBox();
+  const bb = geo.boundingBox, c = new THREE.Vector3(); bb.getCenter(c);
+  geo.translate(-c.x, -c.y, -c.z);
+  const size = new THREE.Vector3(); bb.getSize(size);
+  document.getElementById('dims').textContent =
+    `${size.x.toFixed(1)} × ${size.y.toFixed(1)} × ${size.z.toFixed(1)} mm`;
+  const mat = new THREE.MeshStandardMaterial({ color:0x4ea1ff, metalness:0.1, roughness:0.55 });
+  mesh = new THREE.Mesh(geo, mat);
+  scene.add(mesh);
+  R = Math.max(size.x, size.y, size.z);
+  const grid = new THREE.GridHelper(R*3, 30, 0x343a46, 0x23262e);
+  grid.rotation.x = Math.PI/2; grid.position.z = -size.z/2 - 0.5; scene.add(grid);
+  camera.up.set(0,0,1);
+  camera.position.set(R*1.2, -R*1.4, R*0.9);
+  controls.target.set(0,0,0);
+});
+
+document.getElementById('wire').onclick = () => { if (mesh) mesh.material.wireframe = !mesh.material.wireframe; };
+document.getElementById('topv').onclick = () => camera.position.set(0.01, 0.01, R*2.2);
+document.getElementById('botv').onclick = () => camera.position.set(0.01, 0.01, -R*2.2);
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+(function loop(){ requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera); })();
+</script>
+</body>
+</html>

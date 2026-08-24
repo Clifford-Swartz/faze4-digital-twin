@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How the J1 cyclo works</title>
+<style>
+  :root { --bg:#16181d; --panel:#1e2128; --border:#343a46; --text:#d6dae2;
+          --muted:#8b93a3; --accent:#4ea1ff; --warn:#e0a145; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font:14px/1.55 "Segoe UI",system-ui,sans-serif;
+         display:flex; min-height:100vh; }
+  #side { width:330px; min-width:330px; padding:18px; background:var(--panel);
+          border-right:1px solid var(--border); }
+  h1 { font-size:17px; margin-bottom:4px; }
+  h1 small { color:var(--muted); font-weight:normal; font-size:12px; }
+  p { margin:10px 0; color:var(--text); }
+  .k { color:var(--warn); font-weight:600; }
+  .rows { margin-top:14px; border-top:1px solid var(--border); padding-top:12px; }
+  .row { display:flex; justify-content:space-between; padding:3px 0; font-variant-numeric:tabular-nums; }
+  .row span:first-child { color:var(--muted); }
+  label { display:block; margin-top:14px; color:var(--muted); font-size:12.5px; }
+  input[type=range] { width:100%; }
+  button { background:#262a33; color:var(--text); border:1px solid var(--border);
+           border-radius:6px; padding:7px 14px; font:inherit; cursor:pointer; margin-top:12px; }
+  button:hover { border-color:var(--accent); }
+  #wrap { flex:1; display:flex; align-items:center; justify-content:center; }
+  canvas { max-width:100%; max-height:100vh; }
+</style>
+</head>
+<body>
+  <div id="side">
+    <h1>J1 cycloidal drive <small>&mdash; 15:1</small></h1>
+    <p>The eccentric <span class="k">does not spin the disc</span>. Its journal is
+       offset, so turning it swings the disc's centre around a small circle.
+       The bearing lets the disc be shoved around that circle without being
+       forced to rotate.</p>
+    <p>Pinned between the orbit and the <span class="k">16 ring rollers</span>, the
+       15-lobe disc can't slide &mdash; it has to walk. One motor turn walks it back
+       exactly one lobe.</p>
+    <p>The <span class="k">output pins</span> ride the big holes, which stay put
+       while the disc orbits around them, so they pick off only the slow rotation.</p>
+    <label>Speed <input id="spd" type="range" min="0" max="100" value="35"></label>
+    <button id="step">Single step (one motor turn)</button>
+    <button id="reset">Reset</button>
+    <div class="rows">
+      <div class="row"><span>motor</span><b id="mrev">0.00 rev</b></div>
+      <div class="row"><span>disc / output</span><b id="orev">0.00 rev</b></div>
+      <div class="row"><span>ratio</span><b>15 : 1</b></div>
+    </div>
+  </div>
+  <div id="wrap"><canvas id="c" width="900" height="900"></canvas></div>
+<script>
+const N = 15;         // disc lobes
+const NR = N + 1;     // ring rollers
+const R = 300;        // roller circle radius
+const Rr = 26;        // roller radius
+const E = 22;         // eccentricity (exaggerated for the eye)
+const NP = 8, RP = 150, RPIN = 26;   // output pins
+
+const c = document.getElementById('c'), g = c.getContext('2d');
+let theta = 0, running = true, stepTarget = null;
+
+// classic cycloidal profile: N lobes rolling inside NR rollers
+function discPoint(t) {
+  const psi = Math.atan2(Math.sin((1 - NR) * t), (R / (E * NR)) - Math.cos((1 - NR) * t));
+  return [ R * Math.cos(t) - Rr * Math.cos(t + psi) - E * Math.cos(NR * t),
+          -R * Math.sin(t) + Rr * Math.sin(t + psi) + E * Math.sin(NR * t) ];
+}
+const PROFILE = [];
+for (let i = 0; i <= 1000; i++) PROFILE.push(discPoint(i / 1000 * Math.PI * 2));
+// the raw parametric runs out to R+Rr+E; scale it so the lobe crests ride the
+// inner tangent of the roller circle and the valleys clear it by 2E
+(() => {
+  const maxr = Math.max(...PROFILE.map(([x, y]) => Math.hypot(x, y)));
+  const k = (R - Rr - E) / maxr;
+  PROFILE.forEach(p => { p[0] *= k; p[1] *= k; });
+})();
+
+function draw() {
+  const w = c.width, h = c.height;
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.fillStyle = '#16181d'; g.fillRect(0, 0, w, h);
+  g.translate(w / 2, h / 2);
+
+  const discRot = -theta / N;                       // slow output rotation
+  const ex = E * Math.cos(theta), ey = E * Math.sin(theta);
+
+  // ---- disc ----
+  g.save();
+  g.translate(ex, ey); g.rotate(discRot);
+  g.beginPath();
+  PROFILE.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y));
+  g.closePath();
+  g.fillStyle = '#2c4a6b'; g.strokeStyle = '#7fa6d9'; g.lineWidth = 3;
+  g.fill(); g.stroke();
+  // output holes (pin radius + E)
+  for (let i = 0; i < NP; i++) {
+    const a = i / NP * Math.PI * 2;
+    g.beginPath();
+    g.arc(RP * Math.cos(a), RP * Math.sin(a), RPIN + E, 0, Math.PI * 2);
+    g.fillStyle = '#16181d'; g.fill();
+    g.strokeStyle = '#4a6a99'; g.lineWidth = 1.5; g.stroke();
+  }
+  // a mark so the slow rotation is visible
+  g.beginPath(); g.moveTo(0, 0); g.lineTo(0, -R * 0.62);
+  g.strokeStyle = '#e0a145'; g.lineWidth = 5; g.stroke();
+  g.restore();
+
+  // ---- ring rollers (fixed) ----
+  for (let i = 0; i < NR; i++) {
+    const a = i / NR * Math.PI * 2;
+    g.beginPath(); g.arc(R * Math.cos(a), R * Math.sin(a), Rr, 0, Math.PI * 2);
+    g.fillStyle = '#c8ccd4'; g.fill();
+    g.strokeStyle = '#8a8f99'; g.lineWidth = 2; g.stroke();
+  }
+
+  // ---- output pins (fixed circle, ride the holes) ----
+  for (let i = 0; i < NP; i++) {
+    const a = i / NP * Math.PI * 2;
+    g.beginPath(); g.arc(RP * Math.cos(a), RP * Math.sin(a), RPIN, 0, Math.PI * 2);
+    g.fillStyle = '#5dbb7a'; g.globalAlpha = 0.85; g.fill(); g.globalAlpha = 1;
+    g.strokeStyle = '#2e8b57'; g.lineWidth = 2; g.stroke();
+  }
+
+  // ---- eccentric journal + motor axis ----
+  g.beginPath(); g.arc(ex, ey, 34, 0, Math.PI * 2);
+  g.fillStyle = '#ff7043'; g.fill();
+  g.strokeStyle = '#b3512f'; g.lineWidth = 2; g.stroke();
+  g.beginPath(); g.arc(0, 0, 7, 0, Math.PI * 2); g.fillStyle = '#d6dae2'; g.fill();
+  g.beginPath(); g.moveTo(0, 0); g.lineTo(ex, ey);
+  g.strokeStyle = '#ff7043'; g.lineWidth = 2; g.stroke();
+
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.fillStyle = '#8b93a3'; g.font = '15px Segoe UI';
+  g.fillText('orange = eccentric on the motor (fast)', 18, 28);
+  g.fillText('blue = cyclo disc, orange bar shows its slow rotation', 18, 50);
+  g.fillText('grey = the 16 ring rollers, fixed in the case', 18, 72);
+  g.fillText('green = output pins riding the big holes', 18, 94);
+
+  document.getElementById('mrev').textContent = (theta / (Math.PI * 2)).toFixed(2) + ' rev';
+  document.getElementById('orev').textContent = (-discRot / (Math.PI * 2)).toFixed(3) + ' rev';
+}
+
+let last = performance.now();
+function loop(now) {
+  const dt = Math.min(0.05, (now - last) / 1000); last = now;
+  const spd = document.getElementById('spd').value / 100;
+  if (stepTarget !== null) {
+    theta = Math.min(stepTarget, theta + dt * 2.2);
+    if (theta >= stepTarget) stepTarget = null;
+  } else if (running) {
+    theta += dt * spd * 4;
+  }
+  draw();
+  requestAnimationFrame(loop);
+}
+document.getElementById('step').onclick = () => { stepTarget = theta + Math.PI * 2; };
+document.getElementById('reset').onclick = () => { theta = 0; stepTarget = null; };
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

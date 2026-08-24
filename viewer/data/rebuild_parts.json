@@ -1,0 +1,605 @@
+[
+ {
+  "group": "rebuild_j1",
+  "attach_link": "base_link",
+  "group_offset": [
+   0,
+   0,
+   0
+  ],
+  "replaces": [
+   "Base/Joint 1 eccentric shaft.STL",
+   "Base/Shaft blocker.STL",
+   "Base/Main base.STL",
+   "Base/joint 1 cyclo output shaft.STL",
+   "Rotating base/Joint 1 output shaft.STL"
+  ],
+  "parts": [
+   {
+    "file": "/viewer/assets/mad8318_real.stl",
+    "translate": [
+     75.63,
+     -87.66,
+     27.33
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "exact",
+    "notes": "Official MAD CAD, not a mock. Converted from mad-8318-ipe.stp (Creo, 2024-07-11) pulled from MAD's own product page 2026-08-08; source kept at cad/reference/mad8318/. \u00d891.5 x 41.000 exactly. Stator-base end: \u00d817.8 recess ~3 deep with a \u00d83.0 bore at centre - this is what the j1_rotor_magnet_carrier's \u00d82.85 peg engages. \u00d85.0 bore runs right through. Hub end: \u00d813.0 bore, \u00d829 hub ~2.7 proud. NO protruding shaft either end."
+   },
+   {
+    "file": "/viewer/assets/j1_flange.stl",
+    "translate": [
+     75.63,
+     -87.66,
+     65.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 3,
+    "confidence": "exact",
+    "notes": "J1 rotor eccentric: hub flange (PA6-CF). Countersunk M3 on BCD20 + M4 on BCD23 into the 8318 hub; 4x M3 heat-set inserts on BCD26 receive the cartridge."
+   },
+   {
+    "file": "/viewer/assets/j1_cartridge.stl",
+    "translate": [
+     75.63,
+     -87.66,
+     71.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 2,
+    "confidence": "exact",
+    "notes": "Journal cartridge: 15.06 journal at e=+1.2 spans z78.4-87.6, engaging stock disc 1 via the stock 15x28x7 bearing. Base disc spins inside the case's 38.2 pilot."
+   },
+   {
+    "file": "/viewer/assets/j1_cap.stl",
+    "translate": [
+     74.43,
+     -87.66,
+     87.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 2,
+    "confidence": "exact",
+    "notes": "Journal-2 cap at e=-1.2 spanning z87.6-96.8 (stock disc 2 plane). Spigot register + 2x countersunk M3 down into the cartridge; separate piece so each bearing slides on from its own end."
+   },
+   {
+    "file": "/viewer/assets/j1_washer.stl",
+    "translate": [
+     74.43,
+     -87.66,
+     96.8
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "exact",
+    "notes": "Printed retention washer over the disc-2 bearing race; M3 into the cap pilot."
+   },
+   {
+    "file": "/cad/j1/stl/j1_cage_shell.stl",
+    "translate": [
+     75.63,
+     -87.66,
+     70.33
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 5,
+    "confidence": "good",
+    "notes": "J1 motor cage shell v2: case-pilot register + stock M5 square; O96 bore, 2.5mm wall, bayonet channels+seats at the bottom rim, small high vents. v1 radial-screw joint replaced after load-path review: cyclo eccentric reaction (~500N radial) now crosses a full-circumference bayonet instead of 4 screws in a slotted 1.75mm tube."
+   },
+   {
+    "file": "/cad/j1/stl/j1_shaft_blocker.stl",
+    "translate": [
+     48.13,
+     -240.16,
+     44.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "exact",
+    "notes": "Magnet-bridge shaft blocker: stock O55 bolt interface (5x O6 measured positions), 3-spoke bridge, 6x5 diametric magnet pocket opening down toward the tray-pedestal AS5047P (~1mm gap). Grown 3mm downward; screws counterbored. Replaces the stock open-hole blocker; rides rotary_base."
+   },
+   {
+    "file": "/cad/j1/stl/main_base_8318.stl",
+    "translate": [
+     155.63,
+     -292.66,
+     134.05
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 2,
+    "confidence": "exact",
+    "notes": "Stock Main base with an O103 relief pocket about the cyclo axis (world 75.63,-87.66): full radius z 14-67.5, 45-deg roof to r44 by the case-fan seat (z 74.33). The MAD 8318 (O91.5) + cage skirt (O101) overrun the stock wall face 45.0 mm from that axis - discovered on the bench 2026-08-02 after the first PETG base print. Verified fits vs this mesh: shell 0.91, floor 1.48, motor 5.73 mm. Thinnest remaining wall 2.4 mm beside the stock wire window; boolean watertight, 7.7 cm3 removed. Bake this into every arm - do NOT print the stock Main base."
+   },
+   {
+    "file": "/cad/j1/stl/j1_output_shaft_pocket.stl",
+    "translate": [
+     39.85,
+     -118.91,
+     96.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 6,
+    "confidence": "exact",
+    "notes": "Stock cyclo output shaft with a relief pocket in its underside, about the cyclo axis. The shaft is SOLID through the middle - no bore - so the j1_cap (O15.06 x 11.2) and j1_washer (O18.06 x 2.5) that retain the eccentric cartridge had nowhere to go and were holding the shaft ~4 mm proud of the disc stack: the top 623 of each output-pin span ran in air (3 of 4 engaged) and the washer, which turns at motor speed while the shaft turns at 1/15, ground on the shaft's flat face. Caught on the bench 2026-08-07, fixed part on the arm 2026-08-08 and confirmed working. SIZING: the binding constraint is the BC28 mounting circle, inner edge r12.58 - NOT the BC46 pin holes at r21.65. Cap and washer both sit on axis (offset 0.02 mm) so they spin but never orbit; clearance covers print tolerance only. This file is O21 x 6 (1.47 mm clearance, 2.08 mm wall, verified against every hole at 12 depths). Arm 1 was built with an earlier O24 cut leaving 0.58 mm of wall - harmless in practice, because the 36T pulley's M3x15 only reaches z=14.8 and the shaft blocker's M3x10 z=19.8 while the thin wall lives in z 0-6, so nothing threads within 8.8 mm of it. Arm 1 stays as built; arms 2 and 3 print this O21 version. Boolean watertight, bounds identical to stock, drops straight in. Do NOT print the stock output shaft. JOURNAL: the \u00d850.2 upper boss is ALSO turned down to \u00d849.80 in this file. Stock is \u00d850.17 against the 6810's \u00d850.00 bore - 0.17 mm interference by design, and PETG's +0.10..0.30 print oversize takes that to 0.27-0.47 mm, which will not go on by hand. Found on the bench 2026-08-08 as a gap at the top-cover/main-case seam plus galling marks on the boss. \u00d849.80 designed lands at \u00d849.9-50.1 real - slip to light press. DEPTH: pocket deepened 6 -> 10 mm on 2026-08-08. The first cut cleared the washer (2.5) but not the M3 CAP HEAD sitting on top of it (3.0) - 5.5 mm of stack into a 6 mm pocket, which print tolerance eats. 10 mm gives 4.5 mm clearance. Depth is cheap here: the 36T pulley's M3x20 tips stop at z=18.14, so 8.14 mm of solid material remains below them, and the core inside BC28 is not in the torque path from the pins to the mounts. Bench workaround for an already-printed 6 mm shaft: swap the washer screw to an M3 BUTTON head (1.65 vs 3.0 tall) - drops the stack to 4.15 mm."
+   },
+   {
+    "file": "/cad/j1/stl/rotbase_output_shaft_j50.stl",
+    "translate": null,
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 7,
+    "confidence": "exact",
+    "notes": "Stock rotating-base J1 output shaft with its \u00d850 column journal (z 0-49.2) turned down to \u00d849.80. Stock is \u00d850.07 against the two column 6810s' \u00d850.00 bore - interference before printing, same failure mode as the cyclo shaft boss but milder. Turned down 2026-08-08 alongside it so both 6810 journals on the arm share one fit spec. \u00d821.8 wire bore and all hole patterns untouched; boolean watertight, 851 mm3 removed. Placement TBD - not yet positioned in the twin."
+   },
+   {
+    "file": "/cad/j1/stl/j1_motor_strap.stl?v=5",
+    "translate": [
+     75.63,
+     -87.66,
+     27.33
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 6,
+    "confidence": "good",
+    "notes": "Fused encoder disc + motor strap rev D: planks to the alcove rack channels, 5x M3 into the post columns (3E/2W)."
+   },
+   {
+    "file": "/viewer/assets/as5047p_board_mock.stl",
+    "translate": [
+     75.63,
+     -87.66,
+     19.83
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 7,
+    "confidence": "approx",
+    "notes": "AS5047P breakout mock (30.33 sq, chip up). Board top against the pocket ceiling at world 25.43; chip looks up through the O12 window at the rotor magnet."
+   }
+  ],
+  "open_issues": [
+   "Motor cage CAD landed 2026-07-29 (cad/j1/). Main base 8318 relief landed 2026-08-02 (cad/j1/stl/main_base_8318.stl). Output shaft relief pocket landed 2026-08-08 (cad/j1/stl/j1_output_shaft_pocket.stl). Still to design: bulged Joint 1 cover (interior must clear O101 on y), base electronics tray.",
+   "BENCH-FOUND 2026-08-09, bake for arms 2/3: the 4 cage-shell screws use the stock Joint 1 main case's NEMA 46.92-square holes FROM THE CHAMBER SIDE, but only the stock design's own positions are counterbored - our screw heads stood proud on the chamber floor at r~33 and pinched whichever cyclo disc was lowest (bottom-disc-only pinch, diagnosed by disc-swap + witness marks). Arm 1: counterbores hand-drilled. Arms 2/3: regenerate the main case with 4x counterbores (M3 cap: O6.5 x 3.5 / M5 cap: O9 x 5.5) at the cage screw positions before printing."
+  ]
+ },
+ {
+  "group": "rebuild_gripper",
+  "attach_link": "hvataljka",
+  "group_offset": [
+   0,
+   0,
+   14.2
+  ],
+  "replaces": [],
+  "gripper_joint": {
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "pivot_drive": [
+    24.6,
+    -18.5,
+    56
+   ],
+   "pivot_driven": [
+    24.6,
+    18.5,
+    56
+   ],
+   "max_deg": 35
+  },
+  "parts": [
+   {
+    "file": "/cad/reference/compliant-gripper/stl/gripper_holder_FAZE4.stl",
+    "translate": [
+     25.5,
+     9.5,
+     -0.8
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 0,
+    "confidence": "approx",
+    "notes": "Petar's FAZE4 mount: disc bolts to the J6 output flange, beam carries the gripper body."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Gripper_main_body.stl",
+    "translate": [
+     4,
+     0,
+     79
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ],
+    "explode_dir": [
+     0,
+     -1,
+     0
+    ],
+    "explode_order": 1,
+    "confidence": "good",
+    "notes": "Chassis. Feature-derived pose 2026-07-29: jaw pivot holes (local x23,y+/-18.5) -> group (24.6,+/-18.5,56); drive-gear bore (45.6,-36) -> (19.75,-35.9,33.4); plate spans group x -11..11."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Gripper_template_DRIVE.stl",
+    "translate": [
+     11.1,
+     -18.6,
+     56
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     180
+    ],
+    "jaw": "drive",
+    "explode_dir": [
+     0,
+     -1,
+     0
+    ],
+    "explode_order": 2,
+    "confidence": "good",
+    "notes": "Drive jaw on the gear-side pivot (-y). Pivot bore mapped onto the body's pivot hole; arm extends +z to the finger root at z97."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Gripper_template_DRIVEN.stl",
+    "translate": [
+     11.1,
+     54.6,
+     56
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     180
+    ],
+    "jaw": "driven",
+    "explode_dir": [
+     0,
+     1,
+     0
+    ],
+    "explode_order": 2,
+    "confidence": "good",
+    "notes": "Driven jaw on the +y pivot; sector gears mesh at y=0 (pivot spacing 37mm = the sector pitch diameter)."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Gripper_flex_1.stl",
+    "translate": [
+     38.1,
+     -4.7,
+     2
+    ],
+    "rotate_deg": [
+     180,
+     -90,
+     0
+    ],
+    "jaw": "drive",
+    "explode_dir": [
+     0,
+     -1,
+     0
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "TPU finger, drive side. Roll corrected 2026-07-29: slice data shows the tip tapers to y~1.5 so the straight GRIP face is the y-min edge - now facing the centerline. Root socket lands on the arm end at (24.6,-18.5,97)."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Gripper_flex_2.stl",
+    "translate": [
+     11.1,
+     4.7,
+     2
+    ],
+    "rotate_deg": [
+     0,
+     -90,
+     0
+    ],
+    "jaw": "driven",
+    "explode_dir": [
+     0,
+     1,
+     0
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "TPU finger, driven side, mirror of flex_1 with grip face inward; root at (24.6,+18.5,97)."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/GEAR_55T.stl",
+    "translate": [
+     19.1,
+     -35.9,
+     33.4
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "55T final gear on the body's drive bore (28.5mm to the drive-jaw pivot), axis = plate normal = group x."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/GEAR_36T.stl",
+    "translate": [
+     -24,
+     -35.9,
+     33.4
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approx",
+    "notes": "Compound 36T + pinion behind the plate on the drivetrain axis."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Output_shaft.stl",
+    "translate": [
+     -27.1,
+     -51.5,
+     36
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approx",
+    "notes": "Planet carrier tucked inside the planetary cover envelope on the drivetrain axis."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/PLANETS_12T.stl",
+    "translate": [
+     -16,
+     -26,
+     35.9
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 5,
+    "confidence": "approx",
+    "notes": "12T planet at ~10mm orbit radius inside the cover (x3 in the real unit)."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/bearing_holder_planetary.stl",
+    "translate": [
+     -19.3,
+     -52.8,
+     -18
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 5,
+    "confidence": "approx",
+    "notes": "Planetary bearing plate on the plate back."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Planetary_cover.stl",
+    "translate": [
+     -23.8,
+     -52.8,
+     97.6
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 6,
+    "confidence": "approx",
+    "notes": "Planetary cover on the plate back, drivetrain axis."
+   },
+   {
+    "file": "/cad/reference/compliant-gripper/stl/Bearing_holder_gripper.stl",
+    "translate": [
+     39,
+     0,
+     56
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 6,
+    "confidence": "approx",
+    "notes": "Retainer plate over the jaw pivots."
+   },
+   {
+    "file": "/viewer/assets/mad5010_mock.stl",
+    "translate": [
+     -26.3,
+     -35.9,
+     33.4
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 7,
+    "confidence": "exact",
+    "notes": "MAD 5010 (factory STEP) pancake on the drivetrain axis behind the plate - replaces the underpowered gimbal motor; new motor plate is an open design item. Grip force = S1 current limit."
+   }
+  ],
+  "open_issues": [
+   "Poses derived from mid-plane slice features (pivot bores, gear bore) 2026-07-29 - jaw/finger/gear chain is feature-exact; planetary stack behind the plate remains approximate.",
+   "Gripper_bottles.stl (bottle fingertips) intentionally not shown.",
+   "Motor plate adapting the MAD 5010 to the planetary not yet designed."
+  ]
+ }
+]

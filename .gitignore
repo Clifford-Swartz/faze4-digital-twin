@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+viewer/printers_local.json
+viewer/data/markup_latest.json

@@ -1,0 +1,42 @@
+This repository contains two classes of content under two licenses:
+
+1. VIEWER AND PIPELINE CODE (viewer/*.py, *.js, *.html, viewer/lib excluded
+   where third-party notices apply): MIT License, below.
+
+2. HARDWARE DESIGN ASSETS derived from the FAZE4 robotic arm by Petar Crnjak /
+   Source Robotics (https://github.com/Source-Robotics/Faze4-Robotic-arm):
+   all mesh files under viewer/assets derived from FAZE4 STLs, and the
+   assembly-instruction page images under viewer/assets/pdfpages. These remain
+   licensed under CERN-OHL-S-2.0 (CERN Open Hardware Licence Version 2 -
+   Strongly Reciprocal), the license of the upstream project. Full text:
+   https://ohwr.org/cern_ohl_s_v2.txt
+
+   Modifications to those design files made in this repository (rebuild-parts
+   meshes for MAD 8318/5010 motors, bored covers, relief-pocketed shafts, etc.)
+   are likewise released under CERN-OHL-S-2.0.
+
+three.js (viewer/lib) is MIT, Copyright (c) 2010-2024 three.js authors.
+
+----------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2026 Clifford Swartz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

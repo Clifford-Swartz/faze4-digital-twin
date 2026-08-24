@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>J1 encoder stack</title>
+<style>
+  :root { --bg:#16181d; --panel:#1e2128; --border:#343a46; --text:#d6dae2; --muted:#8b93a3; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { height:100%; overflow:hidden; }
+  body { background:var(--bg); color:var(--text); font:13px/1.5 "Segoe UI",system-ui,sans-serif; display:flex; }
+  #side { width:290px; min-width:290px; padding:16px; background:var(--panel);
+          border-right:1px solid var(--border); overflow-y:auto; }
+  h1 { font-size:15px; margin-bottom:8px; }
+  h1 small { color:var(--muted); font-weight:normal; font-size:11px; }
+  .row { display:flex; align-items:center; gap:8px; padding:5px 0; cursor:pointer; }
+  .sw { width:14px; height:14px; border-radius:3px; border:1px solid #0006; }
+  .row.off { opacity:.35; }
+  label { display:block; margin-top:14px; color:var(--muted); font-size:12px; }
+  input[type=range] { width:100%; }
+  button { background:#262a33; color:var(--text); border:1px solid var(--border);
+           border-radius:6px; padding:7px 12px; font:inherit; cursor:pointer; margin-top:10px; width:100%; }
+  button:hover { border-color:#4ea1ff; }
+  p { color:var(--muted); font-size:12px; margin-top:12px; }
+  #view { flex:1; position:relative; }
+  #hint { position:absolute; bottom:10px; left:12px; color:var(--muted); font-size:11.5px; }
+</style>
+<script type="importmap">{ "imports": { "three": "./lib/three.module.js" } }</script>
+</head>
+<body>
+  <div id="side">
+    <h1>J1 encoder stack <small>&mdash; 3D</small></h1>
+    <div id="list"></div>
+    <label>Explode <input id="exp" type="range" min="0" max="100" value="0"></label>
+    <label>Spin the rotor <input id="spin" type="range" min="0" max="360" value="0"></label>
+    <button id="section">Half section on/off</button>
+    <p>Orange spins with the rotor. Green is the S1 &mdash; its own chip
+       reads the magnet across a 1.9&nbsp;mm gap.</p>
+  </div>
+  <div id="view"><div id="hint">drag orbit &middot; wheel zoom</div></div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from './lib/OrbitControls.js';
+import { STLLoader } from './lib/STLLoader.js';
+
+const view = document.getElementById('view');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x16181d);
+const camera = new THREE.PerspectiveCamera(42, 1, 0.5, 4000);
+camera.up.set(0, 0, 1);
+camera.position.set(150, -170, 80);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(devicePixelRatio);
+view.appendChild(renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0, -2);
+
+scene.add(new THREE.HemisphereLight(0xffffff, 0x303540, 1.5));
+const d1 = new THREE.DirectionalLight(0xffffff, 1.4); d1.position.set(1, -1.4, 1.6); scene.add(d1);
+const d2 = new THREE.DirectionalLight(0xffffff, 0.5); d2.position.set(-1, 1, -0.6); scene.add(d2);
+
+// local frame: z=0 is the motor's bottom face, +z up into the motor
+const PARTS = [
+  { key:'motor',   file:'/viewer/assets/mad8318_mock.stl', color:0x9aa3b0, z:0,     rotor:true,  ex:[0,0,26], label:'8318 rotor + stator' },
+  { key:'floor',   file:'/cad/j1/stl/j1_cage_floor.stl',   color:0x7fa6d9, z:-5,    rotor:false, ex:[0,0,10], label:'cage floor' },
+  // carrier is 11.3 tall and hangs from the motor face: min-z at -8.5
+  { key:'carrier', file:'/cad/j1/stl/j1_rotor_magnet_carrier.stl', color:0xff7043, z:-8.5, rotor:true, ex:[0,0,-18], label:'magnet carrier (ours)' },
+  // S1 mock is 8.6 tall; its top (the encoder face) sits 1.9 mm under the magnet
+  { key:'s1',      file:'/viewer/assets/odrive_s1_mock.stl', color:0x2e8b57, z:-19.0, rotor:false, ex:[0,0,-34], label:'ODrive S1' },
+];
+const loader = new STLLoader();
+const objs = {};
+const listEl = document.getElementById('list');
+
+function addRow(key, color, label) {
+  const row = document.createElement('div');
+  row.className = 'row';
+  row.innerHTML = `<span class="sw" style="background:#${color.toString(16).padStart(6,'0')}"></span><span>${label}</span>`;
+  row.onclick = () => {
+    const o = objs[key]; if (!o) return;
+    o.visible = !o.visible;
+    row.classList.toggle('off', !o.visible);
+  };
+  listEl.appendChild(row);
+}
+
+for (const p of PARTS) {
+  addRow(p.key, p.color, p.label);
+  loader.load(p.file, geo => {
+    geo.computeVertexNormals();
+    geo.computeBoundingBox();
+    const bb = geo.boundingBox;
+    // centre on the motor axis in x/y, put its own min-z at the given z
+    geo.translate(-(bb.min.x + bb.max.x) / 2, -(bb.min.y + bb.max.y) / 2, -bb.min.z);
+    const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+      color: p.color, roughness: 0.55, metalness: 0.15, side: THREE.DoubleSide }));
+    mesh.position.z = p.z;
+    mesh.userData = p;
+    objs[p.key] = mesh;
+    scene.add(mesh);
+  });
+}
+
+// the magnet: a little two-tone puck so N/S is visible while it spins
+const magGrp = new THREE.Group();
+for (const [sign, col] of [[1, 0xc94f4f], [-1, 0x4f7fc9]]) {
+  const g = new THREE.CylinderGeometry(3.1, 3.1, 3.2, 32, 1, false, sign > 0 ? 0 : Math.PI, Math.PI);
+  const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: col, roughness: 0.4 }));
+  m.rotation.x = Math.PI / 2;
+  magGrp.add(m);
+}
+magGrp.position.z = -8.5 + 1.6;
+objs.magnet = magGrp; scene.add(magGrp);
+addRow('magnet', 0xc94f4f, 'diametric magnet (N red / S blue)');
+
+// axis line
+const axis = new THREE.Line(
+  new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,-30), new THREE.Vector3(0,0,45)]),
+  new THREE.LineDashedMaterial({ color: 0x556, dashSize: 3, gapSize: 3 }));
+axis.computeLineDistances(); scene.add(axis);
+
+let clip = false;
+const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+document.getElementById('section').onclick = () => {
+  clip = !clip;
+  renderer.clippingPlanes = clip ? [plane] : [];
+  renderer.localClippingEnabled = clip;
+};
+
+const expEl = document.getElementById('exp'), spinEl = document.getElementById('spin');
+function tick() {
+  const e = expEl.value / 100, a = spinEl.value * Math.PI / 180;
+  for (const p of PARTS) {
+    const o = objs[p.key]; if (!o) continue;
+    o.position.set(p.ex[0]*e, p.ex[1]*e, p.z + p.ex[2]*e);
+    o.rotation.z = p.rotor ? a : 0;
+  }
+  if (objs.magnet) { objs.magnet.position.z = -8.5 + 1.6 + (-18)*e; objs.magnet.rotation.z = a; }
+  const w = view.clientWidth, h = view.clientHeight;
+  if (renderer.domElement.width !== w * devicePixelRatio || renderer.domElement.height !== h * devicePixelRatio) {
+    renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  controls.update();
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+renderer.setSize(view.clientWidth, view.clientHeight);
+camera.aspect = view.clientWidth / view.clientHeight; camera.updateProjectionMatrix();
+tick();
+</script>
+</body>
+</html>

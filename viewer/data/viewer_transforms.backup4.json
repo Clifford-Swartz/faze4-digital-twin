@@ -1,0 +1,4266 @@
+[
+ {
+  "group": "base",
+  "attach_link": "base_link",
+  "group_offset": [
+   0,
+   0,
+   0
+  ],
+  "parts": [
+   {
+    "file": "Base/Main base.STL",
+    "translate": [
+     155.63,
+     -292.66,
+     134.05
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "160x160x118.3 box centered on J1 axis (75.63,-212.66); world box x[-4.37,155.63] y[-292.66,-132.66] z[15.73,134.05] unchanged from the identity-pose fit. CORRECTED 2026-08-02: STL is authored foot-UP (13-pocket slew ring at native z 0-12, 4 corner foot holes at native z 112-118, measured by cross-section) - identity rotation showed it upside-down in both viewers. Ry(180) flips it foot-down while keeping the belt/tower window on +y; PDF p.71 (Step 11) is the ground truth view. Roller slew ring now lands at world z 122-134 (gen_slew2's 625s at z=126 nest in it); 50x65x7 seats for the output shaft at z 51-57 and 81-87."
+   },
+   {
+    "file": "Base/Joint 1 main case.STL",
+    "translate": [
+     30.63,
+     -141.66,
+     74.33
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 0,
+    "confidence": "exact",
+    "notes": "Cyclo tower root. Local motor-face plane z=0 -> world z=74.33 (d38.2 NEMA23 pilot circle found in base_link mesh exactly there); local cyclo axis (45,54) -> world (75.63,-87.66), exactly 125.0 mm +y of the J1 axis. Case cavity z 74.33-103.93. Verified by exact vertex-count matches (case local z=2 slice n=151 = base_link z 75-77 slice). NEMA23 motor hangs below, z 18.33-74.33."
+   },
+   {
+    "file": "Base/Joint 1 cover.STL",
+    "translate": [
+     120.63,
+     -141.66,
+     74.33
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 1,
+    "confidence": "exact",
+    "notes": "Motor shroud, printed opening-up; assembled rotated 180 about Y so it encloses the motor below the case (world z 17.33-74.33). x-extent 10.95..120.63 matches base_link mesh exactly. Attaches to case underside with 3x M3."
+   },
+   {
+    "file": "Base/Joint 1 eccentric shaft.STL",
+    "translate": [
+     69.3,
+     -51.88,
+     74.9
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "Slides on the NEMA23 shaft (bore d6.5 on tower axis). Rotated -90 about z so the +1.2mm eccentric lobe points +x to match disc 1 phase. z base ~74.9 (just above motor face); eccentric phase is arbitrary (depends on motor angle), lower d15.06 journal under disc 1."
+   },
+   {
+    "file": "Base/15_1 cyclo disc.STL",
+    "translate": [
+     42.19,
+     -121.81,
+     78.4
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 2,
+    "confidence": "approximate",
+    "notes": "Disc 1 (lower). Disc center (34.64,34.15) placed at tower axis +1.2mm eccentric offset in +x; spans world z 78.4-87.4 inside the case cavity. Carries a 15x28x7 bearing on the eccentric lobe. Phase arbitrary."
+   },
+   {
+    "file": "Base/15_1 cyclo disc.STL",
+    "translate": [
+     39.79,
+     -53.51,
+     96.51
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Disc 2 (upper), flipped 180 about x per cycloidal design, eccentric offset -1.2mm in x (opposite phase to disc 1); spans world z 87.5-96.5."
+   },
+   {
+    "file": "Base/joint 1 cyclo output shaft.STL",
+    "translate": [
+     39.85,
+     -118.91,
+     96.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 5,
+    "confidence": "good",
+    "notes": "Flange (OD62.5, BCD46 pin pilots) face-down at world z 96.73 over disc 2; 8x M3 25 pin screws with 3x10x4 bearings hang down into the disc d12.4 holes; d50.2 journal up through the top-cover 50x65x7 bearing; top face (BCD28 pulley threads) at 122.55 = pulley underside. Clocking about its axis arbitrary."
+   },
+   {
+    "file": "Base/Joint1 top cover.STL",
+    "translate": [
+     99.98,
+     -28.86,
+     103.93
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -157.5
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 6,
+    "confidence": "exact",
+    "notes": "Sits on case top (103.93-123.65); BCD75 pin pockets face down onto the 16 ring pins; 50x65x7 bearing seat at world z ~116.7-123.7. Verified by exact slice match (local z=2 n=208 = base_link z 105-107 n=208) and corner radius 70.29 match. CLOCKING FIXED 2026-08-05: bench caught the bracket ears pointing away from the Main base (arbitrary-clocking note came due). -157.5 deg about the cyclo axis mates the ears to the base bracket at 0.0mm contact; only this clocking fits - the 8-hole circle is 22.5-deg offset."
+   },
+   {
+    "file": "Base/36 teeth pulley.STL",
+    "translate": [
+     46.63,
+     -58.66,
+     137.87
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 7,
+    "confidence": "good",
+    "notes": "HTD5M 36T on the cyclo output, world z 122.55-137.87, flipped so the 8x M3 15 screw counterbores open upward (their screw heads found in base_link mesh at z 134.8-137.9 on BCD28). Teeth engage the 60T ring (belt plane ~125-135). Clocking arbitrary."
+   },
+   {
+    "file": "Base/Ball bearing retainer.STL",
+    "translate": [
+     33.1,
+     -255.14,
+     94
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 2,
+    "confidence": "good",
+    "notes": "85-square plate, bore d55.7 clears the J1 output shaft d50.2 journal; retains the upper main-base 50x65x7 (z 87-94). Boss ring r34.6-40.6 matches base_link features at z 94-100. z within +/-2mm."
+   },
+   {
+    "file": "Base/Shaft blocker.STL",
+    "translate": [
+     48.13,
+     -240.16,
+     44.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "55-square plate bolted under the Joint 1 output shaft bottom face (world z 50.73); bore d21.8 continues the shaft's d21.6 wire bore (visible p.77 with screws from below). Axially traps the lower 50x65x7. Kinematically rides rotary_base (rotates with J1)."
+   },
+   {
+    "file": "Base/Wire harness.STL",
+    "translate": [
+     45.68,
+     -252.81,
+     16
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     -1,
+     0
+    ],
+    "explode_order": 5,
+    "confidence": "approximate",
+    "notes": "UNVERIFIED anchor: wire-guide bracket inside the Main base floor below the output shaft, near the wire exit hole (p.77). Its r~47.8 arcs suggest it wraps the d94-95 shaft region. Exact position and orientation not identified in any mesh; placed centered under the J1 axis on the base floor."
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     110.04,
+     -84.56,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "32 instances total: 16 ring pins on BCD75 (r37.5 about tower axis (75.63,-87.66)), 2 spacers per pin (levels z~85.2 and z~91.0 center) interleaved with 3x8x4 bearings on the M3 25 pins. Printed on its side (washer axis = local y); rotate 90 about x makes the axis vertical. This entry: pin angle 0deg, lower level."
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     107.19,
+     -70.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 22.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     99.06,
+     -58.04,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 45deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     86.89,
+     -49.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 67.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     72.54,
+     -47.06,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 90deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     58.19,
+     -49.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 112.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     46.02,
+     -58.04,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 135deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     37.89,
+     -70.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 157.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     35.04,
+     -84.56,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 180deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     37.89,
+     -98.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 202.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     46.02,
+     -111.08,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 225deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     58.19,
+     -119.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 247.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     72.54,
+     -122.06,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 270deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     86.89,
+     -119.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 292.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     99.06,
+     -111.08,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 315deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     107.19,
+     -98.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "pin 337.5deg lower"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     110.04,
+     -84.56,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 0deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     107.19,
+     -70.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 22.5deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     99.06,
+     -58.04,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 45deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     86.89,
+     -49.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 67.5deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     72.54,
+     -47.06,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 90deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     58.19,
+     -49.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 112.5deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     46.02,
+     -58.04,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 135deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     37.89,
+     -70.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 157.5deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     35.04,
+     -84.56,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 180deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     37.89,
+     -98.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 202.5deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     46.02,
+     -111.08,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 225deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     58.19,
+     -119.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 247.5deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     72.54,
+     -122.06,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 270deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     86.89,
+     -119.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 292.5deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     99.06,
+     -111.08,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 315deg upper"
+   },
+   {
+    "file": "Base/Joint 1 ring spacers.STL",
+    "translate": [
+     107.19,
+     -98.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "pin 337.5deg upper"
+   },
+   {
+    "file": "Rotating base/Joint 1 output shaft.STL",
+    "translate": [
+     28.47,
+     -259.82,
+     50.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 8,
+    "confidence": "exact",
+    "notes": "60T belt-ring output shaft. Local bottom face z=0 sits exactly at the J1 joint origin plane (world z=50.73); verified by 4 exact slice matches against the rotary_base URDF mesh (n=154/65/44/1213). d50.2 journal in the two main-base 50x65x7 bearings; 60T ring at z 121.25-135.05; top face 135.05 = rotating-base mounting plane; hollow d21.6 wire bore. KINEMATICS: rides rotary_base (rotates with J1), not base_link. Clocking about z arbitrary (4x M10 positions)."
+   },
+   {
+    "file": "Rotating base/Rotating base wires.STL",
+    "translate": [
+     -48.41,
+     -290.79,
+     139.28
+    ],
+    "rotate_deg": [
+     91.26,
+     0.02,
+     90.09
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 9,
+    "confidence": "good",
+    "notes": "Pose FINAL 2026-07-29, PDF-verified (Assembly 3.1 Steps 1-2, p.54-55): this part is the bearing-ring tower on the FLANGE/wires side - the arm's shoulder hub rides its 50x65x7 bearing. Placed by 24-orientation search caged to the left half with an ENCIRCLES-THE-SHOULDER-AXIS acceptance test: median NN 2.20 mm, p90 12.91 mm, ring wraps the axis at r~48 mm. Distance-only ICP was repeatedly fooled (slid to the motor-side tower); the topology test is the fix."
+   },
+   {
+    "file": "Rotating base/Rotating base motor.STL",
+    "translate": [
+     -18.34,
+     -300.14,
+     124.01
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 10,
+    "confidence": "good",
+    "notes": "Outer cowl/fork shell. Three exact anchors: underside M10 BCD68 ring plane lands on the shaft top face (world z 135.05), shell top at 304.74 = rotary_base mesh top, BCD36.5 ring center at world z 252.55 = J2 axis exactly (at world x 158.6, the +x fork arm where the arm's d50 stub and its 50x65x7 sit). Mirror choice (which fork arm is which) inferred from the J2 top-cover bearings found at world x -44..-36; J2 output side = -x. Rides rotary_base."
+   }
+  ],
+  "open_issues": [
+   "Convention: rotate_deg is fixed-axis XYZ (URDF rpy semantics, R = Rz*Ry*Rx), applied before translate: p_link = R*p_stl + translate. All translates are mm in the base_link frame (= world at zero pose). The URDF link meshes are in meters - scale by 1000 to overlay these print STLs.",
+   "Re-parenting for articulation: 'Joint 1 output shaft', 'Shaft blocker', 'Rotating base wires', 'Rotating base motor' physically rotate with J1 and should be parented to rotary_base. Convert with p_rotary = R_j1^T * (p_base - [75.63, -212.66, 50.73]) where R_j1 = rpy(-90, 0, -90) from the URDF joint.",
+   "Rotating base wires bracket: mirror ambiguity about the J1 axis unresolved (alternative pose in its notes); the function/partner of its 50x65x7 head bearing (axis at world z~206) was not identified in any mesh - the URDF rotary_base mesh omits this interior part entirely.",
+   "Wire harness: no mesh or PDF anchor found; placement is a centered guess on the Main base floor - verify against p.76-77 renders or the physical build.",
+   "Cyclo eccentric phase (eccentric shaft + both 15_1 discs) is arbitrary - depends on motor angle; only the disc1/disc2 180-deg opposition is enforced. Disc z-heights good to ~1 mm.",
+   "Round parts' clocking about their own axes (36T pulley, cyclo output shaft, J1 output shaft, top covers) chosen arbitrarily; bolt-hole alignment between mates was not enforced.",
+   "Ring pin stack detail (order of 3x8x4 bearings vs the 2 spacers per pin, z 84.3/90.1) is reasoned from stack heights, not measured.",
+   "J2 drive cartridge parts (Arm+J2 folder: J2 main case, motor, cover, output, top case) occupy the fork between the two shells at world x -44..104 but belong to another group; the J2 top cover with its two 50x65x7 bearings was located at world x -44..-36 on the J2 axis (z=252.55) - useful anchor for that group.",
+   "Main base assumed 90-deg clocking (square footprint): belt window faces +y toward the tower - verify visually once loaded."
+  ]
+ },
+ {
+  "group": "j2",
+  "attach_link": "nadlaktica",
+  "group_offset": [
+   0,
+   0,
+   0
+  ],
+  "parts": [
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 main case.STL",
+    "translate": [
+     269.39,
+     -58.06,
+     -20
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 0,
+    "confidence": "good",
+    "notes": "Stack anchor. Cyclo axis (269.39,58.06) local -> group (0,0)=J2 shoulder axis (nadlaktica frame origin; joint axis=+z). Motor face (local z0) at z=-20 facing +z (NEMA23 84mm body occupies z=-20..+64 inside the cover, not an STL); chamber rim (local z29.6) at z=-49.6. Ry180 puts the D-arc (local x-max) at rear x=-52.6 (matches arm mesh x-min -52.5) and the long flange side toward the elbow +x. Clocking about z of the 4 motor holes not verified."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 cover.STL",
+    "translate": [
+     -52.4,
+     -64.8,
+     -20
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "good",
+    "notes": "Open rim (local z0, full 152x110 outline) mates the case motor-face plane at z=-20; closed D-back at z=+90.4 (matches Fork motor plate outer face plane). Footprint verified identical to the placed case footprint (x -52.4..+99.85, y -57.7..+52.4). Wires exit square hole on top per PDF p.45. Rides the arm (rotating side of J2)."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 eccentric shaft.STL",
+    "translate": [
+     -7.45,
+     -7.45,
+     -22
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "ORIGINAL part, superseded by Rework_parts/27to1 esc shaft _ rework_2 (PDF p.47 red note). Local axis along +y (OAL 22.3, journals d14.9, set-screw boss end at y0); mapped onto motor shaft: spans z=-22..-44.3 under both disc bearings (15x28x7, not STLs). Journal axis placed ON the joint axis; true eccentric offset e=1.3 vs bore and lobe phase vs discs not modeled."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL",
+    "translate": [
+     -38.6,
+     -39.8,
+     -35.5
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 2,
+    "confidence": "good",
+    "notes": "Disc 1 (motor side), instance 1 of 2. d79.8x9, center (39.9,39.8) local -> offset +1.3mm in +x (eccentric throw e=1.3, phase choice arbitrary). Spans z=-26.5..-35.5 (chamber floor at -26.5). ORIGINAL disc: superseded by 27to1 disc _ rework per PDF p.47; carries a 15x28x7 bearing (not an STL)."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL",
+    "translate": [
+     38.6,
+     39.8,
+     -44.5
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     180
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Disc 2, instance 2 of 2 - flipped 180deg about the joint axis relative to disc 1 (cycloidal counter-phase) with opposite eccentric offset -1.3mm in x. Spans z=-35.5..-44.5. PDF p.49: 'holes might need to be opposite to each other'."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 output shaft.STL",
+    "translate": [
+     38.96,
+     -29.83,
+     -67.97
+    ],
+    "rotate_deg": [
+     178.31,
+     -2.28,
+     -175.08
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 5,
+    "confidence": "good",
+    "notes": "Pose CORRECTED 2026-07-29 (asis slide -15 + ICP vs rotary_base+nadlaktica): median NN 2.24 mm, p90 7.52 mm, 0.2 mm off the shoulder axis - slid inboard so the pin flange meets the base tower instead of floating outboard (was 2.96/10.9 in the wrong axial position). Original note: STATIC member - the only part of this group that rides rotary_base, bolted to the rotating-base shells with 8x M5 25 (PDF p.53); re-parent for articulation (see open issues). d65x18 pin flange (local z0 face, d12.4 bore) at z=-44.5 facing the discs; 8x M5 30 pins + 32x 5x10x4 bearings (hardware, not STLs) extend +z into the disc holes. d50.2x20 hub spans z=-63.3..-83.3 carrying the 2x 50x65x7 bearings; hub end face (d18.2 bore) at z=-83.3."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 top case.STL",
+    "translate": [
+     69.55,
+     -62.19,
+     -48.88
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 6,
+    "confidence": "good",
+    "notes": "Ring/pin carrier. Flange face (local z0.72, with 14x d8 pin seats BCD85 + 14x M3-30 bosses BCD90) lands on the case chamber rim plane z=-49.6; bearing tower extends to z=-82.3 with the d65 bore holding the 50x65x7 pair around the output hub. Ry180 puts its mounting ears toward the elbow like the case flange side. Ear clocking about z not verified."
+   },
+   {
+    "file": "Arm+J2/Fork motor.STL",
+    "translate": [
+     106.52,
+     43.24,
+     89.97
+    ],
+    "rotate_deg": [
+     179.79,
+     -0.08,
+     0.19
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 2,
+    "confidence": "exact",
+    "notes": "Pose RESOLVED 2026-07-29 (flipy+elbow seed + ICP): median NN 0.76 mm, p90 7.83 mm; ring center lands at (320.5,-2.1) [shoulder d=320.5mm, elbow d=2.2mm]. Previous pose scored 3.25/15.2 with the flip ambiguity noted. Original note: Upper-arm side plate, motor/cover side (+z). Shoulder bearing-seat ring (local (213.85,46), d62-65 seat) mapped onto the joint axis; plate spans z=64.94..90.2 - matches URDF nadlaktica mesh faces exactly (65/90.2, 25.26 thick). Runs x=-45..+213.85 (rear overhang matches mesh). Which face is outboard (mirror flip) not verified."
+   },
+   {
+    "file": "Arm+J2/Fork wires.STL",
+    "translate": [
+     366.02,
+     -67.35,
+     -65.1
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     180
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 7,
+    "confidence": "good",
+    "notes": "Re-registered against the nadlaktica fused-exterior mesh 2026-07-23: rpy(180,0,180) (= 180 about y), median NN 0.74 mm (p95 1.5) over 600 surface samples. Plate is the wires-side (-z) skin of the ELBOW half of the arm: x 107.2..365.9, y -67.3..45.1, z -92.1..-65.1 (outer face -92.1, inner face -65.1 = Fork cheek plane). Its large bore lands dead on the elbow axis (320.0,0.0), riding the J3 output hub / 50x65x7 stack. Rejected: old pose rpy(0,0,0)/t(-45,-66.4,-87) scored 4.2 mm (mirrored the Fork motor plate onto the shoulder half - wrong end); mirror alternative rpy(180,0,0)/t(109.16,44.07,-65.1) scored 1.78 mm and puts no bore on the elbow axis."
+   },
+   {
+    "file": "Arm+J2/Fork.STL",
+    "translate": [
+     57.26,
+     -111.75,
+     -70.38
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Re-registered against the nadlaktica fused-exterior mesh 2026-07-23: identity rotation, median NN 1.03 mm (p95 3.7) over 600 surface samples, no local region off. Fork is the truss bridge between the two arm plates on the ELBOW half of the arm: x 61.1..244.2, y -67.8..36.9, cheek faces z -65.1/+65.1 flush to the plate inner faces. The d63->d72 stepped opening lands at (154.8,-21.9), axis z (a box lightening/pass hole, not on any motor axis). Rejected: old pose rpy(0,0,180)/t(134.39,89.85,-70.58) scored 4.8 mm and overlapped the J2 chamber; flipped rpy(180,0,0) scored 3.0 mm."
+   },
+   {
+    "file": "Arm+J2/joint2_limit_trigger.STL",
+    "translate": [
+     -38,
+     -218.7,
+     -102.5
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "J2 homing trigger. Part is an arc rider r~38-76 about local (38,218.7); placed concentric with the shoulder axis, z=-102.5..-87 flush outboard of the Fork wires plate where the shoulder arc slots are. Mounting screw position and angular clocking (home position) not verified."
+   },
+   {
+    "file": "Arm+J2/Joint 3 limit trigger.STL",
+    "translate": [
+     286.3,
+     -142.3,
+     55
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     1
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "J3 homing trigger. Arc rider r~34-48 about local (33.7,142.3); placed concentric with the elbow axis at (320,0), z=55..64.7 just inside the Fork motor plate. rotate_deg z=1 is effectively 0 (angular clocking/home position unknown). Side of the elbow it mounts on unverified."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     39.4,
+     3.1,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Ring-pin spacer (d6.2 OD x 1.8 ring, local axis along y). 28 instances total: 14 towers on r42.5 (each tower per PDF p.48: 3x8x4 bearing/spacer/bearing/spacer/bearing on an M3 30 axle), 2 spacer heights per tower at z=-33.5..-31.7 and -39.3..-37.5. This is tower k=0 (angle 0deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     39.4,
+     3.1,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=0 (0deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     35.19,
+     21.54,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=1 (25.71deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     35.19,
+     21.54,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=1 (25.71deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     23.4,
+     36.33,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=2 (51.43deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     23.4,
+     36.33,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=2 (51.43deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     6.36,
+     44.53,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=3 (77.14deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     6.36,
+     44.53,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=3 (77.14deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -12.56,
+     44.53,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=4 (102.86deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -12.56,
+     44.53,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=4 (102.86deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -29.6,
+     36.33,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=5 (128.57deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -29.6,
+     36.33,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=5 (128.57deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -41.39,
+     21.54,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=6 (154.29deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -41.39,
+     21.54,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=6 (154.29deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -45.6,
+     3.1,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=7 (180deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -45.6,
+     3.1,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=7 (180deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -41.39,
+     -15.34,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=8 (205.71deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -41.39,
+     -15.34,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=8 (205.71deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -29.6,
+     -30.13,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=9 (231.43deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -29.6,
+     -30.13,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=9 (231.43deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -12.56,
+     -38.33,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=10 (257.14deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     -12.56,
+     -38.33,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=10 (257.14deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     6.36,
+     -38.33,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=11 (282.86deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     6.36,
+     -38.33,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=11 (282.86deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     23.4,
+     -30.13,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=12 (308.57deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     23.4,
+     -30.13,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=12 (308.57deg), upper spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     35.19,
+     -15.34,
+     -33.5
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=13 (334.29deg), lower spacer."
+   },
+   {
+    "file": "Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+    "translate": [
+     35.19,
+     -15.34,
+     -39.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Tower k=13 (334.29deg), upper spacer."
+   }
+  ],
+  "open_issues": [
+   "ARCHITECTURE (verified vs PDF pp.44-53 + URDF meshes): FAZE4 J2 is an INVERTED cyclo - the motor, main case, eccentric, discs, pin towers, top case and cover all ride ON the arm (nadlaktica); ONLY 'Joint 2 output shaft' is static, bolted to the rotating-base shells with 8x M5 25. attach_link=nadlaktica is correct for everything except the output shaft; for articulation re-parent the output shaft entry to rotary_base using p_rb = Rz(-103.77deg)*p_nad + (0,-201.82,0) mm (transforms given are exact at URDF zero pose either way).",
+   "Group frame = nadlaktica link frame (J2 joint axis = +z through origin; +x toward the elbow at (320,0,0)). All z planes cross-checked against the URDF nadlaktica mesh: case rim/motor face -49.6/-20 vs mesh -50/-20; Fork motor plate 64.94..90.2 vs mesh 65/90.2 (exact); wires plate -87..-60 vs mesh -86/-60. Residual axial slop inside the hidden gearbox stack is about +/-2mm.",
+   "Rotations use XYZ fixed-axis euler (all entries are single-axis 90/180 turns so order is unambiguous). Rotation applied before translation.",
+   "Superseded parts: 'Joint 2 eccentric shaft' and 'Joint 2 cyclo disc' are the ORIGINAL 15x28x7-bearing design; PDF p.47 red note replaces them with Rework_parts/27to1 esc shaft _ rework_2 + 27to1 disc _ rework (20x27x4 bearings). Both variants occupy the same envelope; if the viewer shows the rework parts instead, reuse these transforms (rework eccentric local frame differs - re-derive its own mapping).",
+   "Clocking about the joint axis of the case/top-case/cover screw patterns, disc hole phase, eccentric lobe phase, and both limit-trigger home angles are not verified - axisymmetric placements chosen. Case/cover/top-case D-arc-to-rear orientation IS verified via footprint match to the arm mesh.",
+   "Fork and Fork wires re-registered by mesh registration 2026-07-23 (median NN 1.03 / 0.74 mm): both belong to the ELBOW half of the arm box - Fork is the between-plates truss x 61..244 (cheeks flush at z -65.1/+65.1), Fork wires the -z skin x 107..366 with its bore on the elbow axis (320,0). Fork motor plate (+z side, shoulder half, x -45..214) unchanged. The earlier ~5mm-interference note is obsolete (it stemmed from the old wrong wires-plate z).",
+   "Non-STL hardware in this joint (viewer may want placeholders): NEMA23 57x57x84 motor at z=-20..+64 on the axis; 2x 15x28x7 disc bearings; 14x M3 30 pin axles + 42x 3x8x4 bearings in the towers (bearing z bands -27.7..-31.7, -33.5..-37.5(mid), -39.3..-43.3 approx); 8x M5 30 output pins + 32x 5x10x4 bearings at r~24 spanning z=-44.5..-26.5; 2x 50x65x7 on the output hub z=-69..-83; 8x M5 25 arm-to-base screws.",
+   "Ring spacer count: 28 instances emitted (14 towers x 2) per PDF p.48 (42 bearings + 28 spacers, X14 towers); stl_frames.md's '28 pin seats' = 14 seats in case + 14 in top case, NOT 28 towers.",
+   "Upper arm lid.STL remains UNPLACED (2026-07-29): residual analysis (nadlaktica fused exterior minus all placed parts) shows the entire fork-end outer shell is cosmetic-cover surface sitting proud of the structural fork parts; the oval lid is one patch of that shell and four automated registration strategies (mesh_other, 24-seed grid ICP, residual ICP, cluster-seeded translation-only ICP) all converged to ambiguous fits (best: median 1.48mm but p90 27mm, 17% residual coverage, off-grid rotation). Needs the assembly PDF or a physical reference to place honestly. Same for Rotating base lid.STL on rotary_base."
+  ]
+ },
+ {
+  "group": "j3",
+  "attach_link": "lakat",
+  "group_offset": [
+   -45,
+   -58.7,
+   14.8
+  ],
+  "parts": [
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 main case.STL",
+    "translate": [
+     0,
+     0,
+     0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 0,
+    "confidence": "exact",
+    "notes": "Reference part; group frame = its local frame. J3 axis at (45, 58.7), motor/rotor face at z=0, cyclo cavity z 0-29.6, discs run z 6-24. Verified vs lakat URDF mesh: group axes parallel to lakat axes, origin at lakat (-45, -58.7, +14.8)."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 cover.STL",
+    "translate": [
+     104.9,
+     0,
+     0
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 1,
+    "confidence": "good",
+    "notes": "Frame audit proved cover local frame = case frame mirrored in x (printed rotated 180 about y): axis 59.9 = 104.9-45. This transform un-mirrors it: axis maps to (45, 58.7), body spans z 0..-79.5 enclosing the NEMA23 motor (z -56..0, not modeled). Rim assumed flush on case z=0 face (standard mating, matches 'all flush at z=0' rotor plane). Rear boss d50.2x7 lands at z -72.5..-79.5 = lakat z_min -64.7... 0.0 span match confirms z seat."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 eccentric shaft.STL",
+    "translate": [
+     9.22,
+     49.97,
+     1.3
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "Bore axis (35.78, 8.73) -> J3 axis (45, 58.7). z offset +1.3 chosen so measured journals (lobe1 -y local z 0-13.2, lobe2 +y z 15.2-20.3, d15.06 ecc 1.2) straddle the confirmed disc planes z 6-15/15-24 and the nut pocket lands ~15.5 mm from the motor face (NEMA23 shaft-flat zone). z uncertain +-1 mm; lobe phase about the axis is the motor clocking, arbitrary at rest."
+   },
+   {
+    "file": "Elbow/J3 cyclo/15_1 cyclo disc.STL",
+    "translate": [
+     10.36,
+     23.04,
+     6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 2,
+    "confidence": "approximate",
+    "notes": "Disc 1 (lower, case z 6-15). Center (34.64, 34.46) -> (45, 57.5): J3 axis offset -1.2 in y to match eccentric journal-1 lobe direction. z=6 is a confirmed measurement. Lobe clocking about own axis ('align the dots') not derivable from measurements."
+   },
+   {
+    "file": "Elbow/J3 cyclo/15_1 cyclo disc.STL",
+    "translate": [
+     79.64,
+     94.36,
+     15
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     180
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Disc 2 (upper, case z 15-24), flipped 180 about z per cycloidal design. Center maps to (45, 59.9) = axis +1.2 in y (opposed to disc 1, matches measured journal-2 lobe +y, ecc 1.25). Clocking approximate."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 output shaft.STL",
+    "translate": [
+     9.22,
+     27.45,
+     24
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 5,
+    "confidence": "good",
+    "notes": "Axis (35.78, 31.25) -> (45, 58.7). Flange (d62.5, local z0, pick-off pins into disc holes) seats on disc-2 top at z=24; d50.26 journal end (2x 50x65x7 bearings) reaches z 57.2, flush with top cover outer face 57.3 - independent cross-check of the whole stack. Fork motor plate (nadlaktica) bolts to the z=57.2 face with 8x M3 30."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 top cover.STL",
+    "translate": [
+     90,
+     0,
+     29.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     90
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 6,
+    "confidence": "good",
+    "notes": "Frame audit: local frame = case rotated 90 about z. Rz(+90) is the unique un-rotation matching the axis asymmetry (58.7/45 along local x -> case y). Local z=0 face carries the d2.7 BCD81 ring-screw holes -> it is the case-side face; seats on case top z=29.6, spans to 57.3. Assembled footprint x 0..90, y 0..103.7."
+   },
+   {
+    "file": "Cosmetic/Elbow lid.STL",
+    "translate": [
+     94.68,
+     109.21,
+     66.1
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 2,
+    "confidence": "exact",
+    "notes": "Registered against the lakat fused-exterior mesh 2026-07-23: median NN 0.54 mm over 600 surface samples (rim and dome outer shells at 0.11 mm), 89% of samples <1 mm. rpy(-90,0,-90) maps local (x,y,z) -> link (z,-x,-y). Open rim (local z=0) faces -x onto the elbow body at link x=49.7 (=137.7-88); dome caps the lakat +x end exactly (x_max 137.7); local x span maps to the full lakat y[-112,45] exactly. Rejected near-miss: 180-flip rpy(180,0,-90) scored 2.61 mm median with the rim facing AWAY from the body; old pose rpy(90,90,0)/t(-31.6,0,76.6) scored 12.7 mm (rim-on-y=0 hypothesis was wrong)."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     82.4,
+     61.8,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 1/16 (theta=0), lower spacer. Measured washer d6.2 x 1.8, bore d3.2, printed axis along local y -> Rx90. 16 pins at BCD81 r40.5 (confirmed), angles k*22.5 deg (confirmed via top-cover ring holes at +x/+y). z: assumed pin stack bearing-spacer-bearing-spacer-bearing centered in z 6-24 -> spacers z 11.2-13.0 and 17.0-18.8 (2.4 mm slack in bay; PDF p.23 not renderable to confirm interleave)."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     82.4,
+     61.8,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 1/16 (theta=0), upper spacer."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     79.317,
+     77.299,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 2/16 (22.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     79.317,
+     77.299,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 2/16 (22.5 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     70.538,
+     90.438,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 3/16 (45 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     70.538,
+     90.438,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 3/16 (45 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     57.399,
+     99.217,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 4/16 (67.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     57.399,
+     99.217,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 4/16 (67.5 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     41.9,
+     102.3,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 5/16 (90 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     41.9,
+     102.3,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 5/16 (90 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     26.401,
+     99.217,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 6/16 (112.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     26.401,
+     99.217,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 6/16 (112.5 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     13.262,
+     90.438,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 7/16 (135 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     13.262,
+     90.438,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 7/16 (135 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     4.483,
+     77.299,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 8/16 (157.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     4.483,
+     77.299,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 8/16 (157.5 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     1.4,
+     61.8,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 9/16 (180 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     1.4,
+     61.8,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 9/16 (180 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     4.483,
+     46.301,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 10/16 (202.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     4.483,
+     46.301,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 10/16 (202.5 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     13.262,
+     33.162,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 11/16 (225 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     13.262,
+     33.162,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 11/16 (225 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     26.401,
+     24.383,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 12/16 (247.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     26.401,
+     24.383,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 12/16 (247.5 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     41.9,
+     21.3,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 13/16 (270 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     41.9,
+     21.3,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 13/16 (270 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     57.399,
+     24.383,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 14/16 (292.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     57.399,
+     24.383,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 14/16 (292.5 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     70.538,
+     33.162,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 15/16 (315 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     70.538,
+     33.162,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 15/16 (315 deg), upper."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     79.317,
+     46.301,
+     11.2
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 16/16 (337.5 deg), lower."
+   },
+   {
+    "file": "Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+    "translate": [
+     79.317,
+     46.301,
+     17
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Pin 16/16 (337.5 deg), upper."
+   }
+  ],
+  "open_issues": [
+   "Euler convention: rotate_deg is URDF-style fixed-axis XYZ (R = Rz*Ry*Rx, X applied first). Convention-sensitive entry: Elbow lid (-90,0,-90) maps local (x,y,z) -> group/link (z,-x,-y). All other rotations are single-axis and convention-neutral.",
+   "Group frame = Joint 3 main case local frame. It rides on lakat with identity rotation (verified: lakat mesh x_min -45.0 = case x0 face, y_max +45.0 = case y103.7 face, z span 136.8 = cover 79.5 + case 29.6 + top cover 27.7 exactly), origin offset lakat (-45, -58.7, +14.8). The J3 axis is lakat z through (0,0); group +z = output/fork side.",
+   "NEMA23 motor (57x57x56) is not modeled (no STL); it occupies group z -56..0 inside the Joint 3 cover pocket. If the viewer adds a motor placeholder, put its face at z=0 on axis (45, 58.7).",
+   "Purchased bearings not placed (no STLs): 2x 15x28x7 lobe bearings on the eccentric journals, 48x 3x8x4 on the ring pins, 32x 3x10x4 on the output-shaft pick-off screws, 2x 50x65x7 between output shaft journal and top cover.",
+   "Assembly PDF could not be rendered (pdftoppm/poppler not installed on this machine), so p.21-27 photos were unavailable; stack order was taken from docs/design/measurements/pdf_motor_mounting.md instead. The per-pin bearing/spacer interleave (assumed B-S-B-S-B, leaves 2.4 mm slack in the 18 mm bay) and spacer z-levels should be checked against the p.23 image once poppler is installed.",
+   "Cyclo disc angular clocking ('align the dots') and eccentric phase are arbitrary in this data; positions/eccentric offsets (+-1.2 mm, disc1 -y / disc2 +y, disc2 rotated 180) are measurement-backed but lobe-vs-pin mesh alignment may look slightly off until clocked in the viewer.",
+   "Elbow lid RESOLVED 2026-07-23 by mesh registration against lakat (median NN 0.54 mm, rim/dome shells 0.11 mm): rim plane at link x=49.7 facing -x, dome caps lakat x_max=137.7, full y[-112,45] width. The earlier rim-on-y=0 / J4-bay-centered hypothesis scored 12.7 mm and is superseded.",
+   "Output shaft flange assumed to touch disc-2 top exactly at z=24 (zero clearance); real assembly may have a few tenths of axial float. The independent flush check (24+33.2=57.2 vs 29.6+27.7=57.3) bounds the error at ~0.1 mm."
+  ]
+ },
+ {
+  "group": "j4",
+  "attach_link": "lakat",
+  "group_offset": [
+   0,
+   0,
+   0
+  ],
+  "parts": [
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 motor case.STL",
+    "translate": [
+     97.7,
+     -38.5,
+     38.5
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 9,
+    "confidence": "good",
+    "notes": "CONVENTION (all parts): rotate_deg = fixed-axis XYZ euler (R=Rz*Ry*Rx) about the part STL origin, then translate; coords in mm in the lakat link frame (lakat URDF mesh is meters - scale x1000). Drum spans x 72.7..97.7; floor outboard face flush with NEMA17 face at x=97.7 (motor + d22 pilot boss + d5 shaft all present in lakat mesh and verified). Local cyclo axis (38.5,38.5) maps to lakat (y=0,z=0). Clocking aligned so the 12x BCD64 ring-screw pattern sits at 15deg+30k, matching the top cover; absolute clocking mod 30deg is arbitrary."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 top cover.STL",
+    "translate": [
+     72.7,
+     -45,
+     40
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 2,
+    "confidence": "good",
+    "notes": "z14 plate face bolts on elbow rear wall plane x=58.7 (stack closes exactly: 58.7+14+25=97.7); boss z0 face mates drum chamber rim at x=72.7; bore d48/d47.2 seat/d40 lip holds the 35x47x7 output bearing (bearing at x 60.7..67.7, hardware not emitted). Bearing bore center (45,40) maps to (y=0,z=0). 180deg clocking about the axis unverified: 4-hole d3 corner line placed at y=-39, 2-hole line at y=+35."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output shaft.STL",
+    "translate": [
+     57.7,
+     -23,
+     -23
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "d35 hub (local z0-10) points -x through the cover bearing, hub/pulley face at x=57.7 (1mm inboard of the 58.7 wall plane); d46 body in chamber; pin face (z20.5) at x=78.2 with 10 pins toward the discs. Pin-circle clocking arbitrary (BCD44)."
+   },
+   {
+    "file": "Elbow/J4 cyclo/11_1 cyclo disc.STL",
+    "translate": [
+     84.7,
+     -29.6,
+     -27.74
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 6,
+    "confidence": "good",
+    "notes": "Instance 1 of 2 (floor-side disc, installed first per PDF p18): x 84.7..91.7, center offset +1.5 in z riding eccentric journal B. Lobe-phase clocking arbitrary."
+   },
+   {
+    "file": "Elbow/J4 cyclo/11_1 cyclo disc.STL",
+    "translate": [
+     77.7,
+     29.6,
+     27.74
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 5,
+    "confidence": "good",
+    "notes": "Instance 2 of 2 (cover-side disc): rotated 180deg about the cyclo axis relative to instance 1, center offset -1.5 in z (opposed eccentricity per cycloidal design); x 77.7..84.7."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Eccentric shaft J4.STL",
+    "translate": [
+     75.9,
+     -8.5,
+     -10
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 7,
+    "confidence": "good",
+    "notes": "Bore axis (local 8.5,10) on cyclo axis; local z16.6 motor end at x=92.5 near floor inner face; rides NEMA17 d5 shaft (mesh shows shaft tip at x~73-76). Journal B (+1.5z) in disc1, journal A (-1.5z) in disc2. Axial stance +/-2mm."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     28.01,
+     -5.38
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer instance 1/12, pin at BCD64 angle -15deg. Per-pin stack (PDF p18): 3x8x4 bearing + this printed spacer (d5.8x2.8, bore 3) + 3x8x4 bearing on an M3x25 ring screw; spacer occupies x 83.3..86.1 between the two disc-plane bearings. Bearings/screws are hardware, not emitted. Axial position inferred +/-1.5mm."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     19.73,
+     -19.73
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 2/12, BCD64 angle -45deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     5.38,
+     -28.01
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 3/12, BCD64 angle -75deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     -11.18,
+     -28.01
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 4/12, BCD64 angle -105deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     -25.53,
+     -19.73
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 5/12, BCD64 angle -135deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     -33.81,
+     -5.38
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 6/12, BCD64 angle -165deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     -33.81,
+     11.18
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 7/12, BCD64 angle 165deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     -25.53,
+     25.53
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 8/12, BCD64 angle 135deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     -11.18,
+     33.81
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 9/12, BCD64 angle 105deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     5.38,
+     33.81
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 10/12, BCD64 angle 75deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     19.73,
+     25.53
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 11/12, BCD64 angle 45deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/J4 ring rollers.STL",
+    "translate": [
+     86.1,
+     28.01,
+     11.18
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 8,
+    "confidence": "approximate",
+    "notes": "Ring spacer 12/12, BCD64 angle 15deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     24.9,
+     -2.9
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin spacer 1/10 (ring d5.8x1.6, axis along local y). Sits on output-shaft pin at BCD44 against the pin face x 78.2..79.8, followed by a 3x8x4 bearing (hardware) engaging the cover-side disc. Pin clocking arbitrary (angle 0deg)."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     20.7,
+     10.03
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 2/10, angle 36deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     9.7,
+     18.02
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 3/10, angle 72deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     -3.9,
+     18.02
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 4/10, angle 108deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     -14.9,
+     10.03
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 5/10, angle 144deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     -19.1,
+     -2.9
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 6/10, angle 180deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     -14.9,
+     -15.83
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 7/10, angle 216deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     -3.9,
+     -23.82
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 8/10, angle 252deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     9.7,
+     -23.82
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 9/10, angle 288deg."
+   },
+   {
+    "file": "Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+    "translate": [
+     78.2,
+     20.7,
+     -15.83
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output spacer 10/10, angle 324deg."
+   },
+   {
+    "file": "Elbow/26 teeth Joint 4 pulley.STL",
+    "translate": [
+     46.2,
+     -23,
+     -23
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 1,
+    "confidence": "good",
+    "notes": "On the J4 cyclo output axis (y=0,z=0), z11.5 face bolted to output-shaft hub face at x=57.7; occupies belt pocket x 46.2..57.7 (pocket 46..58.7, verified against J3-cover wire boss in lakat mesh); teeth band x 47.2..56.2; wire path runs through its d14.85 bore into the d14.8 wall hole. Fit-analysis belt summary says 28T here, but encoder-window math (334deg = 360x26/28) and the magnet-cap retrofit notes put 26T on the cyclo output - followed the latter."
+   },
+   {
+    "file": "Elbow/Joint 4 pulley 28 teeth.STL",
+    "translate": [
+     45.2,
+     -96.5,
+     -23
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     1,
+     0,
+     0
+    ],
+    "explode_order": 0,
+    "confidence": "approximate",
+    "notes": "On the J4 JOINT axis (y=-73.5,z=0), bolted to the Joint 4 shaft rear face; nests in the offset tube d51x13.7 rear counterbore (x 45.2..58.4); teeth x 48.0..57.3 aligned with 26T band within ~1mm. CAVEAT: kinematically this pulley (and the Joint 4 shaft, Forearm folder) rotate with podlaktica, not lakat - reparent to podlaktica for articulated mode. Axial stance +/-1.5mm (shaft shoulder position unmeasured)."
+   },
+   {
+    "file": "Elbow/Joint 4 offset.STL",
+    "translate": [
+     58.7,
+     -112,
+     81
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 0,
+    "confidence": "exact",
+    "notes": "Bearing tube on the J4 joint axis: local z axis maps to lakat -x with z0 rear face flush at the x=58.7 wall plane and z103.7 forearm end at x=-45 (lakat bbox face). Verified feature-for-feature against the lakat mesh: d47.2 seats land at x 38..45 and -30..-23 (exact), outer flats land on mesh planes y=-45 and y=-112 (exact), d65x15 forearm recess and d51 rear bore match. Limit-switch ledge (M2 holes at local z97.7) faces +z at x=-39."
+   },
+   {
+    "file": "Elbow/Joint 4 limit switch cover.STL",
+    "translate": [
+     -39,
+     -98,
+     81
+    ],
+    "rotate_deg": [
+     -90,
+     0,
+     90
+    ],
+    "explode_dir": [
+     -1,
+     0,
+     0
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "Caps the micro limit switch (hardware, not emitted) on the offset tube ledge at x -45..-39, top of tube (z~+33..40). Placement assumes the cover shares the tube CAD y-datum (cover local y 36.8-53.5 matches tube switch-flat y 40.7-47.7) with its 29mm hole pitch on the tube M2 holes; open-face direction unverified - may need 180deg flip about lakat y."
+   }
+  ],
+  "open_issues": [
+   "Transform convention: rotate_deg is fixed-axis XYZ euler (R = Rz*Ry*Rx) applied about the part's STL origin, then translate; all coords in mm in the lakat link frame (group frame == lakat frame, so group_offset=[0,0,0]; lakat URDF mesh is authored in meters - scale x1000 to match).",
+   "28T pulley and the Joint 4 shaft (Forearm/Joint 4 shaft.STL, not in this group) kinematically belong to podlaktica (they rotate with the J4 joint); they are placed here statically in the lakat frame - the viewer should reparent the 28T entry to podlaktica for articulated mode (podlaktica joint origin = lakat (0,-73.5,0), axis = lakat -x).",
+   "J4 belt has no STL and no documented spec (HTD5M, center distance 73.5mm, computed length ~282mm => likely 280-285 stock); the gap between pulleys is shown beltless.",
+   "Angular clocking about the cyclo axis for motor case / top cover / discs / pin circles is arbitrary modulo the pattern symmetry (30deg for BCD64 ring, 36deg for output pins); values chosen keep case and cover BCD64 patterns aligned. Top cover 180deg clocking (4-hole line at y=-39 vs +35) not confirmed against the light mesh (d3 pilots absent).",
+   "Output pin stack order (spacer then bearing vs bearing then spacer) inferred from PDF p19 exploded view; also the single-bearing-per-pin BOM means the output visibly engages only the cover-side disc - matches BOM (10x 3x8x4 + 10 spacers) but looks asymmetric.",
+   "Naming inconsistency in sources: fit-analysis belt line puts the 28T on the cyclo output, but the encoder-window figure (334deg = 360*26/28) and 26T-magnet-cap retrofit notes require 26T on the cyclo output - followed the latter. Also measured tooth-tip radius is ~15.5 on both pulleys, so actual tooth counts may not match the file names.",
+   "Hardware not emitted: NEMA17 motor (body occupies lakat x 97.7..137.7, present in the lakat mesh itself), 35x47x7 output bearing (x 60.7..67.7), 2x 17x23x4 disc bearings, 24x ring + 10x output 3x8x4 bearings, 12x M3x25 ring screws, micro limit switch, M2/M3 fasteners.",
+   "Ring-roller and output-spacer axial positions are inferred from disc positions (discs at x 77.7..84.7 and 84.7..91.7 from the fit-analysis journal bands) +/-1.5mm; eccentric axial stance +/-2mm (depends on NEMA17 shaft protrusion, mesh shows shaft tip at x~73-76)."
+  ]
+ },
+ {
+  "attach_link": "podlaktica",
+  "group": "j5_forearm",
+  "group_offset": [
+   0,
+   0,
+   0
+  ],
+  "parts": [
+   {
+    "file": "Forearm/Forearm main case.STL",
+    "translate": [
+     -50.19,
+     53.22,
+     12.46
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 0,
+    "confidence": "exact",
+    "notes": "Group datum: all transforms in this group are ALREADY in the podlaktica URDF link frame (mm; URDF meshes are meters - scale x1000). Case STL frame registered to podlaktica mesh, median NN 0.006 mm. In case-local coords: cyclo/motor axis (38.5,58.5) along z, wrist pivot axis (38.5,205) along z, J4 roll axis (x38.5,z44) along y. Case->link: rpy(30.6233,38.3759,10.8855), t(-50.189,53.223,12.463)."
+   },
+   {
+    "file": "Cosmetic/Forearm motor lid.STL",
+    "translate": [
+     12.81,
+     62.23,
+     -31.29
+    ],
+    "rotate_deg": [
+     149.377,
+     -38.376,
+     -169.114
+    ],
+    "explode_dir": [
+     -0.6208,
+     0.3993,
+     -0.6746
+    ],
+    "explode_order": 2,
+    "confidence": "good",
+    "notes": "Covers the motor-bay broad face (case z0): part is RotY180 in case frame, outer face at case z-8 with a 6 mm lip into the bay. NN vs podlaktica 0.63 mm median. PDF p.78, 6x M3 10."
+   },
+   {
+    "file": "Forearm/Forearm top cover.STL",
+    "translate": [
+     -5.01,
+     44.16,
+     66.32
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 5,
+    "confidence": "exact",
+    "notes": "Pure translation of the case frame (case-local +(0,20,68)): pin ring (38.5,38.5)->case (38.5,58.5), wrist bearing seat (38.5,185)->(38.5,205). Closes cyclo chamber (case z68-82); carries the 35x47x7 output bearing and the wrist-pivot upper 35x47x7. Validated NN 0.009 mm."
+   },
+   {
+    "file": "Forearm/Eccentric shaft J5.STL",
+    "translate": [
+     9.89,
+     82.38,
+     45.59
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 1,
+    "confidence": "good",
+    "notes": "Bore axis (own 8.5,10.0) on the cyclo/motor axis, seated on motor-plate top (case z48), OAL 16.6 -> case z48-64.6. Two d17 lobes at e=1.5 (+/-1.5 in case y) carry the 17x23x4 disc bearings. Set-screwed to NEMA17 shaft; clocking arbitrary (q-dependent)."
+   },
+   {
+    "file": "Forearm/11_1 cyclo disc.STL",
+    "translate": [
+     -9.18,
+     60.33,
+     50.68
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 2,
+    "confidence": "approximate",
+    "notes": "Disc 1 (of 2) on the lower eccentric lobe: bore center (own 29.6,29.24) at case (38.5,57.0) [lobe offset -1.5 in case y], case z48.4-55.4. Lobe-phase/offset direction is q-dependent; z +/-1 mm. PDF p.10."
+   },
+   {
+    "file": "Forearm/11_1 cyclo disc.STL",
+    "translate": [
+     49.97,
+     121.84,
+     43.33
+    ],
+    "rotate_deg": [
+     -30.623,
+     -38.376,
+     -169.114
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "approximate",
+    "notes": "Disc 2: rotated 180 deg about its bore axis (half-lobe-pitch phase opposition, 11 lobes odd), bore at case (38.5,60.0) on the upper lobe (+1.5 y), case z55.6-62.6. PDF p.11 Step3."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     43.55,
+     92.01,
+     29.06
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 1/12: printed roller-spacer OD5.8x2.8 between two 3x8x4 bearings on an M3x25 (PDF p.8). Pin BCD 64.0 exact (r32 about cyclo axis, 0 deg), z53.9-56.7 mid-chamber (z +/-1.5)."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     42.61,
+     105.85,
+     38.11
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 2/12 at 30 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     35.33,
+     114.72,
+     50.06
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 3/12 at 60 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     23.65,
+     116.23,
+     61.71
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 4/12 at 90 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     10.7,
+     109.98,
+     69.93
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 5/12 at 120 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     -0.06,
+     97.65,
+     72.52
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 6/12 at 150 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     -5.72,
+     82.54,
+     68.79
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 7/12 at 180 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     -4.79,
+     68.7,
+     59.74
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 8/12 at 210 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     2.49,
+     59.83,
+     47.79
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 9/12 at 240 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     14.17,
+     58.32,
+     36.15
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 10/12 at 270 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     27.13,
+     64.57,
+     27.93
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 11/12 at 300 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/J5 ring rollers.STL",
+    "translate": [
+     37.88,
+     76.9,
+     25.33
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 3,
+    "confidence": "good",
+    "notes": "Ring pin 12/12 at 330 deg on BCD 64."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     23.96,
+     103.03,
+     58.94
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 1/5, upper washer: OD5.8x1.6 between the two 3x8x4 pin bearings on M3x20 from the output shaft (PDF p.13). Pins on BCD 38 about the cyclo axis; angular phase arbitrary (72 deg pitch). Own axis along y -> RotX-90 in case frame."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     20.48,
+     105.26,
+     55.17
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 1/5, lower washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     8.1,
+     88.47,
+     64.92
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 2/5, upper washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     4.63,
+     90.71,
+     61.14
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 2/5, lower washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     10.27,
+     70.28,
+     52.15
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 3/5, upper washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     6.8,
+     72.51,
+     48.37
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 3/5, lower washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     27.47,
+     73.58,
+     38.28
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 4/5, upper washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     23.99,
+     75.82,
+     34.51
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 4/5, lower washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     35.93,
+     93.82,
+     42.48
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 5/5, upper washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output spacers.STL",
+    "translate": [
+     32.45,
+     96.06,
+     38.7
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "approximate",
+    "notes": "Output pin 5/5, lower washer."
+   },
+   {
+    "file": "Forearm/Joint 5 Output shaft.STL",
+    "translate": [
+     24.72,
+     96.51,
+     90.71
+    ],
+    "rotate_deg": [
+     -149.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 4,
+    "confidence": "good",
+    "notes": "Flipped 180 about x vs its print frame (PDF p.13): pulley-tap face (own z0, M3 BCD25) up at case z82 flush with cover top; d35.1 journal rides the top-cover 35x47x7 (case z73.2-80.2); pin face (BCD38, d19 boss) down, pins+bearings reach into disc output holes. Spans case z61.5-82; +/-0.5 z."
+   },
+   {
+    "file": "Forearm/Joint 5 28 teeth pulley.STL",
+    "translate": [
+     17.91,
+     54.89,
+     72.34
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 6,
+    "confidence": "good",
+    "notes": "Cyclo-output 28T HTD5M: bore axis (own 23,23) on the cyclo axis, bolt face down onto output shaft (6x M3 15 on BCD25), case z82-93 above the top cover. Bolt clocking arbitrary. Belt (HTD 5M 430x10, not printed) runs to the wrist-side twin."
+   },
+   {
+    "file": "Forearm/Joint 5 28 teeth pulley.STL",
+    "translate": [
+     39.59,
+     187.44,
+     130.84
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 6,
+    "confidence": "good",
+    "notes": "Wrist-side 28T: bolts to the wrist-case pivot boss (6x M3 15, BCD~24.7) on the wrist axis (case (38.5,205)), z82-93; its d14.84 bore passes all wrist wires. KINEMATICS: rides saka (rotates with J5), see open issues."
+   },
+   {
+    "file": "Forearm/Joint 4 shaft.STL",
+    "translate": [
+     19.56,
+     -76.14,
+     56.84
+    ],
+    "rotate_deg": [
+     -59.377,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     -0.148,
+     -0.9048,
+     -0.3993
+    ],
+    "explode_order": 1,
+    "confidence": "exact",
+    "notes": "Own axis (31.5,80.9) along z mapped to the J4 roll axis (case (x38.5,z44) along -y): RotX-90 in case frame, d63 flange face flush at case rear face y0, tip journal at case y-89 (the 26T pulley + Joint 4 offset tube of the elbow group mount there). NN vs podlaktica 0.024 mm median. 7x M5 clocking not determined (visually round)."
+   },
+   {
+    "file": "Forearm/Joint 5 switch trigger.STL",
+    "translate": [
+     -111.03,
+     106.53,
+     87.48
+    ],
+    "rotate_deg": [
+     30.623,
+     38.376,
+     10.886
+    ],
+    "explode_dir": [
+     -0.6208,
+     0.3993,
+     -0.6746
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "J5 homing cam bolted to the wrist case's solid (bay-side) pivot boss: own d15 bore center (124.02,135.82) -> wrist axis (38.5,205); its 2x M3 (60 deg apart on BCD25) use 2 of the boss's 6 taps; sits case z-8.45..0.85, exposed in the motor lid's round opening; trips the micro switch in the case cheek (PDF p.12). Cam clocking arbitrary. KINEMATICS: rides saka."
+   },
+   {
+    "file": "Forearm/Servo_gripper_plug.STL",
+    "translate": [
+     -19.42,
+     135.81,
+     69.35
+    ],
+    "rotate_deg": [
+     132.622,
+     -23.537,
+     80.708
+    ],
+    "explode_dir": [
+     -0.7698,
+     -0.148,
+     0.6208
+    ],
+    "explode_order": 1,
+    "confidence": "approximate",
+    "notes": "Servo-gripper option (PDF p.12): blanks the two d12 side-wall ports found on the case x-min wall (case (3.6,111.0), z=33.5 & 54.5 - 21 mm apart = plug boss spacing); plate sits proud outside, d11.7-bored wire snout points into the bay (+x) for the servo wire + zip ties. Wall is tilted 3.9 deg from the x-plane - ignored; +/-2 mm, orientation inferred from PDF imagery."
+   },
+   {
+    "file": "Cosmetic/Forearm wires lid.STL",
+    "translate": [
+     65.41,
+     28.86,
+     -17.47
+    ],
+    "rotate_deg": [
+     42.622,
+     -23.537,
+     80.708
+    ],
+    "explode_dir": [
+     0.6208,
+     -0.3993,
+     0.6746
+    ],
+    "explode_order": 7,
+    "confidence": "approximate",
+    "notes": "HIDDEN BY DEFAULT (upstream file bug: geometry is byte-identical to Upper arm lid.STL; the real belt-side lid STL was never released - its surface exists only inside podlaktica.STL). FILE BUG: this STL's geometry is identical to Upper arm lid.STL (NN median 0.0; same in upstream STL_V2.zip) - it is a 252x112 upper-arm-shaped shell that cannot fit the 77 mm-wide forearm. The real belt-side lid (77 x ~243, case z82..96) exists only inside the podlaktica URDF mesh. Transform = best-fit ICP of the wrong shape over the belt side (median 5.7 mm, overhangs both sides). Recommend HIDING this part in the viewer.",
+    "default_hidden": true
+   }
+  ],
+  "open_issues": [
+   "Transforms are expressed directly in the podlaktica URDF link frame (mm), i.e. group frame == link frame, so group_offset=[0,0,0]. The underlying case-STL->link registration (validated at 0.006 mm median NN against podlaktica.STL) is rpy XYZ (30.6233, 38.3759, 10.8855) deg, t (-50.189, 53.223, 12.463) mm - needed if another agent wants to work in the Forearm-case-local frame. URDF meshes are in meters; these transforms are mm (x1000).",
+   "Cosmetic/Forearm wires lid.STL is a duplicate of Upper arm lid.STL (byte-identical geometry, confirmed also inside the original STL_V2.zip release) - the true forearm belt-side lid STL does not exist in the release. Its surface is present in podlaktica.STL (case-local z82-96 shell, 77 wide x ~243 long incl. a tab over the J4 shaft end). Viewer should hide the placed part or extract the shell from the URDF mesh.",
+   "Kinematic split: the wrist-side 28T pulley and the Joint 5 switch trigger bolt to the wrist-case pivot bosses and rotate with saka (J5), not podlaktica. For correct articulation reparent those two instances to saka keeping their q=0 world pose; the saka joint origin in podlaktica frame is (37.114, 226.83, 100.11) = case-local point (38.5, 205, 44), axis through it along case-local z.",
+   "Cyclo internals (eccentric clocking, disc lobe-offset direction, disc z-stack, roller and output-washer z positions) are q-dependent or PDF-derived stacking: radial/axis placements are exact (pin BCD 64.0, output BCD 38, bores measured) but z is +/-1-1.5 mm and angular phases are arbitrary; the light URDF mesh omits all internals so they could not be cross-validated.",
+   "Output pin angular phase assumed 90+72k deg about the cyclo axis; the disc output-hole clocking was not measured - purely cosmetic at assembly view but affects pin/hole alignment in close-up explode.",
+   "Servo_gripper_plug orientation is inferred from PDF p.11-12 imagery plus the discovered d12 port pair; the case wall it mounts on is tilted 3.9 deg from the x-plane (ignored, ~2 mm error). Verify snout direction (into bay) against the physical part.",
+   "Joint 5 switch trigger mount face assumed at case-local z0.85 (wrist boss flush plane) with screws from outside; residual CAD frame offset was solved from its d15 bore + 2x M3 on BCD25, but seat depth and cam clocking are unverified.",
+   "Optional belt-tensioner idler bearings (PDF p.16, red-marked holes) and the HTD 5M 430x10 belt are non-printed parts and are not included; belt plane is case-local z82-93 between pulley axes (38.5,58.5) and (38.5,205).",
+   "Joint 4 shaft M5 screw-hole clocking about its axis was not determined (part is visually round; NN registration is insensitive to it)."
+  ]
+ },
+ {
+  "group": "j6",
+  "attach_link": "saka",
+  "group_offset": [
+   0,
+   0,
+   0
+  ],
+  "parts": [
+   {
+    "file": "Wrist/Wrist case.STL",
+    "translate": [
+     36,
+     -49.34,
+     46.85
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 0,
+    "confidence": "good",
+    "notes": "Rotations are URDF-style fixed-axis XYZ (R=Rz*Ry*Rx). Group frame = saka link frame. This maps: pivot line (y49.34,z46.85)->J5 axis (y=0,z=0 along x); J6 gearbox axis (36,49.34)->saka z-axis; motor plate z84.81->saka z=-37.96; nose tip 101.81->-54.96 (mesh min -55); d1.8 pin hole (49.34,7.22)->(17.8,0,39.63) vs probed saka (+/-17.8,0,39.59); wire hole (36,85.84)->(0,36.5,-37.96) exact vs probed. CAVEAT: print STL is a mirror image of the case in the URDF saka mesh (exact data match needs improper xs=xc-36 reflection); Ry(180) is the closest proper rotation - only x-asymmetric details (interior wall 2.5mm offset, side-wall hole minutiae) land mirrored vs the URDF mesh. Anchor part of the stack; does not move on explode."
+   },
+   {
+    "file": "Wrist/Wrist cover.STL",
+    "translate": [
+     31.535,
+     -49.34,
+     48.09
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ],
+    "explode_dir": [
+     0,
+     0,
+     1
+    ],
+    "explode_order": 1,
+    "confidence": "good",
+    "notes": "Closes the NEMA14 motor tube at the rear (+z) end of the wrist. Derived from: shared d1.8 alignment pin hole (cover y49.34,z8.46 -> case 49.34,7.22 -> saka 17.8,0,39.63), twin r~23 tube-saddle arcs matching the case slot-tube arcs within 0.5mm, and composed outer face landing at saka z=46.84 = URDF saka mesh z-max 46.8 (mesh includes the cover). Cover nests inside tube flats at saka x=-17.7..+17.7. Residual ambiguity: possible 180-deg yaw about the tube (z) axis - part is near-symmetric about y=0 so either clocking looks identical. Explodes out the rear (+z)."
+   },
+   {
+    "file": "Wrist/Joint 6 output shaft.STL",
+    "translate": [
+     -42.431,
+     40.35,
+     -43.002
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     13.86
+    ],
+    "explode_dir": [
+     0,
+     0,
+     -1
+    ],
+    "explode_order": 1,
+    "confidence": "exact",
+    "notes": "This part IS the hvataljka URDF link: bbox size 57.43x58.1x13.5 and all four signed xy extents match hvataljka.STL under PURE TRANSLATION (-31.53,-49.34,+0.69), rotation identity; ring axis (31.53,49.34)->(0,0). RE-PARENT to hvataljka with that translation + identity rotation so it spins with J6; the transform given here is its saka-frame pose at q6=0 (composed through URDF joint origin (0,0,-42.312), rpy(-180,0,13.86)). Placement check: hub (z0.5-7.25) enters the 35x47x7 bearing region, flange underside (z11.75) at saka z=-54.75, flush against case nose end -54.96; tool face at -57.0. Explodes out the tool end (-z)."
+   }
+  ],
+  "open_issues": [
+   "Chirality: the print 'Wrist case.STL' is a mirror image of the case geometry inside the URDF saka mesh (exact feature match requires reflection xs=xc-36, ys=yc-49.34, zs=46.85-zc, det=-1; verified via wire hole (36,85.84)->(0,36.5), pin hole, wall planes, y-bulge extents). Emitted the closest proper rotation Ry(180); interior-wall 2.5mm offset and side-wall hole details render mirrored. Only one chirality exists physically - check assembly PDF/print if exactness matters; a viewer supporting scale=(1,1,-1) pre-mirror could use the exact reflection instead.",
+   "Joint 6 output shaft is placed in the saka/group frame at q6=0 for consistency, but it belongs to the hvataljka link (translation -31.53,-49.34,+0.69, identity rotation in hvataljka frame). If left parented to saka it will not rotate with the J6 tool-roll joint.",
+   "Wrist cover clocking: 180-deg yaw about the tube axis unresolved (near-symmetric part); position otherwise pinned by pin hole, saddle arcs, and saka mesh z-max.",
+   "Minor: with the URDF-derived shaft pose, the shaft hub overlaps the measured case bearing-seat band (case z 95.7-100.7) by only ~1.4mm (hub maps to case z 90.3-97.1); measured seat z came from coarse radial-band slices, URDF taken as authoritative - cosmetic only.",
+   "rotate_deg convention: URDF-style fixed-axis XYZ euler, R = Rz(z)*Ry(y)*Rx(x); three.js users must convert (not the same as three.js intrinsic 'XYZ' order)."
+  ]
+ }
+]

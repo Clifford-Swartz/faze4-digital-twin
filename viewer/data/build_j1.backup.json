@@ -1,0 +1,8258 @@
+{
+ "title": "ARM Construction Twin",
+ "parts": [
+  {
+   "key": "Base/Joint 1 main case.STL#1",
+   "file": "/Faze4/STL/Base/Joint 1 main case.STL",
+   "label": "Joint 1 main case",
+   "assembled": {
+    "translate": [
+     30.63,
+     -141.66,
+     74.33
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/15_1 cyclo disc.STL#1",
+   "file": "/Faze4/STL/Base/15_1 cyclo disc.STL",
+   "label": "15_1 cyclo disc #1",
+   "assembled": {
+    "translate": [
+     42.19,
+     -121.81,
+     78.4
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/15_1 cyclo disc.STL#2",
+   "file": "/Faze4/STL/Base/15_1 cyclo disc.STL",
+   "label": "15_1 cyclo disc #2",
+   "assembled": {
+    "translate": [
+     39.79,
+     -53.51,
+     96.51
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/joint 1 cyclo output shaft.STL#1",
+   "file": "/cad/j1/stl/j1_output_shaft_pocket.stl",
+   "label": "joint 1 cyclo output shaft",
+   "assembled": {
+    "translate": [
+     39.85,
+     -118.91,
+     96.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint1 top cover.STL#1",
+   "file": "/Faze4/STL/Base/Joint1 top cover.STL",
+   "label": "Joint1 top cover",
+   "assembled": {
+    "translate": [
+     99.98,
+     -28.86,
+     103.93
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     -157.5
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/36 teeth pulley.STL#1",
+   "file": "/Faze4/STL/Base/36 teeth pulley.STL",
+   "label": "36 teeth pulley",
+   "assembled": {
+    "translate": [
+     46.63,
+     -58.66,
+     137.87
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Ball bearing retainer.STL#1",
+   "file": "/Faze4/STL/Base/Ball bearing retainer.STL",
+   "label": "Ball bearing retainer",
+   "assembled": {
+    "translate": [
+     33.1,
+     -255.14,
+     94
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#1",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #1",
+   "assembled": {
+    "translate": [
+     110.04,
+     -84.56,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#2",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #2",
+   "assembled": {
+    "translate": [
+     107.19,
+     -70.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#3",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #3",
+   "assembled": {
+    "translate": [
+     99.06,
+     -58.04,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#4",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #4",
+   "assembled": {
+    "translate": [
+     86.89,
+     -49.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#5",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #5",
+   "assembled": {
+    "translate": [
+     72.54,
+     -47.06,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#6",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #6",
+   "assembled": {
+    "translate": [
+     58.19,
+     -49.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#7",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #7",
+   "assembled": {
+    "translate": [
+     46.02,
+     -58.04,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#8",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #8",
+   "assembled": {
+    "translate": [
+     37.89,
+     -70.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#9",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #9",
+   "assembled": {
+    "translate": [
+     35.04,
+     -84.56,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#10",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #10",
+   "assembled": {
+    "translate": [
+     37.89,
+     -98.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#11",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #11",
+   "assembled": {
+    "translate": [
+     46.02,
+     -111.08,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#12",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #12",
+   "assembled": {
+    "translate": [
+     58.19,
+     -119.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#13",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #13",
+   "assembled": {
+    "translate": [
+     72.54,
+     -122.06,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#14",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #14",
+   "assembled": {
+    "translate": [
+     86.89,
+     -119.21,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#15",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #15",
+   "assembled": {
+    "translate": [
+     99.06,
+     -111.08,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#16",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #16",
+   "assembled": {
+    "translate": [
+     107.19,
+     -98.91,
+     84.3
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#17",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #17",
+   "assembled": {
+    "translate": [
+     110.04,
+     -84.56,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#18",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #18",
+   "assembled": {
+    "translate": [
+     107.19,
+     -70.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#19",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #19",
+   "assembled": {
+    "translate": [
+     99.06,
+     -58.04,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#20",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #20",
+   "assembled": {
+    "translate": [
+     86.89,
+     -49.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#21",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #21",
+   "assembled": {
+    "translate": [
+     72.54,
+     -47.06,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#22",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #22",
+   "assembled": {
+    "translate": [
+     58.19,
+     -49.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#23",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #23",
+   "assembled": {
+    "translate": [
+     46.02,
+     -58.04,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#24",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #24",
+   "assembled": {
+    "translate": [
+     37.89,
+     -70.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#25",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #25",
+   "assembled": {
+    "translate": [
+     35.04,
+     -84.56,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#26",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #26",
+   "assembled": {
+    "translate": [
+     37.89,
+     -98.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#27",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #27",
+   "assembled": {
+    "translate": [
+     46.02,
+     -111.08,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#28",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #28",
+   "assembled": {
+    "translate": [
+     58.19,
+     -119.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#29",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #29",
+   "assembled": {
+    "translate": [
+     72.54,
+     -122.06,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#30",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #30",
+   "assembled": {
+    "translate": [
+     86.89,
+     -119.21,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#31",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #31",
+   "assembled": {
+    "translate": [
+     99.06,
+     -111.08,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Base/Joint 1 ring spacers.STL#32",
+   "file": "/Faze4/STL/Base/Joint 1 ring spacers.STL",
+   "label": "Joint 1 ring spacers #32",
+   "assembled": {
+    "translate": [
+     107.19,
+     -98.91,
+     90.1
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Rotating base/Joint 1 output shaft.STL#1",
+   "file": "/Faze4/STL/Rotating base/Joint 1 output shaft.STL",
+   "label": "Joint 1 output shaft",
+   "assembled": {
+    "translate": [
+     28.47,
+     -259.82,
+     50.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "mad8318_mock",
+   "file": "/viewer/assets/mad8318_mock.stl",
+   "label": "MAD 8318 motor",
+   "assembled": {
+    "translate": [
+     75.63,
+     -87.66,
+     24.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "j1_flange",
+   "file": "/viewer/assets/j1_flange.stl",
+   "label": "j1_flange",
+   "assembled": {
+    "translate": [
+     75.63,
+     -87.66,
+     65.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "j1_cartridge",
+   "file": "/viewer/assets/j1_cartridge.stl",
+   "label": "j1_cartridge",
+   "assembled": {
+    "translate": [
+     75.63,
+     -87.66,
+     71.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "j1_cap",
+   "file": "/viewer/assets/j1_cap.stl",
+   "label": "j1_cap",
+   "assembled": {
+    "translate": [
+     74.43,
+     -87.66,
+     87.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "j1_washer",
+   "file": "/viewer/assets/j1_washer.stl",
+   "label": "j1_washer",
+   "assembled": {
+    "translate": [
+     74.43,
+     -87.66,
+     96.8
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "j1_cage_shell",
+   "file": "/cad/j1/stl/j1_cage_shell.stl",
+   "label": "j1_cage_shell",
+   "assembled": {
+    "translate": [
+     75.63,
+     -87.66,
+     67.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "j1_cage_floor",
+   "file": "/cad/j1/stl/j1_cage_floor.stl",
+   "label": "j1_cage_floor",
+   "assembled": {
+    "translate": [
+     75.63,
+     -87.66,
+     67.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "j1_shaft_blocker",
+   "file": "/cad/j1/stl/j1_shaft_blocker.stl",
+   "label": "j1_shaft_blocker",
+   "assembled": {
+    "translate": [
+     48.13,
+     -240.16,
+     44.73
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "main_base_8318",
+   "file": "/cad/j1/stl/main_base_8318.stl",
+   "label": "Main base (8318 relief pocket)",
+   "assembled": {
+    "translate": [
+     155.63,
+     -292.66,
+     134.05
+    ],
+    "rotate_deg": [
+     0,
+     180,
+     0
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_j1"
+  },
+  {
+   "key": "Rotating base/Rotating base wires.STL#1",
+   "file": "/Faze4/STL/Rotating base/Rotating base wires.STL",
+   "label": "Rotating base wires",
+   "assembled": {
+    "translate": [
+     -48.41,
+     -290.79,
+     139.28
+    ],
+    "rotate_deg": [
+     91.26,
+     0.02,
+     90.09
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "Rotating base/Rotating base motor.STL#1",
+   "file": "/Faze4/STL/Rotating base/Rotating base motor.STL",
+   "label": "Rotating base motor",
+   "assembled": {
+    "translate": [
+     -18.34,
+     -300.14,
+     124.01
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     90
+    ]
+   },
+   "kind": "stock",
+   "group": "base"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 main case.STL#1",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 main case.STL",
+   "label": "Joint 2 main case #1",
+   "assembled": {
+    "translate": [
+     55.63,
+     -92.15,
+     500.39
+    ],
+    "rotate_deg": [
+     89.999,
+     76.232,
+     -90.001
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 cover.STL#1",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 cover.STL",
+   "label": "Joint 2 cover #1",
+   "assembled": {
+    "translate": [
+     55.63,
+     -162.19,
+     186.24
+    ],
+    "rotate_deg": [
+     90.001,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 eccentric shaft.STL#1",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 eccentric shaft.STL",
+   "label": "Joint 2 eccentric shaft #1",
+   "assembled": {
+    "translate": [
+     53.63,
+     -207.2,
+     243.55
+    ],
+    "rotate_deg": [
+     0.001,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL#1",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL",
+   "label": "Joint 2 cyclo disc #1",
+   "assembled": {
+    "translate": [
+     40.13,
+     -183.19,
+     205.59
+    ],
+    "rotate_deg": [
+     90.001,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL#2",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL",
+   "label": "Joint 2 cyclo disc #2",
+   "assembled": {
+    "translate": [
+     31.13,
+     -242.13,
+     299.52
+    ],
+    "rotate_deg": [
+     -90.001,
+     76.232,
+     -90.001
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 output shaft.STL#1",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 output shaft.STL",
+   "label": "Joint 2 output shaft #1",
+   "assembled": {
+    "translate": [
+     7.66,
+     -174.41,
+     283.3
+    ],
+    "rotate_deg": [
+     102.644,
+     80.865,
+     -75.49
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 top case.STL#1",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 top case.STL",
+   "label": "Joint 2 top case #1",
+   "assembled": {
+    "translate": [
+     26.75,
+     -135.7,
+     305.3
+    ],
+    "rotate_deg": [
+     89.999,
+     76.232,
+     -90.001
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/Fork motor.STL#1",
+   "file": "/Faze4/STL/Arm+J2/Fork motor.STL",
+   "label": "Fork motor #1",
+   "assembled": {
+    "translate": [
+     165.6,
+     -229.31,
+     366.3
+    ],
+    "rotate_deg": [
+     -89.878,
+     -76.421,
+     89.658
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/Fork wires.STL#1",
+   "file": "/Faze4/STL/Arm+J2/Fork wires.STL",
+   "label": "Fork wires #1",
+   "assembled": {
+    "translate": [
+     10.53,
+     -60.13,
+     592.03
+    ],
+    "rotate_deg": [
+     89.999,
+     76.232,
+     -90.001
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/Fork.STL#1",
+   "file": "/Faze4/STL/Arm+J2/Fork.STL",
+   "label": "Fork #1",
+   "assembled": {
+    "translate": [
+     5.25,
+     -90.49,
+     281.57
+    ],
+    "rotate_deg": [
+     90.001,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/joint2_limit_trigger.STL#1",
+   "file": "/Faze4/STL/Arm+J2/joint2_limit_trigger.STL",
+   "label": "joint2_limit_trigger #1",
+   "assembled": {
+    "translate": [
+     -26.87,
+     -9.29,
+     163.6
+    ],
+    "rotate_deg": [
+     90.001,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/Joint 3 limit trigger.STL#1",
+   "file": "/Faze4/STL/Arm+J2/Joint 3 limit trigger.STL",
+   "label": "Joint 3 limit trigger #1",
+   "assembled": {
+    "translate": [
+     130.63,
+     -6.31,
+     496.76
+    ],
+    "rotate_deg": [
+     90.001,
+     -77.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#1",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #1",
+   "assembled": {
+    "translate": [
+     42.13,
+     -206.29,
+     291.56
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#2",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #2",
+   "assembled": {
+    "translate": [
+     36.33,
+     -206.29,
+     291.56
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#3",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #3",
+   "assembled": {
+    "translate": [
+     42.13,
+     -225.21,
+     291.86
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#4",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #4",
+   "assembled": {
+    "translate": [
+     36.33,
+     -225.21,
+     291.86
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#5",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #5",
+   "assembled": {
+    "translate": [
+     42.13,
+     -242.38,
+     283.93
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#6",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #6",
+   "assembled": {
+    "translate": [
+     36.33,
+     -242.38,
+     283.93
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#7",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #7",
+   "assembled": {
+    "translate": [
+     42.13,
+     -254.4,
+     269.33
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#8",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #8",
+   "assembled": {
+    "translate": [
+     36.33,
+     -254.4,
+     269.33
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#9",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #9",
+   "assembled": {
+    "translate": [
+     42.13,
+     -258.9,
+     250.95
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#10",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #10",
+   "assembled": {
+    "translate": [
+     36.33,
+     -258.9,
+     250.95
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#11",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #11",
+   "assembled": {
+    "translate": [
+     42.13,
+     -254.99,
+     232.45
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#12",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #12",
+   "assembled": {
+    "translate": [
+     36.33,
+     -254.99,
+     232.45
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#13",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #13",
+   "assembled": {
+    "translate": [
+     42.13,
+     -243.43,
+     217.48
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#14",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #14",
+   "assembled": {
+    "translate": [
+     36.33,
+     -243.43,
+     217.48
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#15",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #15",
+   "assembled": {
+    "translate": [
+     42.13,
+     -226.52,
+     209.0
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#16",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #16",
+   "assembled": {
+    "translate": [
+     36.33,
+     -226.52,
+     209.0
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#17",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #17",
+   "assembled": {
+    "translate": [
+     42.13,
+     -207.61,
+     208.7
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#18",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #18",
+   "assembled": {
+    "translate": [
+     36.33,
+     -207.61,
+     208.7
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#19",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #19",
+   "assembled": {
+    "translate": [
+     42.13,
+     -190.44,
+     216.63
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#20",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #20",
+   "assembled": {
+    "translate": [
+     36.33,
+     -190.44,
+     216.63
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#21",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #21",
+   "assembled": {
+    "translate": [
+     42.13,
+     -178.42,
+     231.23
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#22",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #22",
+   "assembled": {
+    "translate": [
+     36.33,
+     -178.42,
+     231.23
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#23",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #23",
+   "assembled": {
+    "translate": [
+     42.13,
+     -173.92,
+     249.61
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#24",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #24",
+   "assembled": {
+    "translate": [
+     36.33,
+     -173.92,
+     249.61
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#25",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #25",
+   "assembled": {
+    "translate": [
+     42.13,
+     -177.83,
+     268.11
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#26",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #26",
+   "assembled": {
+    "translate": [
+     36.33,
+     -177.83,
+     268.11
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#27",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #27",
+   "assembled": {
+    "translate": [
+     42.13,
+     -189.39,
+     283.08
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#28",
+   "file": "/Faze4/STL/Arm+J2/J2 cyclo/Joint 2 ring spacers.STL",
+   "label": "Joint 2 ring spacers #28",
+   "assembled": {
+    "translate": [
+     36.33,
+     -189.39,
+     283.08
+    ],
+    "rotate_deg": [
+     -179.999,
+     -76.232,
+     89.999
+    ]
+   },
+   "kind": "stock",
+   "group": "j2"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 main case.STL#1",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 main case.STL",
+   "label": "Joint 3 main case #1",
+   "assembled": {
+    "translate": [
+     60.83,
+     -190.03,
+     614.4
+    ],
+    "rotate_deg": [
+     -89.999,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 cover.STL#1",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 cover.STL",
+   "label": "Joint 3 cover #1",
+   "assembled": {
+    "translate": [
+     60.83,
+     -86.39,
+     630.61
+    ],
+    "rotate_deg": [
+     -90.001,
+     8.892,
+     -90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 eccentric shaft.STL#1",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 eccentric shaft.STL",
+   "label": "Joint 3 eccentric shaft #1",
+   "assembled": {
+    "translate": [
+     59.53,
+     -173.2,
+     566.45
+    ],
+    "rotate_deg": [
+     -89.999,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#1",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/15_1 cyclo disc.STL",
+   "label": "15_1 cyclo disc #1",
+   "assembled": {
+    "translate": [
+     54.83,
+     -176.24,
+     593.24
+    ],
+    "rotate_deg": [
+     -89.999,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#2",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/15_1 cyclo disc.STL",
+   "label": "15_1 cyclo disc #2",
+   "assembled": {
+    "translate": [
+     45.83,
+     -96.76,
+     533.48
+    ],
+    "rotate_deg": [
+     89.999,
+     8.892,
+     -90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 output shaft.STL#1",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 output shaft.STL",
+   "label": "Joint 3 output shaft #1",
+   "assembled": {
+    "translate": [
+     36.83,
+     -176.68,
+     588.7
+    ],
+    "rotate_deg": [
+     -89.999,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 top cover.STL#1",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 top cover.STL",
+   "label": "Joint 3 top cover #1",
+   "assembled": {
+    "translate": [
+     31.23,
+     -101.11,
+     628.31
+    ],
+    "rotate_deg": [
+     -89.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Cosmetic/Elbow lid.STL#1",
+   "file": "/Faze4/STL/Cosmetic/Elbow lid.STL",
+   "label": "Elbow lid #1",
+   "assembled": {
+    "translate": [
+     -5.27,
+     -79.61,
+     521.14
+    ],
+    "rotate_deg": [
+     -0.004,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#1",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #1",
+   "assembled": {
+    "translate": [
+     49.63,
+     -99.07,
+     566.08
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#2",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #2",
+   "assembled": {
+    "translate": [
+     43.83,
+     -99.07,
+     566.08
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#3",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #3",
+   "assembled": {
+    "translate": [
+     49.63,
+     -99.72,
+     550.29
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#4",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #4",
+   "assembled": {
+    "translate": [
+     43.83,
+     -99.72,
+     550.29
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#5",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #5",
+   "assembled": {
+    "translate": [
+     49.63,
+     -106.36,
+     535.95
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#6",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #6",
+   "assembled": {
+    "translate": [
+     43.83,
+     -106.36,
+     535.95
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#7",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #7",
+   "assembled": {
+    "translate": [
+     49.63,
+     -117.99,
+     525.25
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#8",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #8",
+   "assembled": {
+    "translate": [
+     43.83,
+     -117.99,
+     525.25
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#9",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #9",
+   "assembled": {
+    "translate": [
+     49.63,
+     -132.82,
+     519.8
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#10",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #10",
+   "assembled": {
+    "translate": [
+     43.83,
+     -132.82,
+     519.8
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#11",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #11",
+   "assembled": {
+    "translate": [
+     49.63,
+     -148.61,
+     520.45
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#12",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #12",
+   "assembled": {
+    "translate": [
+     43.83,
+     -148.61,
+     520.45
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#13",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #13",
+   "assembled": {
+    "translate": [
+     49.63,
+     -162.95,
+     527.1
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#14",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #14",
+   "assembled": {
+    "translate": [
+     43.83,
+     -162.95,
+     527.1
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#15",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #15",
+   "assembled": {
+    "translate": [
+     49.63,
+     -173.66,
+     538.72
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#16",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #16",
+   "assembled": {
+    "translate": [
+     43.83,
+     -173.66,
+     538.72
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#17",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #17",
+   "assembled": {
+    "translate": [
+     49.63,
+     -179.1,
+     553.56
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#18",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #18",
+   "assembled": {
+    "translate": [
+     43.83,
+     -179.1,
+     553.56
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#19",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #19",
+   "assembled": {
+    "translate": [
+     49.63,
+     -178.45,
+     569.35
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#20",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #20",
+   "assembled": {
+    "translate": [
+     43.83,
+     -178.45,
+     569.35
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#21",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #21",
+   "assembled": {
+    "translate": [
+     49.63,
+     -171.8,
+     583.68
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#22",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #22",
+   "assembled": {
+    "translate": [
+     43.83,
+     -171.8,
+     583.68
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#23",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #23",
+   "assembled": {
+    "translate": [
+     49.63,
+     -160.18,
+     594.39
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#24",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #24",
+   "assembled": {
+    "translate": [
+     43.83,
+     -160.18,
+     594.39
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#25",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #25",
+   "assembled": {
+    "translate": [
+     49.63,
+     -145.34,
+     599.83
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#26",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #26",
+   "assembled": {
+    "translate": [
+     43.83,
+     -145.34,
+     599.83
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#27",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #27",
+   "assembled": {
+    "translate": [
+     49.63,
+     -129.56,
+     599.18
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#28",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #28",
+   "assembled": {
+    "translate": [
+     43.83,
+     -129.56,
+     599.18
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#29",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #29",
+   "assembled": {
+    "translate": [
+     49.63,
+     -115.22,
+     592.54
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#30",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #30",
+   "assembled": {
+    "translate": [
+     43.83,
+     -115.22,
+     592.54
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#31",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #31",
+   "assembled": {
+    "translate": [
+     49.63,
+     -104.51,
+     580.91
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#32",
+   "file": "/Faze4/STL/Elbow/J3 cyclo/Joint 3 ring spacers.STL",
+   "label": "Joint 3 ring spacers #32",
+   "assembled": {
+    "translate": [
+     43.83,
+     -104.51,
+     580.91
+    ],
+    "rotate_deg": [
+     0.001,
+     -8.892,
+     90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j3"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 motor case.STL#1",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 motor case.STL",
+   "label": "Joint 4 motor case #1",
+   "assembled": {
+    "translate": [
+     37.13,
+     -45.93,
+     616.5
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 top cover.STL#1",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 top cover.STL",
+   "label": "Joint 4 top cover #1",
+   "assembled": {
+    "translate": [
+     35.63,
+     -71.63,
+     619.06
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output shaft.STL#1",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output shaft.STL",
+   "label": "Joint 4 Output shaft #1",
+   "assembled": {
+    "translate": [
+     98.63,
+     -83.05,
+     595.0
+    ],
+    "rotate_deg": [
+     0.004,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#1",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/11_1 cyclo disc.STL",
+   "label": "11_1 cyclo disc #1",
+   "assembled": {
+    "translate": [
+     103.37,
+     -57.39,
+     605.7
+    ],
+    "rotate_deg": [
+     0.004,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#2",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/11_1 cyclo disc.STL",
+   "label": "11_1 cyclo disc #2",
+   "assembled": {
+    "translate": [
+     47.89,
+     -55.16,
+     546.13
+    ],
+    "rotate_deg": [
+     -0.004,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Eccentric shaft J4.STL#1",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Eccentric shaft J4.STL",
+   "label": "Eccentric shaft J4 #1",
+   "assembled": {
+    "translate": [
+     85.63,
+     -62.83,
+     583.49
+    ],
+    "rotate_deg": [
+     0.004,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#1",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #1",
+   "assembled": {
+    "translate": [
+     81.01,
+     -47.11,
+     548.99
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#2",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #2",
+   "assembled": {
+    "translate": [
+     95.36,
+     -48.39,
+     557.17
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#3",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #3",
+   "assembled": {
+    "translate": [
+     103.64,
+     -50.6,
+     571.35
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#4",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #4",
+   "assembled": {
+    "translate": [
+     103.64,
+     -53.16,
+     587.71
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#5",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #5",
+   "assembled": {
+    "translate": [
+     95.36,
+     -55.38,
+     601.89
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#6",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #6",
+   "assembled": {
+    "translate": [
+     81.01,
+     -56.66,
+     610.07
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#7",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #7",
+   "assembled": {
+    "translate": [
+     64.45,
+     -56.66,
+     610.07
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#8",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #8",
+   "assembled": {
+    "translate": [
+     50.1,
+     -55.38,
+     601.89
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#9",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #9",
+   "assembled": {
+    "translate": [
+     41.82,
+     -53.16,
+     587.71
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#10",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #10",
+   "assembled": {
+    "translate": [
+     41.82,
+     -50.6,
+     571.35
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#11",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #11",
+   "assembled": {
+    "translate": [
+     50.1,
+     -48.39,
+     557.17
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/J4 ring rollers.STL#12",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/J4 ring rollers.STL",
+   "label": "J4 ring rollers #12",
+   "assembled": {
+    "translate": [
+     64.45,
+     -47.11,
+     548.99
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#1",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #1",
+   "assembled": {
+    "translate": [
+     78.53,
+     -55.39,
+     550.85
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#2",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #2",
+   "assembled": {
+    "translate": [
+     65.6,
+     -56.04,
+     555.0
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#3",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #3",
+   "assembled": {
+    "translate": [
+     57.61,
+     -57.74,
+     565.86
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#4",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #4",
+   "assembled": {
+    "translate": [
+     57.61,
+     -59.84,
+     579.3
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#5",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #5",
+   "assembled": {
+    "translate": [
+     65.6,
+     -61.54,
+     590.17
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#6",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #6",
+   "assembled": {
+    "translate": [
+     78.53,
+     -62.19,
+     594.32
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#7",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #7",
+   "assembled": {
+    "translate": [
+     91.46,
+     -61.54,
+     590.17
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#8",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #8",
+   "assembled": {
+    "translate": [
+     99.45,
+     -59.84,
+     579.3
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#9",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #9",
+   "assembled": {
+    "translate": [
+     99.45,
+     -57.74,
+     565.86
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#10",
+   "file": "/Faze4/STL/Elbow/J4 cyclo/Joint 4 Output spacers.STL",
+   "label": "Joint 4 Output spacers #10",
+   "assembled": {
+    "translate": [
+     91.46,
+     -56.04,
+     555.0
+    ],
+    "rotate_deg": [
+     89.996,
+     -81.108,
+     -89.996
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/26 teeth Joint 4 pulley.STL#1",
+   "file": "/Faze4/STL/Elbow/26 teeth Joint 4 pulley.STL",
+   "label": "26 teeth Joint 4 pulley #1",
+   "assembled": {
+    "translate": [
+     98.63,
+     -94.41,
+     593.22
+    ],
+    "rotate_deg": [
+     0.004,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/Joint 4 pulley 28 teeth.STL#1",
+   "file": "/Faze4/STL/Elbow/Joint 4 pulley 28 teeth.STL",
+   "label": "Joint 4 pulley 28 teeth #1",
+   "assembled": {
+    "translate": [
+     98.63,
+     -106.76,
+     665.69
+    ],
+    "rotate_deg": [
+     0.004,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/Joint 4 offset.STL#1",
+   "file": "/Faze4/STL/Elbow/Joint 4 offset.STL",
+   "label": "Joint 4 offset #1",
+   "assembled": {
+    "translate": [
+     -5.37,
+     -95.82,
+     683.09
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j4:Elbow/Joint 4 limit switch cover.STL#1",
+   "file": "/Faze4/STL/Elbow/Joint 4 limit switch cover.STL",
+   "label": "Joint 4 limit switch cover #1",
+   "assembled": {
+    "translate": [
+     -5.37,
+     -190.18,
+     654.15
+    ],
+    "rotate_deg": [
+     -179.996,
+     81.108,
+     90.004
+    ]
+   },
+   "kind": "stock",
+   "group": "j4"
+  },
+  {
+   "key": "j5_forearm:Forearm/Forearm main case.STL#1",
+   "file": "/Faze4/STL/Forearm/Forearm main case.STL",
+   "label": "Forearm main case #1",
+   "assembled": {
+    "translate": [
+     123.74,
+     -198.15,
+     661.74
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Cosmetic/Forearm motor lid.STL#1",
+   "file": "/Faze4/STL/Cosmetic/Forearm motor lid.STL",
+   "label": "Forearm motor lid #1",
+   "assembled": {
+    "translate": [
+     109.0,
+     -186.43,
+     586.84
+    ],
+    "rotate_deg": [
+     -126.066,
+     -78.974,
+     -53.425
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Forearm top cover.STL#1",
+   "file": "/Faze4/STL/Forearm/Forearm top cover.STL",
+   "label": "Forearm top cover #1",
+   "assembled": {
+    "translate": [
+     56.18,
+     -219.1,
+     666.3
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Eccentric shaft J5.STL#1",
+   "file": "/Faze4/STL/Forearm/Eccentric shaft J5.STL",
+   "label": "Eccentric shaft J5 #1",
+   "assembled": {
+    "translate": [
+     72.63,
+     -242.31,
+     630.2
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/11_1 cyclo disc.STL#1",
+   "file": "/Faze4/STL/Forearm/11_1 cyclo disc.STL",
+   "label": "11_1 cyclo disc #1",
+   "assembled": {
+    "translate": [
+     74.63,
+     -225.07,
+     654.17
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/11_1 cyclo disc.STL#2",
+   "file": "/Faze4/STL/Forearm/11_1 cyclo disc.STL",
+   "label": "11_1 cyclo disc #2",
+   "assembled": {
+    "translate": [
+     60.73,
+     -276.83,
+     587.36
+    ],
+    "rotate_deg": [
+     53.934,
+     -78.974,
+     -53.425
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#1",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #1",
+   "assembled": {
+    "translate": [
+     62.48,
+     -243.65,
+     592.86
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#2",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #2",
+   "assembled": {
+    "translate": [
+     62.97,
+     -260.11,
+     594.6
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#3",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #3",
+   "assembled": {
+    "translate": [
+     64.31,
+     -273.49,
+     604.28
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#4",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #4",
+   "assembled": {
+    "translate": [
+     66.13,
+     -280.18,
+     619.32
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#5",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #5",
+   "assembled": {
+    "translate": [
+     67.95,
+     -278.4,
+     635.69
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#6",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #6",
+   "assembled": {
+    "translate": [
+     69.29,
+     -268.63,
+     649.0
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#7",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #7",
+   "assembled": {
+    "translate": [
+     69.78,
+     -253.48,
+     655.67
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#8",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #8",
+   "assembled": {
+    "translate": [
+     69.29,
+     -237.02,
+     653.94
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#9",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #9",
+   "assembled": {
+    "translate": [
+     67.96,
+     -223.64,
+     644.26
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#10",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #10",
+   "assembled": {
+    "translate": [
+     66.13,
+     -216.95,
+     629.22
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#11",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #11",
+   "assembled": {
+    "translate": [
+     64.3,
+     -218.73,
+     612.85
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/J5 ring rollers.STL#12",
+   "file": "/Faze4/STL/Forearm/J5 ring rollers.STL",
+   "label": "J5 ring rollers #12",
+   "assembled": {
+    "translate": [
+     62.97,
+     -228.5,
+     599.54
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#1",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #1",
+   "assembled": {
+    "translate": [
+     62.56,
+     -267.4,
+     621.73
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#2",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #2",
+   "assembled": {
+    "translate": [
+     68.11,
+     -267.3,
+     621.11
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#3",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #3",
+   "assembled": {
+    "translate": [
+     64.61,
+     -257.2,
+     641.51
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#4",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #4",
+   "assembled": {
+    "translate": [
+     70.18,
+     -257.1,
+     640.87
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#5",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #5",
+   "assembled": {
+    "translate": [
+     63.83,
+     -235.16,
+     638.01
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#6",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #6",
+   "assembled": {
+    "translate": [
+     69.39,
+     -235.05,
+     637.38
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#7",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #7",
+   "assembled": {
+    "translate": [
+     61.28,
+     -231.72,
+     616.09
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#8",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #8",
+   "assembled": {
+    "translate": [
+     66.84,
+     -231.63,
+     615.46
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#9",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #9",
+   "assembled": {
+    "translate": [
+     60.49,
+     -251.65,
+     606.03
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output spacers.STL#10",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output spacers.STL",
+   "label": "Joint 5 Output spacers #10",
+   "assembled": {
+    "translate": [
+     66.06,
+     -251.55,
+     605.4
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 Output shaft.STL#1",
+   "file": "/Faze4/STL/Forearm/Joint 5 Output shaft.STL",
+   "label": "Joint 5 Output shaft #1",
+   "assembled": {
+    "translate": [
+     40.5,
+     -277.74,
+     643.16
+    ],
+    "rotate_deg": [
+     126.066,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#1",
+   "file": "/Faze4/STL/Forearm/Joint 5 28 teeth pulley.STL",
+   "label": "Joint 5 28 teeth pulley #1",
+   "assembled": {
+    "translate": [
+     40.5,
+     -232.29,
+     650.27
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#2",
+   "file": "/Faze4/STL/Forearm/Joint 5 28 teeth pulley.STL",
+   "label": "Joint 5 28 teeth pulley #2",
+   "assembled": {
+    "translate": [
+     40.51,
+     -377.03,
+     627.63
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 4 shaft.STL#1",
+   "file": "/Faze4/STL/Forearm/Joint 4 shaft.STL",
+   "label": "Joint 4 shaft #1",
+   "assembled": {
+    "translate": [
+     -1.14,
+     -111.35,
+     682.7
+    ],
+    "rotate_deg": [
+     -143.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Joint 5 switch trigger.STL#1",
+   "file": "/Faze4/STL/Forearm/Joint 5 switch trigger.STL",
+   "label": "Joint 5 switch trigger #1",
+   "assembled": {
+    "translate": [
+     141.88,
+     -279.49,
+     734.03
+    ],
+    "rotate_deg": [
+     -53.934,
+     78.974,
+     126.575
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j5_forearm:Forearm/Servo_gripper_plug.STL#1",
+   "file": "/Faze4/STL/Forearm/Servo_gripper_plug.STL",
+   "label": "Servo_gripper_plug #1",
+   "assembled": {
+    "translate": [
+     99.33,
+     -299.26,
+     648.14
+    ],
+    "rotate_deg": [
+     173.456,
+     8.894,
+     -90.0
+    ]
+   },
+   "kind": "stock",
+   "group": "j5_forearm"
+  },
+  {
+   "key": "j6:Wrist/Wrist case.STL#1",
+   "file": "/Faze4/STL/Wrist/Wrist case.STL",
+   "label": "Wrist case #1",
+   "assembled": {
+    "translate": [
+     33.49,
+     -349.33,
+     552.34
+    ],
+    "rotate_deg": [
+     90.122,
+     6.465,
+     1.016
+    ]
+   },
+   "kind": "stock",
+   "group": "j6"
+  },
+  {
+   "key": "j6:Wrist/Wrist cover.STL#1",
+   "file": "/Faze4/STL/Wrist/Wrist cover.STL",
+   "label": "Wrist cover #1",
+   "assembled": {
+    "translate": [
+     37.91,
+     -348.01,
+     551.84
+    ],
+    "rotate_deg": [
+     90.122,
+     6.465,
+     1.016
+    ]
+   },
+   "kind": "stock",
+   "group": "j6"
+  },
+  {
+   "key": "j6:Wrist/Joint 6 output shaft.STL#1",
+   "file": "/Faze4/STL/Wrist/Joint 6 output shaft.STL",
+   "label": "Joint 6 output shaft #1",
+   "assembled": {
+    "translate": [
+     123.09,
+     -437.8,
+     632.44
+    ],
+    "rotate_deg": [
+     -90.13,
+     -20.325,
+     -178.953
+    ]
+   },
+   "kind": "stock",
+   "group": "j6"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/gripper_holder_FAZE4.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/gripper_holder_FAZE4.stl",
+   "label": "gripper gripper_holder_FAZE4",
+   "assembled": {
+    "translate": [
+     49.4,
+     -451.73,
+     597.04
+    ],
+    "rotate_deg": [
+     179.87,
+     -20.325,
+     -178.953
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_main_body.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Gripper_main_body.stl",
+   "label": "gripper Gripper_main_body",
+   "assembled": {
+    "translate": [
+     74.25,
+     -531.11,
+     598.31
+    ],
+    "rotate_deg": [
+     -69.675,
+     -0.122,
+     91.002
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVE.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Gripper_template_DRIVE.stl",
+   "label": "gripper Gripper_template_DRIVE",
+   "assembled": {
+    "translate": [
+     73.65,
+     -508.16,
+     618.27
+    ],
+    "rotate_deg": [
+     -179.87,
+     20.325,
+     1.047
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVEN.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Gripper_template_DRIVEN.stl",
+   "label": "gripper Gripper_template_DRIVEN",
+   "assembled": {
+    "translate": [
+     48.23,
+     -508.46,
+     549.63
+    ],
+    "rotate_deg": [
+     -179.87,
+     20.325,
+     1.047
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_1.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Gripper_flex_1.stl",
+   "label": "gripper Gripper_flex_1",
+   "assembled": {
+    "translate": [
+     42.57,
+     -454.69,
+     614.73
+    ],
+    "rotate_deg": [
+     69.675,
+     0.122,
+     -88.998
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_2.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Gripper_flex_2.stl",
+   "label": "gripper Gripper_flex_2",
+   "assembled": {
+    "translate": [
+     64.62,
+     -454.26,
+     596.54
+    ],
+    "rotate_deg": [
+     -110.325,
+     0.122,
+     -88.998
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/GEAR_55T.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/GEAR_55T.stl",
+   "label": "gripper GEAR_55T",
+   "assembled": {
+    "translate": [
+     71.77,
+     -485.63,
+     637.32
+    ],
+    "rotate_deg": [
+     -90.13,
+     -20.325,
+     -178.953
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/GEAR_36T.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/GEAR_36T.stl",
+   "label": "gripper GEAR_36T",
+   "assembled": {
+    "translate": [
+     112.18,
+     -484.89,
+     622.35
+    ],
+    "rotate_deg": [
+     -90.13,
+     -20.325,
+     -178.953
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Output_shaft.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Output_shaft.stl",
+   "label": "gripper Output_shaft",
+   "assembled": {
+    "translate": [
+     120.55,
+     -487.37,
+     635.9
+    ],
+    "rotate_deg": [
+     -69.675,
+     -0.122,
+     91.002
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/PLANETS_12T.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/PLANETS_12T.stl",
+   "label": "gripper PLANETS_12T",
+   "assembled": {
+    "translate": [
+     101.28,
+     -487.57,
+     615.84
+    ],
+    "rotate_deg": [
+     -69.675,
+     -0.122,
+     91.002
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/bearing_holder_planetary.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/bearing_holder_planetary.stl",
+   "label": "gripper bearing_holder_planetary",
+   "assembled": {
+    "translate": [
+     112.74,
+     -433.51,
+     639.94
+    ],
+    "rotate_deg": [
+     -69.675,
+     -0.122,
+     91.002
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Planetary_cover.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Planetary_cover.stl",
+   "label": "gripper Planetary_cover",
+   "assembled": {
+    "translate": [
+     118.98,
+     -549.01,
+     638.13
+    ],
+    "rotate_deg": [
+     -69.675,
+     -0.122,
+     91.002
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/cad/reference/compliant-gripper/stl/Bearing_holder_gripper.stl#1",
+   "file": "/cad/reference/compliant-gripper/stl/Bearing_holder_gripper.stl",
+   "label": "gripper Bearing_holder_gripper",
+   "assembled": {
+    "translate": [
+     41.04,
+     -508.71,
+     610.52
+    ],
+    "rotate_deg": [
+     -90.351,
+     69.675,
+     -179.328
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:/viewer/assets/mad5010_mock.stl#1",
+   "file": "/viewer/assets/mad5010_mock.stl",
+   "label": "gripper mad5010_mock",
+   "assembled": {
+    "translate": [
+     114.33,
+     -484.85,
+     621.55
+    ],
+    "rotate_deg": [
+     -69.675,
+     -0.122,
+     91.002
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "bearing_693#1",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     113.14,
+     -87.66,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#2",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     113.14,
+     -87.66,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#3",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     113.14,
+     -87.66,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#4",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     110.29,
+     -73.31,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#5",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     110.29,
+     -73.31,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#6",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     110.29,
+     -73.31,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#7",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     102.16,
+     -61.14,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#8",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     102.16,
+     -61.14,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#9",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     102.16,
+     -61.14,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#10",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     89.99,
+     -53.01,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#11",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     89.99,
+     -53.01,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#12",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     89.99,
+     -53.01,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#13",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     75.64,
+     -50.16,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#14",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     75.64,
+     -50.16,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#15",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     75.64,
+     -50.16,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#16",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     61.29,
+     -53.01,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#17",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     61.29,
+     -53.01,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#18",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     61.29,
+     -53.01,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#19",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     49.12,
+     -61.14,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#20",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     49.12,
+     -61.14,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#21",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     49.12,
+     -61.14,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#22",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     40.99,
+     -73.31,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#23",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     40.99,
+     -73.31,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#24",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     40.99,
+     -73.31,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#25",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     38.14,
+     -87.66,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#26",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     38.14,
+     -87.66,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#27",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     38.14,
+     -87.66,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#28",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     40.99,
+     -102.01,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#29",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     40.99,
+     -102.01,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#30",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     40.99,
+     -102.01,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#31",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     49.12,
+     -114.18,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#32",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     49.12,
+     -114.18,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#33",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     49.12,
+     -114.18,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#34",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     61.29,
+     -122.31,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#35",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     61.29,
+     -122.31,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#36",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     61.29,
+     -122.31,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#37",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     75.64,
+     -125.16,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#38",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     75.64,
+     -125.16,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#39",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     75.64,
+     -125.16,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#40",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     89.99,
+     -122.31,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#41",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     89.99,
+     -122.31,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#42",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     89.99,
+     -122.31,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#43",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     102.16,
+     -114.18,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#44",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     102.16,
+     -114.18,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#45",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     102.16,
+     -114.18,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#46",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     110.29,
+     -102.01,
+     81.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#47",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     110.29,
+     -102.01,
+     88.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_693#48",
+   "file": "/viewer/assets/bearing_693.stl",
+   "label": "693 bearing",
+   "assembled": {
+    "translate": [
+     110.29,
+     -102.01,
+     95.1
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_6902#1",
+   "file": "/viewer/assets/bearing_6902.stl",
+   "label": "6902 bearing",
+   "assembled": {
+    "translate": [
+     77.77,
+     -87.78,
+     82.91
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_6902#2",
+   "file": "/viewer/assets/bearing_6902.stl",
+   "label": "6902 bearing",
+   "assembled": {
+    "translate": [
+     75.37,
+     -87.54,
+     92.0
+    ],
+    "rotate_deg": [
+     180.0,
+     0.0,
+     90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#1",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.68,
+     -77.67,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#2",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.68,
+     -77.67,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#3",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.68,
+     -77.67,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#4",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.68,
+     -77.67,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#5",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.7,
+     -97.58,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#6",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.7,
+     -97.58,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#7",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.7,
+     -97.58,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#8",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     65.7,
+     -97.58,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#9",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.63,
+     -101.72,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#10",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.63,
+     -101.72,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#11",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.63,
+     -101.72,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#12",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.63,
+     -101.72,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#13",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.66,
+     -73.75,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#14",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.66,
+     -73.75,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#15",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.66,
+     -73.75,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#16",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     75.66,
+     -73.75,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#17",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.59,
+     -77.72,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#18",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.59,
+     -77.72,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#19",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.59,
+     -77.72,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#20",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.59,
+     -77.72,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#21",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.6,
+     -97.68,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#22",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.6,
+     -97.68,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#23",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.6,
+     -97.68,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#24",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     85.6,
+     -97.68,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#25",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     89.58,
+     -87.64,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#26",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     89.58,
+     -87.64,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#27",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     89.58,
+     -87.64,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#28",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     89.58,
+     -87.64,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#29",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     61.64,
+     -87.66,
+     108.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#30",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     61.64,
+     -87.66,
+     112.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#31",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     61.64,
+     -87.66,
+     116.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_623#32",
+   "file": "/viewer/assets/bearing_623.stl",
+   "label": "623 bearing",
+   "assembled": {
+    "translate": [
+     61.64,
+     -87.66,
+     120.8
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_6810#1",
+   "file": "/viewer/assets/bearing_6810.stl",
+   "label": "6810 bearing",
+   "assembled": {
+    "translate": [
+     75.23,
+     -87.74,
+     109.85
+    ],
+    "rotate_deg": [
+     -0.0,
+     -0.0,
+     -90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_6810#2",
+   "file": "/viewer/assets/bearing_6810.stl",
+   "label": "6810 bearing",
+   "assembled": {
+    "translate": [
+     75.63,
+     -211.97,
+     89.13
+    ],
+    "rotate_deg": [
+     180.0,
+     -0.0,
+     90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_6810#3",
+   "file": "/viewer/assets/bearing_6810.stl",
+   "label": "6810 bearing",
+   "assembled": {
+    "translate": [
+     76.03,
+     -212.93,
+     56.71
+    ],
+    "rotate_deg": [
+     180.0,
+     -0.0,
+     90.0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#1",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     130.63,
+     -212.66,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#2",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     124.33,
+     -187.1,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#3",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     106.87,
+     -167.4,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#4",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     82.26,
+     -158.06,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#5",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     56.13,
+     -161.23,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#6",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     34.46,
+     -176.19,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#7",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     22.23,
+     -199.5,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#8",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     22.23,
+     -225.82,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#9",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     34.46,
+     -249.13,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#10",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     56.13,
+     -264.09,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#11",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     82.26,
+     -267.26,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#12",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     106.87,
+     -257.92,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "bearing_625#13",
+   "file": "/viewer/assets/bearing_625.stl",
+   "label": "625 slew bearing (ring approx)",
+   "assembled": {
+    "translate": [
+     124.33,
+     -238.22,
+     126.05
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   },
+   "kind": "hardware"
+  },
+  {
+   "key": "belt_htd5m",
+   "file": "/viewer/assets/belt_htd5m_490.stl",
+   "label": "HTD-5M 490x10 belt",
+   "kind": "belt",
+   "assembled": {
+    "translate": [
+     0,
+     0,
+     0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "board_s1",
+   "file": "/viewer/assets/odrive_s1_mock.stl",
+   "label": "ODrive S1 (node 1, J1)",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     95,
+     -212.66,
+     12
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "board_xult",
+   "file": "/viewer/assets/same70_xult_mock.stl",
+   "label": "SAME70 XULT + RNBD451",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     280,
+     -212.66,
+     0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     90
+    ]
+   }
+  },
+  {
+   "key": "board_s1_j2",
+   "file": "/viewer/assets/odrive_s1_mock.stl",
+   "label": "S1 J2 (coaxial in housing, planned)",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     -44.4,
+     -212.7,
+     252.6
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ]
+   }
+  },
+  {
+   "key": "board_s1_j3",
+   "file": "/viewer/assets/odrive_s1_mock.stl",
+   "label": "S1 J3 (side tray, planned)",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     35.6,
+     -64.9,
+     493.6
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "board_s1_j4",
+   "file": "/viewer/assets/odrive_s1_mock.stl",
+   "label": "S1 J4 (coaxial under lid, planned)",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     75.6,
+     16.2,
+     622.7
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ]
+   }
+  },
+  {
+   "key": "board_s1_j5",
+   "file": "/viewer/assets/odrive_s1_mock.stl",
+   "label": "S1 J5 (lid pocket, planned)",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     90.2,
+     -150.2,
+     568.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "board_s1_j6",
+   "file": "/viewer/assets/odrive_s1_mock.stl",
+   "label": "S1 J6 (rear bay, at-risk, planned)",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     79.5,
+     -425.5,
+     627.0
+    ],
+    "rotate_deg": [
+     90,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "board_s1_gr",
+   "file": "/viewer/assets/odrive_s1_mock.stl",
+   "label": "S1 gripper (TBD, planned)",
+   "kind": "board",
+   "assembled": {
+    "translate": [
+     133.7,
+     -496.8,
+     576.2
+    ],
+    "rotate_deg": [
+     0,
+     90,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_0",
+   "file": "/viewer/assets/screw_m3x12_cap.stl",
+   "label": "M3x12 shell->case",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     99.09,
+     -64.2,
+     76.1
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_1",
+   "file": "/viewer/assets/screw_m3x12_cap.stl",
+   "label": "M3x12 shell->case",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     52.17,
+     -64.2,
+     76.1
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_2",
+   "file": "/viewer/assets/screw_m3x12_cap.stl",
+   "label": "M3x12 shell->case",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     52.17,
+     -111.12,
+     76.1
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_3",
+   "file": "/viewer/assets/screw_m3x12_cap.stl",
+   "label": "M3x12 shell->case",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     99.09,
+     -111.12,
+     76.1
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_4",
+   "file": "/viewer/assets/screw_m3x8_cs.stl",
+   "label": "M3x8 CS flange->hub",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     85.63,
+     -87.66,
+     71.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_5",
+   "file": "/viewer/assets/screw_m3x8_cs.stl",
+   "label": "M3x8 CS flange->hub",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.63,
+     -77.66,
+     71.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_6",
+   "file": "/viewer/assets/screw_m3x8_cs.stl",
+   "label": "M3x8 CS flange->hub",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     65.63,
+     -87.66,
+     71.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_7",
+   "file": "/viewer/assets/screw_m3x8_cs.stl",
+   "label": "M3x8 CS flange->hub",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.63,
+     -97.66,
+     71.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_8",
+   "file": "/viewer/assets/screw_m3x8_cap.stl",
+   "label": "M3x8 cartridge->flange",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     84.82,
+     -78.47,
+     74.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_9",
+   "file": "/viewer/assets/screw_m3x8_cap.stl",
+   "label": "M3x8 cartridge->flange",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     66.44,
+     -78.47,
+     74.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_10",
+   "file": "/viewer/assets/screw_m3x8_cap.stl",
+   "label": "M3x8 cartridge->flange",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     66.44,
+     -96.85,
+     74.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_11",
+   "file": "/viewer/assets/screw_m3x8_cap.stl",
+   "label": "M3x8 cartridge->flange",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     84.82,
+     -96.85,
+     74.2
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_12",
+   "file": "/viewer/assets/screw_m4x10_cap.stl",
+   "label": "M4x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     95.63,
+     -87.66,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_13",
+   "file": "/viewer/assets/screw_m4x10_cap.stl",
+   "label": "M4x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.63,
+     -67.66,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_14",
+   "file": "/viewer/assets/screw_m4x10_cap.stl",
+   "label": "M4x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     55.63,
+     -87.66,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_15",
+   "file": "/viewer/assets/screw_m4x10_cap.stl",
+   "label": "M4x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.63,
+     -107.66,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_16",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     86.24,
+     -77.05,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_17",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     65.02,
+     -77.05,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_18",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     65.02,
+     -98.27,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_19",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 floor->stator",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     86.24,
+     -98.27,
+     19.2
+    ],
+    "rotate_deg": [
+     180,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_20",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 bayonet lock",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     101.63,
+     -42.63,
+     24.7
+    ],
+    "rotate_deg": [
+     -90.0,
+     30.0,
+     -30.0
+    ]
+   }
+  },
+  {
+   "key": "screw_21",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 bayonet lock",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     49.63,
+     -132.69,
+     24.7
+    ],
+    "rotate_deg": [
+     90.0,
+     -30.0,
+     -30.0
+    ]
+   }
+  },
+  {
+   "key": "screw_22",
+   "file": "/viewer/assets/screw_m3x10_cs.stl",
+   "label": "M3x10 CS cap->cartridge",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     79.63,
+     -87.66,
+     84.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_23",
+   "file": "/viewer/assets/screw_m3x10_cs.stl",
+   "label": "M3x10 CS cap->cartridge",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     71.63,
+     -87.66,
+     84.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_24",
+   "file": "/viewer/assets/screw_m3x12_cap.stl",
+   "label": "M3x12 washer",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.63,
+     -87.66,
+     92.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_25",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 blocker",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     95.63,
+     -212.66,
+     51.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_26",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 blocker",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     81.81,
+     -193.64,
+     51.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_27",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 blocker",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     59.45,
+     -200.9,
+     51.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_28",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 blocker",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     59.45,
+     -224.42,
+     51.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_29",
+   "file": "/viewer/assets/screw_m3x10_cap.stl",
+   "label": "M3x10 blocker",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     81.81,
+     -231.68,
+     51.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_30",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     113.14,
+     -87.66,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_31",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     110.29,
+     -73.31,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_32",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     102.16,
+     -61.14,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_33",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     89.99,
+     -53.01,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_34",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.64,
+     -50.16,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_35",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     61.29,
+     -53.01,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_36",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     49.12,
+     -61.14,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_37",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     40.99,
+     -73.31,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_38",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     38.14,
+     -87.66,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_39",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     40.99,
+     -102.01,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_40",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     49.12,
+     -114.18,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_41",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     61.29,
+     -122.31,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_42",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.64,
+     -125.16,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_43",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     89.99,
+     -122.31,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_44",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     102.16,
+     -114.18,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_45",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 ring pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     110.29,
+     -102.01,
+     100.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_46",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     25.87,
+     -118.97,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_47",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     29.81,
+     -108.99,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_48",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     29.83,
+     -128.91,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_49",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     39.78,
+     -133.04,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_50",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     39.81,
+     -105.08,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_51",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     49.74,
+     -129.0,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_52",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     49.75,
+     -109.04,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_53",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 output pin",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     53.73,
+     -118.97,
+     120.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_54",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 top cover",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     104.26,
+     -116.29,
+     118.03
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_55",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 top cover",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     46.99,
+     -116.29,
+     118.03
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_56",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 top cover",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.63,
+     -128.16,
+     118.03
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_57",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 top cover",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     40.13,
+     -70.66,
+     122.53
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_58",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 top cover",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     60.62,
+     -51.68,
+     122.53
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_59",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 top cover",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     90.62,
+     -51.68,
+     122.53
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_60",
+   "file": "/viewer/assets/screw_m3x25_cap.stl",
+   "label": "M3x25 top cover",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     111.13,
+     -70.66,
+     122.53
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_61",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     61.66,
+     -87.54,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_62",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     65.76,
+     -97.44,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_63",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     65.87,
+     -77.67,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_64",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.51,
+     -101.63,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_65",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     75.75,
+     -73.69,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_66",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     85.41,
+     -97.53,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_67",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     85.62,
+     -77.9,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_68",
+   "file": "/viewer/assets/screw_m3x20_cap.stl",
+   "label": "M3x20 pulley",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     89.6,
+     -87.78,
+     133.65
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_69",
+   "file": "/viewer/assets/screw_m3x15_cap.stl",
+   "label": "M3x15 case->base",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     46.28,
+     -53.7,
+     77.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_70",
+   "file": "/viewer/assets/screw_m3x15_cap.stl",
+   "label": "M3x15 case->base",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     97.96,
+     -132.66,
+     77.6
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_71",
+   "file": "/viewer/assets/screw_m3x15_cap.stl",
+   "label": "M3x15 case->base",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     33.35,
+     -161.1,
+     121.5
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_72",
+   "file": "/viewer/assets/screw_m3x15_cap.stl",
+   "label": "M3x15 case->base",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     118.01,
+     -161.09,
+     121.5
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_73",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     130.63,
+     -212.66,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_74",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     124.33,
+     -187.1,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_75",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     106.87,
+     -167.4,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_76",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     82.26,
+     -158.06,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_77",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     56.13,
+     -161.23,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_78",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     34.46,
+     -176.19,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_79",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     22.23,
+     -199.5,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_80",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     22.23,
+     -225.82,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_81",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     34.46,
+     -249.13,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_82",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     56.13,
+     -264.09,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_83",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     82.26,
+     -267.26,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_84",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     106.87,
+     -257.92,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "screw_85",
+   "file": "/viewer/assets/screw_m5x20_cap.stl",
+   "label": "M5x20 slew roller",
+   "kind": "screw",
+   "assembled": {
+    "translate": [
+     124.33,
+     -238.22,
+     132.0
+    ],
+    "rotate_deg": [
+     0,
+     0,
+     0
+    ]
+   }
+  }
+ ],
+ "steps": [
+  {
+   "title": "Unboxed",
+   "parts": [],
+   "pdf": "",
+   "text": "Everything out of the box. J1 builds now; the other joints wait on their color blobs until their steps are authored. Coupon printed and journal_comp dialed before the eccentric set counts."
+  },
+  {
+   "title": "Shell into the case",
+   "parts": [
+    "Base/Joint 1 main case.STL#1",
+    "j1_cage_shell",
+    "screw_0",
+    "screw_1",
+    "screw_2",
+    "screw_3"
+   ],
+   "pdf": "adapts p.61",
+   "text": "OUR swap of PDF Step 1 (stock bolts the NEMA23 here). Heat-set the 4 M3 inserts into the shell's top plate first (230-240C, flush). Register boss into the O38.2 case pilot, then drive the 4 screws with washers from INSIDE the empty case - there is no access once the chamber fills."
+  },
+  {
+   "title": "Flange on the rotor",
+   "parts": [
+    "mad8318_mock",
+    "j1_flange",
+    "screw_4",
+    "screw_5",
+    "screw_6",
+    "screw_7"
+   ],
+   "pdf": "replaces p.64 set-screw",
+   "text": "Flange recess-side DOWN over the 8318's O28 hub boss - the recess registers it, the screws only clamp. 4x M3 countersunk on the O20 circle into the hub's factory threads, star pattern, heads dead flush. Spin the rotor and eyeball the flange edge for wobble before moving on."
+  },
+  {
+   "title": "Cartridge on the flange",
+   "parts": [
+    "j1_cartridge",
+    "screw_8",
+    "screw_9",
+    "screw_10",
+    "screw_11"
+   ],
+   "pdf": "ours",
+   "text": "Cartridge onto the flange's 4 heat-set inserts, M3x8, cross pattern, gentle torque (brass in plastic). This is journal 1 of the eccentric - its screw heads must sit in their recesses or disc 1 will rock on them."
+  },
+  {
+   "title": "Floor on the stator",
+   "parts": [
+    "j1_cage_floor",
+    "screw_12",
+    "screw_13",
+    "screw_14",
+    "screw_15",
+    "screw_16",
+    "screw_17",
+    "screw_18",
+    "screw_19"
+   ],
+   "pdf": "ours",
+   "text": "Cage floor onto the stator base from below: 4x M4 on O40 + 4x M3 on O30, counterbored. Phase leads through the gateway notch - aim the bundle ~25 deg counter-clockwise of the notch so the bayonet twist lands it home."
+  },
+  {
+   "title": "Module in, bayonet locked",
+   "parts": [
+    "screw_20",
+    "screw_21"
+   ],
+   "pdf": "ours",
+   "text": "Motor module rises into the shell, floor lugs into the vertical channels, twist ~25 deg CW to the stops - you will feel it land - then the 2 radial M3 locks so it cannot untwist. Skirt rim should end flush with the floor. Spin the can: free, no scrape, wires unpinched."
+  },
+  {
+   "title": "Boss screws",
+   "parts": [],
+   "pdf": "p.62",
+   "text": "3x M3x10 at the marked bosses in the chamber. These go in BEFORE the pin forest - they are unreachable afterwards."
+  },
+  {
+   "title": "Ring pins",
+   "parts": [
+    "Base/Joint 1 ring spacers.STL#1",
+    "Base/Joint 1 ring spacers.STL#2",
+    "Base/Joint 1 ring spacers.STL#3",
+    "Base/Joint 1 ring spacers.STL#4",
+    "Base/Joint 1 ring spacers.STL#5",
+    "Base/Joint 1 ring spacers.STL#6",
+    "Base/Joint 1 ring spacers.STL#7",
+    "Base/Joint 1 ring spacers.STL#8",
+    "Base/Joint 1 ring spacers.STL#9",
+    "Base/Joint 1 ring spacers.STL#10",
+    "Base/Joint 1 ring spacers.STL#11",
+    "Base/Joint 1 ring spacers.STL#12",
+    "Base/Joint 1 ring spacers.STL#13",
+    "Base/Joint 1 ring spacers.STL#14",
+    "Base/Joint 1 ring spacers.STL#15",
+    "Base/Joint 1 ring spacers.STL#16",
+    "Base/Joint 1 ring spacers.STL#17",
+    "Base/Joint 1 ring spacers.STL#18",
+    "Base/Joint 1 ring spacers.STL#19",
+    "Base/Joint 1 ring spacers.STL#20",
+    "Base/Joint 1 ring spacers.STL#21",
+    "Base/Joint 1 ring spacers.STL#22",
+    "Base/Joint 1 ring spacers.STL#23",
+    "Base/Joint 1 ring spacers.STL#24",
+    "Base/Joint 1 ring spacers.STL#25",
+    "Base/Joint 1 ring spacers.STL#26",
+    "Base/Joint 1 ring spacers.STL#27",
+    "Base/Joint 1 ring spacers.STL#28",
+    "Base/Joint 1 ring spacers.STL#29",
+    "Base/Joint 1 ring spacers.STL#30",
+    "Base/Joint 1 ring spacers.STL#31",
+    "Base/Joint 1 ring spacers.STL#32",
+    "bearing_693#1",
+    "bearing_693#2",
+    "bearing_693#3",
+    "bearing_693#4",
+    "bearing_693#5",
+    "bearing_693#6",
+    "bearing_693#7",
+    "bearing_693#8",
+    "bearing_693#9",
+    "bearing_693#10",
+    "bearing_693#11",
+    "bearing_693#12",
+    "bearing_693#13",
+    "bearing_693#14",
+    "bearing_693#15",
+    "bearing_693#16",
+    "bearing_693#17",
+    "bearing_693#18",
+    "bearing_693#19",
+    "bearing_693#20",
+    "bearing_693#21",
+    "bearing_693#22",
+    "bearing_693#23",
+    "bearing_693#24",
+    "bearing_693#25",
+    "bearing_693#26",
+    "bearing_693#27",
+    "bearing_693#28",
+    "bearing_693#29",
+    "bearing_693#30",
+    "bearing_693#31",
+    "bearing_693#32",
+    "bearing_693#33",
+    "bearing_693#34",
+    "bearing_693#35",
+    "bearing_693#36",
+    "bearing_693#37",
+    "bearing_693#38",
+    "bearing_693#39",
+    "bearing_693#40",
+    "bearing_693#41",
+    "bearing_693#42",
+    "bearing_693#43",
+    "bearing_693#44",
+    "bearing_693#45",
+    "bearing_693#46",
+    "bearing_693#47",
+    "bearing_693#48",
+    "screw_30",
+    "screw_31",
+    "screw_32",
+    "screw_33",
+    "screw_34",
+    "screw_35",
+    "screw_36",
+    "screw_37",
+    "screw_38",
+    "screw_39",
+    "screw_40",
+    "screw_41",
+    "screw_42",
+    "screw_43",
+    "screw_44",
+    "screw_45"
+   ],
+   "pdf": "p.62",
+   "text": "16 pins around the chamber, each an M3x25 carrying THREE 693ZZ (3x8x4) alternating with TWO printed spacers: 48 bearings, 32 spacers. Screws self-tap into the case - snug, not gorilla. Flick every stack: all three outer races must spin free."
+  },
+  {
+   "title": "Disc 1 on",
+   "parts": [
+    "Base/15_1 cyclo disc.STL#1",
+    "bearing_6902#1",
+    "bearing_6902#2"
+   ],
+   "pdf": "p.63",
+   "text": "Press a 6902 (15x28x7) into each disc - push on the OUTER race only, square and flush. Disc 1 drops over the cartridge journal, lobes meshing into the ring rollers; wiggle it around the ring rather than forcing it down."
+  },
+  {
+   "title": "Cap on",
+   "parts": [
+    "j1_cap",
+    "screw_22",
+    "screw_23"
+   ],
+   "pdf": "p.64",
+   "text": "Cap onto the cartridge, countersunk M3s, heads flush. Its journal is offset the opposite way - that is what enforces the 180-deg disc opposition the PDF warns about, mechanically, so you cannot get it wrong."
+  },
+  {
+   "title": "Disc 2 on",
+   "parts": [
+    "Base/15_1 cyclo disc.STL#2"
+   ],
+   "pdf": "p.64",
+   "text": "Disc 2 over the cap's journal, same lobe-meshing dance. Now turn the motor can slowly by hand: both discs should orbit smoothly through a full revolution, no tight spots. Fix binding here, not later."
+  },
+  {
+   "title": "Retainer washer",
+   "parts": [
+    "j1_washer",
+    "screw_24"
+   ],
+   "pdf": "ours",
+   "text": "Printed washer flat on disc 2's bearing, one M3 down its middle into the cap's pilot. O18 on purpose: it covers the bearing's INNER race only and stays clear of the spinning outer race."
+  },
+  {
+   "title": "Output shaft in",
+   "parts": [
+    "Base/joint 1 cyclo output shaft.STL#1"
+   ],
+   "pdf": "p.66",
+   "text": "The output shaft drops over the cyclo, its 8 pin holes lining up with the big holes in both discs."
+  },
+  {
+   "title": "Output pins",
+   "parts": [
+    "bearing_623#1",
+    "bearing_623#2",
+    "bearing_623#3",
+    "bearing_623#4",
+    "bearing_623#5",
+    "bearing_623#6",
+    "bearing_623#7",
+    "bearing_623#8",
+    "bearing_623#9",
+    "bearing_623#10",
+    "bearing_623#11",
+    "bearing_623#12",
+    "bearing_623#13",
+    "bearing_623#14",
+    "bearing_623#15",
+    "bearing_623#16",
+    "bearing_623#17",
+    "bearing_623#18",
+    "bearing_623#19",
+    "bearing_623#20",
+    "bearing_623#21",
+    "bearing_623#22",
+    "bearing_623#23",
+    "bearing_623#24",
+    "bearing_623#25",
+    "bearing_623#26",
+    "bearing_623#27",
+    "bearing_623#28",
+    "bearing_623#29",
+    "bearing_623#30",
+    "bearing_623#31",
+    "bearing_623#32",
+    "screw_46",
+    "screw_47",
+    "screw_48",
+    "screw_49",
+    "screw_50",
+    "screw_51",
+    "screw_52",
+    "screw_53"
+   ],
+   "pdf": "p.65",
+   "text": "8 pins, each an M3x25 carrying FOUR 623ZZ (3x10x4) - 32 bearings. In practice you build the forest on the shaft OFF the arm and lower the lot in together; spin-check every stack first, because the rollers riding the disc hole walls are what extracts the 15:1 output."
+  },
+  {
+   "title": "Top cover",
+   "parts": [
+    "Base/Joint1 top cover.STL#1",
+    "bearing_6810#1",
+    "screw_54",
+    "screw_55",
+    "screw_56",
+    "screw_57",
+    "screw_58",
+    "screw_59",
+    "screw_60"
+   ],
+   "pdf": "p.67-68",
+   "text": "One 6810 (50x65x7) into the top cover - it carries the cyclo output hub. Cover over the chamber, 8x M3x25 into the case. The flange at the bolt circle is 14.80 thick (NOT the 19.72 overall height - that includes the raised centre boss), into a 14.8 deep blind hole: x20 is Petar's spec at 5.2 mm of thread, x25 gives 10.2 mm, x30 BOTTOMS OUT and jams on the hole floor instead of clamping. The 16 O6.9 x 2.8 pockets on the underside register the ring-pin stacks' O6.2 top spacers - lower the cover flat, all 16 must find their pocket. Clocking: bracket ears embrace the base, only one orientation lines the holes up."
+  },
+  {
+   "title": "Onto the Main base",
+   "parts": [
+    "main_base_8318",
+    "screw_69",
+    "screw_70",
+    "screw_71",
+    "screw_72"
+   ],
+   "pdf": "p.69",
+   "text": "The finished gearbox module bolts into the Main base: 9x M3x15. OUR base, not stock: O103 relief pocket on the tower side clears the 8318 + cage skirt (the stock wall sits 45.0mm from the cyclo axis; the skirt needs 50.5)."
+  },
+  {
+   "title": "Slew ring",
+   "parts": [
+    "bearing_625#1",
+    "bearing_625#2",
+    "bearing_625#3",
+    "bearing_625#4",
+    "bearing_625#5",
+    "bearing_625#6",
+    "bearing_625#7",
+    "bearing_625#8",
+    "bearing_625#9",
+    "bearing_625#10",
+    "bearing_625#11",
+    "bearing_625#12",
+    "bearing_625#13",
+    "screw_73",
+    "screw_74",
+    "screw_75",
+    "screw_76",
+    "screw_77",
+    "screw_78",
+    "screw_79",
+    "screw_80",
+    "screw_81",
+    "screw_82",
+    "screw_83",
+    "screw_84",
+    "screw_85"
+   ],
+   "pdf": "p.69-70",
+   "text": "The slew is 13 bearing ROLLERS, not balls: 13x 625ZZ (5x16x5), each on an M5x20 into a captive M5 nut around the ring. Drop every nut into its pocket before you start threading."
+  },
+  {
+   "title": "Column bearings",
+   "parts": [
+    "bearing_6810#2",
+    "bearing_6810#3"
+   ],
+   "pdf": "p.71",
+   "text": "Two 6810s (50x65x7) into the base column bores, upper and lower - they carry the output shaft the whole arm stands on. THESE GO IN BEFORE THE RETAINER: the retainer's centre bore is O55.7 and a 6810 is O65 across, so once the ring is on you cannot pass a column bearing through it. Push on the OUTER race only, square, until each is flush on its seat."
+  },
+  {
+   "title": "Bearing retainer",
+   "parts": [
+    "Base/Ball bearing retainer.STL#1"
+   ],
+   "pdf": "p.70",
+   "text": "Retainer ring onto the BASE OF THE COLUMN (bench-confirmed 2026-08-08: the 5-hole BC75 pattern matches the bottom face, not the top - the twin had it on top). It caps the lower 6810's outer race, overlapping it 4.65 mm all round. Not a slew-roller keeper: those rollers are already captive on their own M5 screws."
+  },
+  {
+   "title": "Arm platform + belt",
+   "parts": [
+    "Rotating base/Joint 1 output shaft.STL#1",
+    "belt_htd5m"
+   ],
+   "pdf": "p.71-74",
+   "text": "Loop the HTD-5M 490x10 belt around the platform's 60T ring BEFORE seating it - there is no threading it afterwards. Then the platform onto the column. Optional M8 inductive homing sensor at p.72-73 (our output encoder supersedes it; 0.5-1mm gap if fitted)."
+  },
+  {
+   "title": "Belt + 36T",
+   "parts": [
+    "Base/36 teeth pulley.STL#1",
+    "screw_61",
+    "screw_62",
+    "screw_63",
+    "screw_64",
+    "screw_65",
+    "screw_66",
+    "screw_67",
+    "screw_68"
+   ],
+   "pdf": "p.75",
+   "text": "36T pulley goes on THROUGH the belt loop onto the cyclo output: 8x M3x20 CAP head, counterbore face UP. The pulley is 15.32 thick with a 3.0 deep O5.95 counterbore, so a screw only starts biting the shaft after 12.32 mm - an M3x15 leaves just 2.68 mm of thread. M3x20 gives 7.68 mm. Belt slack? PDF trick: drop spare bearings into the idler pockets at the arrow to tension."
+  },
+  {
+   "title": "Shaft blocker",
+   "parts": [
+    "j1_shaft_blocker",
+    "screw_25",
+    "screw_26",
+    "screw_27",
+    "screw_28",
+    "screw_29"
+   ],
+   "pdf": "p.76-77",
+   "text": "OUR magnet-bridge blocker onto the output shaft: 5x M3x10 (the measured O6 features are counterbores, not clearance - fixed in our print). Magnet pocket faces DOWN toward the future encoder pedestal. All wires route through the kidney slots. 'We are done with main assembly, good job.' - Petar"
+  },
+  {
+   "title": "First light",
+   "parts": [
+    "board_s1",
+    "board_xult"
+   ],
+   "pdf": "",
+   "text": "S1 (node 1) + DC + CAN into the base cavity - velcro until the tray is designed. Current limit LOW: the plastic is the fuse. Gentle sensorless spin -> 25:1 of printed physics turns -> nudge -> J1 slider in the twin."
+  },
+  {
+   "title": "J2: motor into the case",
+   "pdf": "p.44",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 main case.STL#1"
+   ],
+   "text": "OURS. Petar's step 1 is a NEMA23 into the J2 main case on 4x M5x8 HEX; we drive from the 8318 instead. The motor HOUSING IS DONE - cad/j1/stl/j2_cover_8318.stl, the stock J2 cover with a O93 bore cut 46.4 deep for the can, same 152.1x110x110.4 envelope so the Rotating base shells are untouched. STILL MISSING: the 27:1 rotor eccentric carrier that bolts to the bell's prop holes (4x M4 on O23 BCD + 4x M3 on O20) and presents two d20.0 lobes at e=1.3, 180 deg opposed. WATCH: O93 around a O91.5 can is 0.75 mm per side, and on an outrunner that can ROTATES - spin it by hand in the bore before committing. The fit analysis wanted O95.5+; the printed part is tighter."
+  },
+  {
+   "title": "J2: wires through the case",
+   "pdf": "p.45",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 cover.STL#1"
+   ],
+   "text": "Wires go through the SQUARE hole on top and out the hole on the side, then press the cover to the main case and press the pair into the arm. Petar's warning on p.46: pinch a wire while pressing and you get gaps - pull it apart and try again rather than forcing it."
+  },
+  {
+   "title": "J2: cover screws",
+   "pdf": "p.46",
+   "parts": [],
+   "text": "3x M3x20 through the cover into the arm."
+  },
+  {
+   "title": "J2: eccentric",
+   "pdf": "p.47",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 eccentric shaft.STL#1"
+   ],
+   "text": "STOCK PATH: 'Joint 2 eccentric shaft' + 1x M3 nut + 1x M3 4mm set screw. THE REWORK SUPERSEDES IT: use '27to1 esc_shaft_rework_2' from the Rework_parts folder, and it needs TWO nuts and TWO set screws, not one of each. Do not screw the set screw all the way in. OURS replaces this again with the rotor-bolted carrier - see step above."
+  },
+  {
+   "title": "J2: disc 1 on",
+   "pdf": "p.47",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL#1"
+   ],
+   "text": "REWORK DISCS: '27to1 disc_rework', not the stock 'Joint2 cyclo disc'. The rework takes TWO 20x27x4 bearings, NOT the 15x28x7 the stock table lists. Press on the OUTER race only."
+  },
+  {
+   "title": "J2: ring pins",
+   "pdf": "p.48",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#1",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#2",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#3",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#4",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#5",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#6",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#7",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#8",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#9",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#10",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#11",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#12",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#13",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#14",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#15",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#16",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#17",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#18",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#19",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#20",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#21",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#22",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#23",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#24",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#25",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#26",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#27",
+    "j2:Arm+J2/J2 cyclo/Joint 2 ring spacers.STL#28"
+   ],
+   "text": "14 pins, each an M3x30 carrying THREE 693ZZ (3x8x4) alternating with TWO J2 ring spacers: 42 bearings, 28 spacers. J1 was 16 pins of M3x25 - this is 14 of M3x30, do not mix them up. Flick every stack before moving on."
+  },
+  {
+   "title": "J2: disc 2 + phasing",
+   "pdf": "p.49",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 cyclo disc.STL#2"
+   ],
+   "text": "Second disc on, then the 4mm set screw. Petar's note matters here: ALIGN THE HOLES ON THE CYCLO DISCS - they may need to be opposite each other. Counter-phased 180 deg is what makes 27:1 work; get it wrong and one disc fights the other."
+  },
+  {
+   "title": "J2: output pins",
+   "pdf": "p.50",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 output shaft.STL#1"
+   ],
+   "text": "Joint 2 output shaft with 8 pins: each an M5x30 HEX carrying FOUR 5x10x4 bearings (MR105) - 32 total. SCREWS GO TO THE OUTER HOLES. Note these are M5 and 5x10x4, where J1's output pins were M3x25 and 623ZZ."
+  },
+  {
+   "title": "J2: top cover + bearings",
+   "pdf": "p.51",
+   "parts": [
+    "j2:Arm+J2/J2 cyclo/Joint 2 top case.STL#1"
+   ],
+   "text": "Two 6810s (50x65x7) into the Joint 2 top cover, one each side, then the assembly in. Same bearing as J1's top cover and column - count what you have left before pressing."
+  },
+  {
+   "title": "J2: close the cyclo",
+   "pdf": "p.52",
+   "parts": [],
+   "text": "14x M3x30 around the ring plus 2x M3x10 at the two marked corner positions. Star pattern, snug not gorilla."
+  },
+  {
+   "title": "J2: arm to saddle",
+   "pdf": "p.53",
+   "parts": [
+    "j2:Arm+J2/Fork motor.STL#1",
+    "j2:Arm+J2/Fork wires.STL#1",
+    "j2:Arm+J2/Fork.STL#1",
+    "j2:Arm+J2/Joint 3 limit trigger.STL#1"
+   ],
+   "text": "8x M5x25 HEX - FOUR on this side and FOUR on the opposite side. Fork, fork motor/wires plates and both limit triggers go on around here."
+  },
+  {
+   "title": "J2: rotating base, wires shell",
+   "pdf": "p.54",
+   "parts": [
+    "Rotating base/Rotating base wires.STL#1"
+   ],
+   "text": "Its own sub-assembly, buildable on the bench. Into the wires shell: 2x M10 nuts and 2x M5 nuts into their pockets FIRST, then one 6810 (50x65x7) pressed into the bearing-ring tower. Then 2 roller switches on 4x M2x10 - wired IN PARALLEL, leads down through the hole beneath them."
+  },
+  {
+   "title": "J2: rotating base, motor shell",
+   "pdf": "p.55",
+   "parts": [
+    "Rotating base/Rotating base motor.STL#1",
+    "j2:Arm+J2/joint2_limit_trigger.STL#1"
+   ],
+   "text": "2x M10 nuts into the motor shell's hex pockets, then the shell over the top and M10 bolts through the floor. BEFORE closing: every wire from the arm must come out of the hole Petar marks in RED on p.55. Close it with one routed wrong and it all comes apart again."
+  },
+  {
+   "title": "J3: elbow cyclo",
+   "parts": [
+    "j3:Elbow/J3 cyclo/Joint 3 main case.STL#1",
+    "j3:Elbow/J3 cyclo/Joint 3 cover.STL#1",
+    "j3:Elbow/J3 cyclo/Joint 3 eccentric shaft.STL#1",
+    "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#1",
+    "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#2",
+    "j3:Elbow/J3 cyclo/Joint 3 output shaft.STL#1",
+    "j3:Elbow/J3 cyclo/Joint 3 top cover.STL#1",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#1",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#2",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#3",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#4",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#5",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#6",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#7",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#8",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#9",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#10",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#11",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#12",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#13",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#14",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#15",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#16",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#17",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#18",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#19",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#20",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#21",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#22",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#23",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#24",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#25",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#26",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#27",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#28",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#29",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#30",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#31",
+    "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#32"
+   ],
+   "pdf": "p.18-30",
+   "text": "COARSE PASS. Elbow 15:1 cyclo: same recipe as J1 (15x28x7 disc bearings, roller ring pins). Our rotor eccentric replaces the stock set-screw shaft; third 8318 drives it."
+  },
+  {
+   "title": "J3: elbow structure",
+   "parts": [
+    "j3:Cosmetic/Elbow lid.STL#1"
+   ],
+   "pdf": "p.18-30",
+   "text": "COARSE PASS. Elbow housing + covers around the cyclo. The J3/J4 combined shell (one coordinated part per the fit plan) replaces the stock cover - CAD pending."
+  },
+  {
+   "title": "J4: cyclo + drum",
+   "parts": [
+    "j4:Elbow/J4 cyclo/Joint 4 motor case.STL#1",
+    "j4:Elbow/J4 cyclo/Joint 4 top cover.STL#1",
+    "j4:Elbow/J4 cyclo/Joint 4 Output shaft.STL#1",
+    "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#1",
+    "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#2",
+    "j4:Elbow/J4 cyclo/Eccentric shaft J4.STL#1",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#1",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#2",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#3",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#4",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#5",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#6",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#7",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#8",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#9",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#10",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#11",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#12",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#1",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#2",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#3",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#4",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#5",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#6",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#7",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#8",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#9",
+    "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#10"
+   ],
+   "pdf": "p.18-30",
+   "text": "COARSE PASS. Forearm-roll 11:1 cyclo in its drum: 17x23x4 disc bearings, rebuilt drum floor for the 5010 cage (CAD pending), our rotor eccentric replaces the shaft-drive."
+  },
+  {
+   "title": "J4: belt side",
+   "parts": [
+    "j4:Elbow/26 teeth Joint 4 pulley.STL#1",
+    "j4:Elbow/Joint 4 pulley 28 teeth.STL#1",
+    "j4:Elbow/Joint 4 offset.STL#1",
+    "j4:Elbow/Joint 4 limit switch cover.STL#1"
+   ],
+   "pdf": "p.18-30",
+   "text": "COARSE PASS. J4's pulleys + offset + covers; belt drawn when this joint gets its detail pass."
+  },
+  {
+   "title": "J5: forearm",
+   "parts": [
+    "j5_forearm:Forearm/Forearm main case.STL#1",
+    "j5_forearm:Cosmetic/Forearm motor lid.STL#1",
+    "j5_forearm:Forearm/Forearm top cover.STL#1",
+    "j5_forearm:Forearm/Eccentric shaft J5.STL#1",
+    "j5_forearm:Forearm/11_1 cyclo disc.STL#1",
+    "j5_forearm:Forearm/11_1 cyclo disc.STL#2",
+    "j5_forearm:Forearm/J5 ring rollers.STL#1",
+    "j5_forearm:Forearm/J5 ring rollers.STL#2",
+    "j5_forearm:Forearm/J5 ring rollers.STL#3",
+    "j5_forearm:Forearm/J5 ring rollers.STL#4",
+    "j5_forearm:Forearm/J5 ring rollers.STL#5",
+    "j5_forearm:Forearm/J5 ring rollers.STL#6",
+    "j5_forearm:Forearm/J5 ring rollers.STL#7",
+    "j5_forearm:Forearm/J5 ring rollers.STL#8",
+    "j5_forearm:Forearm/J5 ring rollers.STL#9",
+    "j5_forearm:Forearm/J5 ring rollers.STL#10",
+    "j5_forearm:Forearm/J5 ring rollers.STL#11",
+    "j5_forearm:Forearm/J5 ring rollers.STL#12",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#1",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#2",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#3",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#4",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#5",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#6",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#7",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#8",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#9",
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#10",
+    "j5_forearm:Forearm/Joint 5 Output shaft.STL#1",
+    "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#1",
+    "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#2",
+    "j5_forearm:Forearm/Joint 4 shaft.STL#1",
+    "j5_forearm:Forearm/Joint 5 switch trigger.STL#1",
+    "j5_forearm:Forearm/Servo_gripper_plug.STL#1"
+   ],
+   "pdf": "p.8-17",
+   "text": "COARSE PASS. Forearm case (reprint planned: O60 bay for the 5010), J5 cyclo (15:1 upgrade decision pending), pulleys, wrist pivot bits. 5010 #2 lives here."
+  },
+  {
+   "title": "J6: wrist",
+   "parts": [
+    "j6:Wrist/Wrist case.STL#1",
+    "j6:Wrist/Wrist cover.STL#1",
+    "j6:Wrist/Joint 6 output shaft.STL#1"
+   ],
+   "pdf": "p.4-7",
+   "text": "COARSE PASS. Stock wrist case + cover + J6 output flange. The entire wrist housing gets replaced (measured hopeless for the 5010 can) - the largest new-CAD item on the books."
+  },
+  {
+   "title": "Gripper",
+   "parts": [
+    "gr:/cad/reference/compliant-gripper/stl/gripper_holder_FAZE4.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Gripper_main_body.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVE.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVEN.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_1.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_2.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/GEAR_55T.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/GEAR_36T.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Output_shaft.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/PLANETS_12T.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/bearing_holder_planetary.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Planetary_cover.stl#1",
+    "gr:/cad/reference/compliant-gripper/stl/Bearing_holder_gripper.stl#1",
+    "gr:/viewer/assets/mad5010_mock.stl#1"
+   ],
+   "pdf": "hackaday/PCrnjak",
+   "text": "The compliant gripper onto the J6 flange: Petar's own FAZE4 mount, jaw pair on the measured pivots, 7th motor (5010 240KV) + 4th S1 + AS5047P when the parts land. Grip force = current limit."
+  },
+  {
+   "title": "Full arm first light",
+   "parts": [
+    "board_s1_j2",
+    "board_s1_j3",
+    "board_s1_j4",
+    "board_s1_j5",
+    "board_s1_j6",
+    "board_s1_gr"
+   ],
+   "pdf": "",
+   "text": "Every joint's S1 on the CAN chain (planned homes shown), 44-48V supply replaces the DPS, encoders calibrated & SAVED, homing story via output encoders. The claw machine stands up."
+  }
+ ]
+}

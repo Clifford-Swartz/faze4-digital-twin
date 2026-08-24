@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARM Construction Twin</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #16181d; --panel: #1e2128; --panel2: #262a33; --border: #343a46;
+    --text: #d6dae2; --muted: #8b93a3; --accent: #4ea1ff; --good: #5dbb7a; --warn: #e0a145;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body { background: var(--bg); color: var(--text); font: 13px/1.5 "Segoe UI", system-ui, sans-serif; display: flex; }
+  #side {
+    width: 360px; min-width: 360px; height: 100%; background: var(--panel);
+    border-right: 1px solid var(--border); display: flex; flex-direction: column;
+  }
+  #side h1 { font-size: 15px; padding: 12px 14px 2px; }
+  #side h1 small { color: var(--muted); font-weight: normal; font-size: 11px; }
+  #stepnav { display: flex; gap: 8px; align-items: center; padding: 10px 14px; }
+  #stepnav button {
+    background: var(--panel2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 16px; font: inherit; font-size: 14px; cursor: pointer;
+  }
+  #stepnav button:hover { border-color: var(--accent); }
+  #stepnav button:disabled { opacity: .35; cursor: default; }
+  #stepcount { color: var(--muted); margin-left: auto; font-variant-numeric: tabular-nums; }
+  #stepcard { margin: 4px 14px 10px; background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  #steptitle { font-size: 15px; font-weight: 600; }
+  #steppdf { color: var(--warn); font-size: 11px; margin-left: 6px; }
+  #steptext { color: var(--muted); margin-top: 6px; font-size: 12.5px; }
+  #stepparts { margin-top: 8px; font-size: 12px; }
+  #stepparts span { display: inline-block; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 7px; margin: 2px 3px 0 0; }
+  #donewrap { padding: 0 14px 8px; }
+  #btn-done {
+    width: 100%; background: var(--panel2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 9px; font: inherit; cursor: pointer;
+  }
+  #btn-done.done { background: #235c38; border-color: var(--good); }
+  #checklist { flex: 1; overflow-y: auto; padding: 4px 14px 14px; border-top: 1px solid var(--border); }
+  .chk { display: flex; gap: 8px; align-items: baseline; padding: 5px 6px; border-radius: 6px; cursor: pointer; }
+  .chk:hover { background: var(--panel2); }
+  .chk.current { background: #2c4a6b33; outline: 1px solid var(--accent); }
+  .chk .n { color: var(--muted); font-variant-numeric: tabular-nums; width: 20px; }
+  .chk .t { flex: 1; }
+  .chk .m { color: var(--good); }
+  #hint { color: var(--muted); font-size: 11.5px; padding: 8px 14px; border-top: 1px solid var(--border); }
+  #view { flex: 1; position: relative; }
+  #view canvas { display: block; }
+  #partname {
+    position: absolute; bottom: 10px; left: 12px; color: var(--text); font-size: 12px;
+    text-shadow: 0 1px 3px #000; pointer-events: none;
+  }
+  #printcard {
+    position: absolute; top: 10px; right: 12px; width: 250px; background: var(--panel);
+    border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; display: none;
+  }
+  #printcard.show { display: block; }
+  #printcard .pn { font-weight: 600; margin-bottom: 6px; }
+  #printcard .row { display: flex; gap: 6px; }
+  #printcard button {
+    flex: 1; background: var(--panel2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 7px 4px; font: inherit; font-size: 12px; cursor: pointer;
+  }
+  #printcard button:hover { border-color: var(--accent); }
+  #printcard .psel.on { border-color: var(--accent); background: #2c4a6b55; }
+  #printcard .psel:disabled { opacity: .35; cursor: default; }
+  #printstatus {
+    position: absolute; top: 10px; left: 12px; color: var(--muted); font-size: 12px;
+    text-shadow: 0 1px 3px #000; max-width: 55%;
+  }
+  #printstatus.active { color: var(--warn); }
+  #pdfbtn {
+    position: absolute; bottom: 10px; right: 12px; background: var(--panel);
+    color: var(--text); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 14px; font: inherit; cursor: pointer;
+  }
+  #pdfbtn:hover { border-color: var(--accent); }
+  #pdfpanel {
+    position: absolute; top: 10px; bottom: 52px; right: 12px; width: 420px;
+    max-width: 45%; background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; display: none; flex-direction: column; overflow: hidden;
+  }
+  #pdfpanel.show { display: flex; }
+  #pdfbar { display: flex; gap: 6px; align-items: center; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  #pdfbar button {
+    background: var(--panel2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 4px 12px; font: inherit; cursor: pointer;
+  }
+  #pdfbar button:hover { border-color: var(--accent); }
+  #pdflabel { color: var(--muted); font-size: 12px; margin-left: auto; }
+  #pdflabel.instep { color: var(--warn); }
+  #pdfimg-wrap { flex: 1; overflow: auto; background: #0d0e11; }
+  #pdfimg { width: 100%; display: block; }
+  #confirmcard {
+    position: absolute; top: 10px; right: 12px; width: 290px; background: var(--panel);
+    border: 1px solid var(--warn); border-radius: 10px; padding: 10px 12px; display: none;
+  }
+  #confirmcard.show { display: block; }
+  #confirmcard .pn { font-weight: 600; margin-bottom: 6px; }
+  #confirmcard img { width: 100%; border-radius: 6px; background: #111; min-height: 120px; }
+  #confirmcard .eta { color: var(--muted); margin: 6px 0; }
+  #confirmcard .row { display: flex; gap: 6px; }
+  #confirmcard button {
+    flex: 1; background: var(--panel2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 4px; font: inherit; cursor: pointer;
+  }
+  #btn-confirm { border-color: var(--good) !important; }
+</style>
+<script type="importmap">
+  { "imports": { "three": "./lib/three.module.js" } }
+</script>
+</head>
+<body>
+  <div id="side">
+    <h1>ARM Construction Twin <small>&mdash; build-along</small></h1>
+    <div id="stepnav">
+      <button id="prev">&#9664; Prev</button>
+      <button id="next">Next &#9654;</button>
+      <span id="stepcount"></span>
+    </div>
+    <div id="stepcard">
+      <div><span id="steptitle"></span><span id="steppdf"></span></div>
+      <div id="steptext"></div>
+      <div id="stepparts"></div>
+    </div>
+    <div id="donewrap"><button id="btn-done">Mark step built on the real bench</button></div>
+    <div id="checklist"></div>
+    <div id="hint">Parts fly from the floor as steps advance. Click a part to name it.<br>
+      <b>WASD</b> fly &middot; <b>Q/E</b> down/up &middot; <b>Shift</b> fast &middot; <b>Alt</b> slow &middot; <b>&larr;/&rarr;</b> steps</div>
+  </div>
+  <div id="view">
+    <div id="partname"></div>
+    <div id="printstatus"></div>
+    <div id="printcard">
+      <div class="pn"></div>
+      <div class="row" id="printerrow" style="margin-bottom:6px">
+        <button data-printer="p1s" class="psel on">P1S</button>
+        <button data-printer="ad5m" class="psel">AD5M</button>
+      </div>
+      <div class="row">
+        <button data-mat="PLA">&#128424; PLA</button>
+        <button data-mat="PETG">&#128424; PETG</button>
+        <button data-mat="TPU">&#128424; TPU</button>
+      </div>
+    </div>
+    <div id="confirmcard">
+      <div class="pn"></div>
+      <img id="previewimg" alt="sliced plate preview">
+      <div class="eta"></div>
+      <div class="row">
+        <button id="btn-confirm">&#9989; Print it</button>
+        <button id="btn-cancel">&#10060; Cancel</button>
+      </div>
+    </div>
+    <div id="pdfpanel">
+      <div id="pdfbar">
+        <button id="pdfprev">&#9664;</button>
+        <button id="pdfnext">&#9654;</button>
+        <button id="pdfstep" title="jump to this build step's pages">step&#8217;s page</button>
+        <span id="pdflabel"></span>
+      </div>
+      <div id="pdfimg-wrap"><img id="pdfimg" alt="assembly instructions page"></div>
+    </div>
+    <button id="pdfbtn">&#128214; Instructions</button>
+  </div>
+  <script type="module" src="./build.js"></script>
+</body>
+</html>
