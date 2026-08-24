@@ -43,10 +43,16 @@ visualizer), `encoder.html` (encoder bench).
 Chain: browser (Web Bluetooth) → RNBD451 → UART3 → SAME70 (`firmware/teleop`)
 → CAN 250k → ODrive S1. Transparent UART service UUIDs are in app.js.
 
-Line protocol to the SAME70: `V,<node>,<mvel>` + `GO,<node>` (velocity mode),
-`N,<node>,<mturns>` (position nudge, trap-traj, holds after), `STOP` (all),
-`PING` → `PONG`. Telemetry: `HB,<node>,<state>,<err_hex>,<mvel>,<mpos>` at
-2 Hz per node (m-prefixed = milli-units).
+Line protocol to the SAME70 (ASCII decimal, newline-terminated):
+- `V,<node>,<mvel>` — velocity setpoint in **milli-motor-rev/s** (`V,0,2500` =
+  2.5 motor rev/s; firmware does `atoi/1000` into ODrive `Set_Input_Vel`).
+  Joint speed = motor speed / gear ratio.
+- `GO,<node>` — no value: clears errors, arms closed-loop velocity, and applies
+  the last `V` (ODrive resets setpoints on arming, so V is stored and replayed).
+- `N,<node>,<mturns>` — position nudge in milli-motor-turns (trap-traj, holds).
+- `STOP` (all nodes), `PING` → `PONG`.
+Telemetry: `HB,<node>,<state>,<err_hex>,<mvel>,<mpos>` at 2 Hz per seen node —
+same milli-units, motor-side.
 
 - Only ONE central can hold the module — a zombie browser tab or the OS
   Bluetooth stack will steal the connection. Close other tabs first.
