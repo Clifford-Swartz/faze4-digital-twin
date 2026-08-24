@@ -7,11 +7,11 @@
 Stdlib only, no dependencies. Serves the repo root so the viewer can load
 meshes, data, and the assembly-instruction pages.
 """
+import argparse
 import http.server
 import os
 import socketserver
 
-PORT = 8347
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -30,7 +30,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    ap = argparse.ArgumentParser(description="Serve the FAZE4 digital twin")
+    ap.add_argument("--host", default="127.0.0.1",
+                    help="bind address; use 0.0.0.0 to reach it from other devices (Pi setups)")
+    ap.add_argument("--port", type=int, default=8347)
+    args = ap.parse_args()
     socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("127.0.0.1", PORT), Handler) as httpd:
-        print(f"FAZE4 twin: http://localhost:{PORT}/viewer/index.html")
+    with socketserver.TCPServer((args.host, args.port), Handler) as httpd:
+        shown = "localhost" if args.host == "127.0.0.1" else args.host
+        print(f"FAZE4 twin: http://{shown}:{args.port}/viewer/index.html")
         httpd.serve_forever()

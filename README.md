@@ -41,6 +41,37 @@ No dependencies, no configuration, no accounts — stdlib Python only.
 BLE teleop needs the bench hardware (RNBD451 module + SAME70 + ODrive S1) and a
 Web-Bluetooth-capable browser.
 
+## Run it on a Raspberry Pi (or any always-on box)
+
+```
+git clone https://github.com/Clifford-Swartz/faze4-digital-twin.git
+cd faze4-digital-twin
+python3 viewer/serve.py --host 0.0.0.0
+# open http://<pi-address>:8347/viewer/index.html from any device on your network
+```
+
+To start it on boot, a minimal systemd unit
+(`/etc/systemd/system/faze4-twin.service`):
+
+```ini
+[Unit]
+Description=FAZE4 digital twin
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/faze4-digital-twin/viewer/serve.py --host 0.0.0.0
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+then `sudo systemctl enable --now faze4-twin`.
+
+Note: Web Bluetooth requires a secure context, so the BLE teleop button only
+works on `localhost` or over HTTPS — viewing and the assembly explorer work
+fine from any device either way.
+
 ## Attribution & license
 
 The FAZE4 arm is by Petar Crnjak / [Source Robotics](https://github.com/Source-Robotics/Faze4-Robotic-arm),
