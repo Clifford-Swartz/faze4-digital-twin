@@ -1,5 +1,5 @@
 {
- "source_urdf": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\urdf\\Final_light_assembly_URDF.urdf",
+ "source_urdf": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/urdf/Final_light_assembly_URDF.urdf",
  "robot_name": "Final_light_assembly_URDF",
  "units": {
   "length": "mm",
@@ -20,7 +20,7 @@
   {
    "name": "base_link",
    "mesh_file": "base_link.STL",
-   "mesh_path": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\meshes\\base_link.STL",
+   "mesh_path": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/base_link.STL",
    "mesh_units": "meters",
    "scale": [
     1,
@@ -89,7 +89,7 @@
   {
    "name": "rotary_base",
    "mesh_file": "rotary_base.STL",
-   "mesh_path": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\meshes\\rotary_base.STL",
+   "mesh_path": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/rotary_base.STL",
    "mesh_units": "meters",
    "scale": [
     1,
@@ -158,7 +158,7 @@
   {
    "name": "nadlaktica",
    "mesh_file": "nadlaktica.STL",
-   "mesh_path": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\meshes\\nadlaktica.STL",
+   "mesh_path": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/nadlaktica.STL",
    "mesh_units": "meters",
    "scale": [
     1,
@@ -227,7 +227,7 @@
   {
    "name": "lakat",
    "mesh_file": "lakat.STL",
-   "mesh_path": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\meshes\\lakat.STL",
+   "mesh_path": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/lakat.STL",
    "mesh_units": "meters",
    "scale": [
     1,
@@ -296,7 +296,7 @@
   {
    "name": "podlaktica",
    "mesh_file": "podlaktica.STL",
-   "mesh_path": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\meshes\\podlaktica.STL",
+   "mesh_path": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/podlaktica.STL",
    "mesh_units": "meters",
    "scale": [
     1,
@@ -365,7 +365,7 @@
   {
    "name": "saka",
    "mesh_file": "saka.STL",
-   "mesh_path": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\meshes\\saka.STL",
+   "mesh_path": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/saka.STL",
    "mesh_units": "meters",
    "scale": [
     1,
@@ -434,7 +434,7 @@
   {
    "name": "hvataljka",
    "mesh_file": "hvataljka.STL",
-   "mesh_path": "C:\\Users\\cliff\\Desktop\\Projects\\ARM\\Faze4\\Faze4-Robotic-arm-master\\URDF_FAZE4\\meshes\\hvataljka.STL",
+   "mesh_path": "/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/hvataljka.STL",
    "mesh_units": "meters",
    "scale": [
     1,
