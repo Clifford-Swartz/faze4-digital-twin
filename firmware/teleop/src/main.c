@@ -78,8 +78,8 @@ static void can_rx_cb(const struct device *dev, struct can_frame *f, void *ud)
 	k_msgq_put(&canq, f, K_NO_WAIT);
 }
 
-/* Set to 0 to skip CAN transmit (for testing without motors) */
-#define CAN_TX_ENABLED 0
+/* Set to 0 to skip CAN transmit (motorless bench / twin-only demo) */
+#define CAN_TX_ENABLED 1
 
 static void can_send8(uint32_t id, const uint8_t *data, uint8_t len)
 {

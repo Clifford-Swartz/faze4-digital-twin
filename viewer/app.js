@@ -611,12 +611,14 @@ function wireButtons() {
 // reduction so the joint moves at true output speed.
 // Use serve.py --serial <PORT> to enable the relay.
 const LIVE_URL = '/events';  // same origin as the viewer
-const LIVE_MAP = {                       // CAN node -> joint
-  0: { j: 0, ratio: 25, name: 'J1 base yaw' },    // IMU yaw -> J1
-  1: { j: 1, ratio: 50, name: 'J2 shoulder' },    // IMU pitch -> J2
-  2: { j: 2, ratio: 50, name: 'J3 elbow' },       // IMU pitch -> J3
-  3: { j: 4, ratio: 25, name: 'J5 wrist pitch' }, // IMU roll -> J5 (j:4 since J4 is skipped)
+const LIVE_MAP = {                       // CAN node -> joint (real arm truth)
+  0: { j: 0, ratio: 25, name: 'MAD 8318 J1' },   // J1 base yaw (closed loop, real encoder)
+  1: { j: 1, ratio: 27, name: 'MAD 8318 J2' },   // J2 shoulder, 27:1 cyclo
+  2: { j: 2, ratio: 15, name: 'MAD 8318 J3' },   // J3 elbow, 15:1 cyclo
 };
+// PyKit IMU demo mapping (synthetic heartbeats, no motors) — swap in as needed:
+// const LIVE_MAP = { 0:{j:0,ratio:25,name:'J1'}, 1:{j:1,ratio:50,name:'J2'},
+//                    2:{j:2,ratio:50,name:'J3'}, 3:{j:4,ratio:25,name:'J5'} };
 const AXIS_STATES = {
   0: 'UNDEF', 1: 'IDLE', 2: 'STARTUP', 3: 'FULL_CALIB', 4: 'MOTOR_CALIB',
   6: 'IDX_SEARCH', 7: 'OFFSET_CALIB', 8: 'CLOSED_LOOP', 9: 'LOCKIN',
@@ -725,7 +727,7 @@ wireLive();
 // Only one central can hold the link - this and the tkinter console are
 // mutually exclusive by construction. On BLE drop the firmware stops all
 // motors itself (%DISCONNECT% handler).
-const BLE_NAME = 'CLAW_RX__1292';
+const BLE_NAME = new URLSearchParams(location.search).get('ble') || 'RNBD451_667B';
 const BLE_SVC = '49535343-fe7d-4ae5-8fa9-9fafd205e455';  // Microchip transparent UART
 const BLE_TX = '49535343-1e4d-4bd9-ba61-23c647249616';   // notify: module -> host
 const BLE_RX = '49535343-8841-43f4-a8d4-ecbe34729bb3';   // write:  host -> module
