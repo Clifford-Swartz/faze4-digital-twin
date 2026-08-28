@@ -606,12 +606,16 @@ function wireButtons() {
 }
 
 // ---------------------------------------------------------------- live twin
-// Telemetry feed from tools/motor_gui.py (SSE). Each heartbeat carries the
-// sensorless velocity estimate in turns/s; we integrate it through the
-// planned gear reduction so the joint moves at true output speed.
-const LIVE_URL = 'http://localhost:8348/events';
-const LIVE_MAP = {                       // CAN node -> joint (renumbered 2026-08-12)
-  0: { j: 0, ratio: 25, name: 'MAD 8318 J1' },   // -> J1 base yaw (closed loop, real encoder)
+// Telemetry feed via SSE. Heartbeats come from SAME70 debug UART -> serve.py.
+// Each heartbeat carries velocity/position; we apply it through the gear
+// reduction so the joint moves at true output speed.
+// Use serve.py --serial <PORT> to enable the relay.
+const LIVE_URL = '/events';  // same origin as the viewer
+const LIVE_MAP = {                       // CAN node -> joint
+  0: { j: 0, ratio: 25, name: 'J1 base yaw' },    // IMU yaw -> J1
+  1: { j: 1, ratio: 50, name: 'J2 shoulder' },    // IMU pitch -> J2
+  2: { j: 2, ratio: 50, name: 'J3 elbow' },       // IMU pitch -> J3
+  3: { j: 4, ratio: 25, name: 'J5 wrist pitch' }, // IMU roll -> J5 (j:4 since J4 is skipped)
 };
 const AXIS_STATES = {
   0: 'UNDEF', 1: 'IDLE', 2: 'STARTUP', 3: 'FULL_CALIB', 4: 'MOTOR_CALIB',
@@ -703,11 +707,12 @@ function wireLive() {
     status.textContent = 'live: connecting…';
     liveSrc.onopen = () => { status.textContent = 'live: waiting for heartbeats…'; };
     liveSrc.onmessage = (e) => {
-      const d = JSON.parse(e.data);
-      applyHb(d.node, d.state, d.err, d.vel);
+      // SSE data is raw HB line from serve.py serial relay
+      onBleLine(e.data);
+      status.textContent = liveStatusText();
     };
     liveSrc.onerror = () => {              // EventSource retries on its own
-      status.textContent = 'live: no feed — is motor_gui.py running?';
+      status.textContent = 'live: no feed — is serve.py --serial running?';
     };
   });
 }
@@ -720,7 +725,7 @@ wireLive();
 // Only one central can hold the link - this and the tkinter console are
 // mutually exclusive by construction. On BLE drop the firmware stops all
 // motors itself (%DISCONNECT% handler).
-const BLE_NAME = 'RNBD451_667B';
+const BLE_NAME = 'CLAW_RX__1292';
 const BLE_SVC = '49535343-fe7d-4ae5-8fa9-9fafd205e455';  // Microchip transparent UART
 const BLE_TX = '49535343-1e4d-4bd9-ba61-23c647249616';   // notify: module -> host
 const BLE_RX = '49535343-8841-43f4-a8d4-ecbe34729bb3';   // write:  host -> module

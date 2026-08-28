@@ -64,8 +64,13 @@ struct node_state {
 	float nudge_target;    /* signed turns to travel */
 	int64_t nudge_deadline;/* safety timeout */
 	int64_t nudge_idle_at; /* when to drop to IDLE after ramp-down */
+	/* synthetic tracking (for twin without real motors) */
+	float cmd_vel;         /* commanded velocity from PyKit (milli-turns/s -> turns/s) */
+	float syn_pos;         /* integrated position estimate */
+	bool syn_active;       /* true when receiving commands (generates synthetic HB) */
 };
 static struct node_state nodes[MAX_NODES];
+static int64_t last_integrate = 0;  /* for synthetic position integration */
 
 static void can_rx_cb(const struct device *dev, struct can_frame *f, void *ud)
 {
@@ -73,8 +78,12 @@ static void can_rx_cb(const struct device *dev, struct can_frame *f, void *ud)
 	k_msgq_put(&canq, f, K_NO_WAIT);
 }
 
+/* Set to 0 to skip CAN transmit (for testing without motors) */
+#define CAN_TX_ENABLED 0
+
 static void can_send8(uint32_t id, const uint8_t *data, uint8_t len)
 {
+#if CAN_TX_ENABLED
 	struct can_frame f = { .id = id, .dlc = can_bytes_to_dlc(len), .flags = 0 };
 	memcpy(f.data, data, len);
 	/* non-blocking: hardware TX queue is 32 deep, and blocking here loses
@@ -83,6 +92,12 @@ static void can_send8(uint32_t id, const uint8_t *data, uint8_t len)
 	if (r != 0) {
 		printk("can_send 0x%03X failed: %d\n", id, r);
 	}
+#else
+	ARG_UNUSED(id);
+	ARG_UNUSED(data);
+	ARG_UNUSED(len);
+	/* CAN TX disabled for testing without motors */
+#endif
 }
 
 static void set_axis_state(uint8_t node, uint32_t state)
@@ -190,8 +205,10 @@ static void handle_line(char *line)
 	}
 
 	if (strcmp(cmd, "V") == 0 && a2) {
-		float v = atoi(a2) / 1000.0f;
+		float v = atoi(a2) / 1000.0f;  /* milli-turns/s -> turns/s */
 		nodes[node].last_cmd_vel = v;
+		nodes[node].cmd_vel = v;       /* track for synthetic HB */
+		nodes[node].syn_active = true; /* enable synthetic heartbeats */
 		set_input_vel(node, v);
 	} else if (strcmp(cmd, "N") == 0 && a2) {
 		/* timed burst (duration = turns/NUDGE_VEL). NOTE: terminating on
@@ -255,7 +272,17 @@ int main(void)
 	int64_t last_byte = 0;
 	unsigned char c;
 
+	static int64_t last_alive = 0;
+	static int loop_count = 0;
+
 	while (1) {
+		loop_count++;
+		/* periodic alive message every 2 seconds */
+		if (k_uptime_get() - last_alive > 2000) {
+			printk("[ALIVE] loop=%d bn=%d\n", loop_count, bn);
+			last_alive = k_uptime_get();
+		}
+
 		/* hot byte pump - nothing blocking in here */
 		while (uart_poll_in(ble, &c) == 0) {
 			if (bn < (int)sizeof(burst)) {
@@ -266,6 +293,7 @@ int main(void)
 
 		/* burst complete? parse it (blocking work is safe now) */
 		if (bn > 0 && k_uptime_get() - last_byte >= 3) {
+			printk("[BURST] parsing %d bytes\n", bn);
 			for (int i = 0; i < bn; i++) {
 				c = burst[i];
 				if (in_status) {
@@ -328,19 +356,43 @@ int main(void)
 			}
 		}
 
+		/* integrate synthetic position from commanded velocity */
+		int64_t now_integrate = k_uptime_get();
+		if (last_integrate > 0) {
+			float dt = (now_integrate - last_integrate) / 1000.0f;
+			for (int n = 0; n < MAX_NODES; n++) {
+				if (nodes[n].syn_active) {
+					nodes[n].syn_pos += nodes[n].cmd_vel * dt;
+				}
+			}
+		}
+		last_integrate = now_integrate;
+
 		/* periodic status upstream */
 		if (k_uptime_get() - last_hb > 500) {
 			last_hb = k_uptime_get();
+			printk("[HB_LOOP] checking nodes\n");
 			for (int n = 0; n < MAX_NODES; n++) {
-				if (!nodes[n].seen) {
-					continue;
+				/* real motor heartbeat */
+				if (nodes[n].seen) {
+					char out[64];
+					snprintf(out, sizeof(out), "HB,%d,%u,%08X,%d,%d\n",
+						 n, nodes[n].state, nodes[n].err,
+						 (int)(nodes[n].vel * 1000.0f),
+						 (int)(nodes[n].pos * 1000.0f));
+					ble_puts(out);
+					printk("%s", out);
 				}
-				char out[64];
-				snprintf(out, sizeof(out), "HB,%d,%u,%08X,%d,%d\n",
-					 n, nodes[n].state, nodes[n].err,
-					 (int)(nodes[n].vel * 1000.0f),
-					 (int)(nodes[n].pos * 1000.0f));
-				ble_puts(out);
+				/* synthetic heartbeat (no real motor, but commands received) */
+				else if (nodes[n].syn_active) {
+					char out[64];
+					snprintf(out, sizeof(out), "HB,%d,8,0,%d,%d\n",
+						 n,
+						 (int)(nodes[n].cmd_vel * 1000.0f),
+						 (int)(nodes[n].syn_pos * 1000.0f));
+					ble_puts(out);
+					printk("%s", out);  /* SSE relay */
+				}
 			}
 		}
 	}
