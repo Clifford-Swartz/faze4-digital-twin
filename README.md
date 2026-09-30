@@ -21,12 +21,15 @@ metal moved, not because we assumed it would.
   the Maker Faire enclosure, claw IK that keeps the gripper pointing down,
   PyKit IMU control over Web Bluetooth, and teddy bears to grab and drop in the
   prize chute (see below).
-- `viewer/build.html` / `part.html` / `cyclo.html` / `encoder.html` — assembly
-  explorer, single-part viewer, cycloidal-drive visualizer, encoder bench page.
-- `viewer/serve.py` — static server + slicer/print pipeline (Bambu P1S over
-  MQTT/FTPS, FlashForge Adventurer 5M over its LAN API): POST an STL, it
-  re-centers, slices with the right profile, uploads, and starts the print with
-  a human confirm gate in between.
+- `viewer/build.html` — the construction twin: the whole build as 63 steps, parts
+  flying from the floor into place, step notes, the upstream instruction pages,
+  a bench checklist, and send-a-part-to-the-printer (see below).
+- `viewer/part.html` / `cyclo.html` / `encoder.html` — single-part viewer,
+  cycloidal-drive visualizer, encoder bench page.
+- `viewer/serve.py` — the viewer server, stdlib only. The print pipeline (slice,
+  preview, human confirm, send to a Bambu P1S / FlashForge AD5M) runs in the
+  full local server, which holds printer credentials and isn't published; on
+  this server the print card says no pipeline is available.
 - `viewer/assets/` — converted meshes for every printed part (stock FAZE4 and
   rebuild parts), plus the upstream assembly instructions as page images.
 - `viewer/data/` — the assembly graph and transform data the twin is built from.
@@ -80,6 +83,32 @@ and clicking the panel title collapses it.
 
 For scripting, `window.twin.feed(line)` takes the same PyKit lines from the
 browser console; the GIFs above were recorded that way.
+
+## Construction twin
+
+`viewer/build.html` walks the rebuild in 63 steps, from the J1 base through
+J2–J5 to the gripper. **Next** / **Prev** (or ←/→) moves between steps; each
+step's parts fly from their joint's pile on the floor to where they go, and the
+step card lists them with the build notes and a link to the matching page of
+the upstream instructions (**Instructions** opens the page viewer).
+
+![J1 base: shell, flange, cartridge, 96 ring pins, discs, output pins, slew ring, belt (1.6x speed)](docs/media/construct_j1.gif)
+
+![Pulled back: J2 through the gripper coming together (1.6x speed)](docs/media/construct_arm.gif)
+
+Click a part to name it; right-click (or Ctrl+click) hides it, **H** brings
+everything back. **Mark step built on the real bench** keeps a checklist of how
+far the physical arm has got. WASD / Q / E fly the camera.
+
+Clicking a printable part also opens a print card: pick the printer and the
+material, and the full local server slices it, shows the plate and the time
+estimate, and waits for **Print it** before anything reaches the printer. This
+recording stops at **Cancel**:
+
+![Send to printer: pick AD5M + PETG, slice, preview, estimate, confirm gate (slicing wait trimmed)](docs/media/construct_print.gif)
+
+`window.build` exposes the camera, the parts (with their step and assembled
+position) and `go(n)` for scripting; the GIFs were recorded headless with it.
 
 ## Run it on a Raspberry Pi (or any always-on box)
 

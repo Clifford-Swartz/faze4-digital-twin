@@ -381,7 +381,7 @@ pinHud.style.cssText = 'position:fixed;left:12px;bottom:12px;background:#1d2027c
 pinHud.innerHTML = '<span id="pincount"></span> ' +
   '<button id="pinsend" style="margin-left:8px">send to Claude</button> ' +
   '<button id="pinclear" style="margin-left:4px">clear</button>' +
-  '<div style="color:#8b93a3;margin-top:3px">Shift+click = pin · Shift+drag = draw</div>';
+  '<div style="color:#8b93a3;margin-top:3px">Shift+click = pin · Shift+drag = draw · right-click / Ctrl+click = hide part · H = restore</div>';
 document.body.appendChild(pinHud);
 function numberSprite(n) {
   const c = document.createElement('canvas'); c.width = c.height = 64;
@@ -437,8 +437,29 @@ function castAt(e) {
   ptr.x = ((e.clientX - r.left) / r.width) * 2 - 1;
   ptr.y = -((e.clientY - r.top) / r.height) * 2 + 1;
   ray.setFromCamera(ptr, camera);
-  return ray.intersectObjects(entries.map(x => x.mesh), false)[0];
+  return ray.intersectObjects(entries.filter(x => x.mesh.visible).map(x => x.mesh), false)[0];
 }
+
+// ---- hide/restore: right-click (or Ctrl+click) a part hides it; H or the chip restores all ----
+const hidden = new Set();
+const hideHud = document.createElement('div');
+hideHud.style.cssText = 'position:fixed;right:12px;bottom:12px;background:#1d2027cc;border:1px solid #343a46;' +
+  'border-radius:8px;padding:6px 10px;color:#d6dae2;font:12px system-ui;z-index:30;display:none;cursor:pointer';
+hideHud.title = 'click to restore all hidden parts (or press H)';
+document.body.appendChild(hideHud);
+function refreshHideHud() {
+  hideHud.style.display = hidden.size ? 'block' : 'none';
+  hideHud.textContent = `hidden: ${hidden.size} · restore`;
+}
+function hidePart(en) { if (!en) return; en.mesh.visible = false; hidden.add(en); refreshHideHud(); }
+function restoreAll() { hidden.forEach(en => { en.mesh.visible = true; }); hidden.clear(); refreshHideHud(); }
+hideHud.addEventListener('click', restoreAll);
+renderer.domElement.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  const hit = castAt(e);
+  hidePart(hit ? entries.find(x => x.mesh === hit.object) : null);
+});
+window.addEventListener('keydown', (e) => { if ((e.key === 'h' || e.key === 'H') && !e.ctrlKey && !e.metaKey && !typing(e.target)) restoreAll(); });
 renderer.domElement.addEventListener('pointerdown', (e) => {
   if (!e.shiftKey) return;
   controls.enabled = false;
@@ -479,7 +500,8 @@ renderer.domElement.addEventListener('pointerup', (e) => {
   ptr.x = ((e.clientX - r.left) / r.width) * 2 - 1;
   ptr.y = -((e.clientY - r.top) / r.height) * 2 + 1;
   ray.setFromCamera(ptr, camera);
-  const hit = ray.intersectObjects(entries.map(x => x.mesh), false)[0];
+  const hit = ray.intersectObjects(entries.filter(x => x.mesh.visible).map(x => x.mesh), false)[0];
+  if (e.ctrlKey) { hidePart(hit ? entries.find(x => x.mesh === hit.object) : null); return; }
   selected = hit ? entries.find(x => x.mesh === hit.object) : null;
   document.getElementById('partname').textContent = selected ? selected.label : '';
   pcard.classList.toggle('show', !!selected);
@@ -515,6 +537,7 @@ for (const b of pcard.querySelectorAll('button[data-mat]')) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ file, material: b.dataset.mat, printer }) });
     if (r.status === 409) { pstatus.textContent = 'pipeline busy - one job at a time'; return; }
+    if (r.status === 404 || r.status === 501) { pstatus.textContent = 'no print pipeline on this server (the public serve.py is viewer-only)'; return; }
     pcard.classList.remove('show');
     pollStatus();
   });
@@ -535,7 +558,9 @@ async function pollStatus() {
   if (pollTimer) return;
   const tick = async () => {
     try {
-      const s = await fetch('/print/status').then(r => r.json());
+      const rs = await fetch('/print/status');
+      if (rs.status === 404) { clearInterval(pollTimer); pollTimer = null; return; }   // viewer-only server: no pipeline
+      const s = await rs.json();
       pstatus.textContent = s.state === 'idle' ? '' : `print: ${s.state} — ${s.detail}`;
       pstatus.classList.toggle('active', ['slicing', 'uploading', 'starting', 'printing'].includes(s.state));
       if (s.state === 'await_confirm') {
@@ -547,7 +572,7 @@ async function pollStatus() {
         return;
       }
       if (['idle', 'done', 'error'].includes(s.state)) { clearInterval(pollTimer); pollTimer = null; }
-    } catch (e) { clearInterval(pollTimer); pollTimer = null; /* no print pipeline on this server */ }
+    } catch (e) { /* server restarting */ }
   };
   pollTimer = setInterval(tick, 2000);
   tick();
@@ -582,5 +607,7 @@ function animate(t) {
   controls.update();
   renderer.render(scene, camera);
 }
+// scripting/demo hook (console or headless recorder): camera, parts (step + assembled pos), jump to a step
+window.build = { camera, controls, entries, get step() { return step; }, go: (n) => applyStep(n) };
 animate(0);
 main();

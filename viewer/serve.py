@@ -107,6 +107,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         n = int(self.headers.get("Content-Length") or 0)
         if n:
             self.rfile.read(n)
+        if self.path not in ("/iklog", "/drive/cmd"):
+            self.send_error(404, "viewer-only server (no print pipeline / drive bridge)")
+            return
         self.send_response(204)
         self.end_headers()
 

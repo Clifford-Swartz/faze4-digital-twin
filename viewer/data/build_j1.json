@@ -919,14 +919,14 @@
    "label": "Rotating base wires",
    "assembled": {
     "translate": [
-     -48.41,
-     -290.79,
+     199.67,
+     -134.53,
      139.28
     ],
     "rotate_deg": [
      91.26,
      0.02,
-     90.09
+     -89.91
     ]
    },
    "kind": "stock",
@@ -938,14 +938,14 @@
    "label": "Rotating base motor",
    "assembled": {
     "translate": [
-     -18.34,
-     -300.14,
+     169.6,
+     -125.18,
      124.01
     ],
     "rotate_deg": [
-     90,
-     0,
-     90
+     90.0,
+     0.0,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1090,14 +1090,14 @@
    "label": "Fork motor #1",
    "assembled": {
     "translate": [
-     165.6,
-     -229.31,
-     366.3
+     166.09,
+     -60.34,
+     591.37
     ],
     "rotate_deg": [
-     -89.878,
-     -76.421,
-     89.658
+     90.121,
+     76.425,
+     -89.66
     ]
    },
    "kind": "stock",
@@ -1129,8 +1129,8 @@
    "assembled": {
     "translate": [
      5.25,
-     -90.49,
-     281.57
+     -90.88,
+     278.1
     ],
     "rotate_deg": [
      90.001,
@@ -1717,14 +1717,14 @@
    "label": "Joint 3 main case #1",
    "assembled": {
     "translate": [
-     60.83,
-     -190.03,
-     614.4
+     83.5,
+     -71.173,
+     528.706
     ],
     "rotate_deg": [
-     -89.999,
-     -8.892,
-     90.0
+     -90.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1736,14 +1736,14 @@
    "label": "Joint 3 cover #1",
    "assembled": {
     "translate": [
-     60.83,
-     -86.39,
-     630.61
+     83.5,
+     -88.491,
+     632.167
     ],
     "rotate_deg": [
-     -90.001,
-     8.892,
-     -90.0
+     -90.0,
+     80.5,
+     90.0
     ]
    },
    "kind": "stock",
@@ -1755,14 +1755,14 @@
    "label": "Joint 3 eccentric shaft #1",
    "assembled": {
     "translate": [
-     59.53,
-     -173.2,
-     566.45
+     84.799,
+     -121.984,
+     529.548
     ],
     "rotate_deg": [
-     -89.999,
-     -8.892,
-     90.0
+     -90.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1774,14 +1774,14 @@
    "label": "15_1 cyclo disc #1",
    "assembled": {
     "translate": [
-     54.83,
-     -176.24,
-     593.24
+     89.5,
+     -95.603,
+     535.115
     ],
     "rotate_deg": [
-     -89.999,
-     -8.892,
-     90.0
+     -90.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1793,14 +1793,14 @@
    "label": "15_1 cyclo disc #2",
    "assembled": {
     "translate": [
-     45.83,
-     -96.76,
-     533.48
+     98.498,
+     -177.388,
+     591.68
     ],
     "rotate_deg": [
-     89.999,
-     8.892,
-     -90.0
+     90.0,
+     80.5,
+     90.0
     ]
    },
    "kind": "stock",
@@ -1812,14 +1812,14 @@
    "label": "Joint 3 output shaft #1",
    "assembled": {
     "translate": [
-     36.83,
-     -176.68,
-     588.7
+     107.5,
+     -99.773,
+     533.265
     ],
     "rotate_deg": [
-     -89.999,
-     -8.892,
-     90.0
+     -90.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1831,14 +1831,14 @@
    "label": "Joint 3 top cover #1",
    "assembled": {
     "translate": [
-     31.23,
-     -101.11,
-     628.31
+     113.1,
+     -86.03,
+     617.473
     ],
     "rotate_deg": [
-     -89.996,
-     81.108,
-     90.004
+     -90.0,
+     9.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1869,14 +1869,14 @@
    "label": "Joint 3 ring spacers #1",
    "assembled": {
     "translate": [
-     49.63,
-     -99.07,
-     566.08
+     94.699,
+     -145.725,
+     599.774
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1888,14 +1888,14 @@
    "label": "Joint 3 ring spacers #2",
    "assembled": {
     "translate": [
-     43.83,
-     -99.07,
-     566.08
+     100.499,
+     -145.725,
+     599.774
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1907,14 +1907,14 @@
    "label": "Joint 3 ring spacers #3",
    "assembled": {
     "translate": [
-     49.63,
-     -99.72,
-     550.29
+     94.699,
+     -160.503,
+     594.175
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1926,14 +1926,14 @@
    "label": "Joint 3 ring spacers #4",
    "assembled": {
     "translate": [
-     43.83,
-     -99.72,
-     550.29
+     100.499,
+     -160.503,
+     594.175
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1945,14 +1945,14 @@
    "label": "Joint 3 ring spacers #5",
    "assembled": {
     "translate": [
-     49.63,
-     -106.36,
-     535.95
+     94.698,
+     -172.015,
+     583.35
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1964,14 +1964,14 @@
    "label": "Joint 3 ring spacers #6",
    "assembled": {
     "translate": [
-     43.83,
-     -106.36,
-     535.95
+     100.498,
+     -172.016,
+     583.35
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -1983,14 +1983,14 @@
    "label": "Joint 3 ring spacers #7",
    "assembled": {
     "translate": [
-     49.63,
-     -117.99,
-     525.25
+     94.698,
+     -178.499,
+     568.938
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2002,14 +2002,14 @@
    "label": "Joint 3 ring spacers #8",
    "assembled": {
     "translate": [
-     43.83,
-     -117.99,
-     525.25
+     100.498,
+     -178.5,
+     568.938
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2021,14 +2021,14 @@
    "label": "Joint 3 ring spacers #9",
    "assembled": {
     "translate": [
-     49.63,
-     -132.82,
-     519.8
+     94.698,
+     -178.992,
+     553.146
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2040,14 +2040,14 @@
    "label": "Joint 3 ring spacers #10",
    "assembled": {
     "translate": [
-     43.83,
-     -132.82,
-     519.8
+     100.498,
+     -178.992,
+     553.146
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2059,14 +2059,14 @@
    "label": "Joint 3 ring spacers #11",
    "assembled": {
     "translate": [
-     49.63,
-     -148.61,
-     520.45
+     94.698,
+     -173.393,
+     538.368
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2078,14 +2078,14 @@
    "label": "Joint 3 ring spacers #12",
    "assembled": {
     "translate": [
-     43.83,
-     -148.61,
-     520.45
+     100.498,
+     -173.393,
+     538.368
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2097,14 +2097,14 @@
    "label": "Joint 3 ring spacers #13",
    "assembled": {
     "translate": [
-     49.63,
-     -162.95,
-     527.1
+     94.698,
+     -162.558,
+     526.858
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2116,14 +2116,14 @@
    "label": "Joint 3 ring spacers #14",
    "assembled": {
     "translate": [
-     43.83,
-     -162.95,
-     527.1
+     100.498,
+     -162.558,
+     526.858
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2135,14 +2135,14 @@
    "label": "Joint 3 ring spacers #15",
    "assembled": {
     "translate": [
-     49.63,
-     -173.66,
-     538.72
+     94.699,
+     -148.153,
+     520.362
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2154,14 +2154,14 @@
    "label": "Joint 3 ring spacers #16",
    "assembled": {
     "translate": [
-     43.83,
-     -173.66,
-     538.72
+     100.499,
+     -148.153,
+     520.362
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2173,14 +2173,14 @@
    "label": "Joint 3 ring spacers #17",
    "assembled": {
     "translate": [
-     49.63,
-     -179.1,
-     553.56
+     94.699,
+     -132.354,
+     519.882
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2192,14 +2192,14 @@
    "label": "Joint 3 ring spacers #18",
    "assembled": {
     "translate": [
-     43.83,
-     -179.1,
-     553.56
+     100.499,
+     -132.354,
+     519.882
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2211,14 +2211,14 @@
    "label": "Joint 3 ring spacers #19",
    "assembled": {
     "translate": [
-     49.63,
-     -178.45,
-     569.35
+     94.699,
+     -117.576,
+     525.481
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2230,14 +2230,14 @@
    "label": "Joint 3 ring spacers #20",
    "assembled": {
     "translate": [
-     43.83,
-     -178.45,
-     569.35
+     100.499,
+     -117.576,
+     525.481
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2249,14 +2249,14 @@
    "label": "Joint 3 ring spacers #21",
    "assembled": {
     "translate": [
-     49.63,
-     -171.8,
-     583.68
+     94.699,
+     -106.076,
+     536.312
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2268,14 +2268,14 @@
    "label": "Joint 3 ring spacers #22",
    "assembled": {
     "translate": [
-     43.83,
-     -171.8,
-     583.68
+     100.499,
+     -106.076,
+     536.312
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2287,14 +2287,14 @@
    "label": "Joint 3 ring spacers #23",
    "assembled": {
     "translate": [
-     49.63,
-     -160.18,
-     594.39
+     94.7,
+     -99.579,
+     550.718
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2306,14 +2306,14 @@
    "label": "Joint 3 ring spacers #24",
    "assembled": {
     "translate": [
-     43.83,
-     -160.18,
-     594.39
+     100.5,
+     -99.58,
+     550.718
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2325,14 +2325,14 @@
    "label": "Joint 3 ring spacers #25",
    "assembled": {
     "translate": [
-     49.63,
-     -145.34,
-     599.83
+     94.7,
+     -99.1,
+     566.516
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2344,14 +2344,14 @@
    "label": "Joint 3 ring spacers #26",
    "assembled": {
     "translate": [
-     43.83,
-     -145.34,
-     599.83
+     100.5,
+     -99.1,
+     566.516
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2363,14 +2363,14 @@
    "label": "Joint 3 ring spacers #27",
    "assembled": {
     "translate": [
-     49.63,
-     -129.56,
-     599.18
+     94.7,
+     -104.695,
+     581.285
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2382,14 +2382,14 @@
    "label": "Joint 3 ring spacers #28",
    "assembled": {
     "translate": [
-     43.83,
-     -129.56,
-     599.18
+     100.5,
+     -104.695,
+     581.285
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2401,14 +2401,14 @@
    "label": "Joint 3 ring spacers #29",
    "assembled": {
     "translate": [
-     49.63,
-     -115.22,
-     592.54
+     94.699,
+     -115.521,
+     592.798
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2420,14 +2420,14 @@
    "label": "Joint 3 ring spacers #30",
    "assembled": {
     "translate": [
-     43.83,
-     -115.22,
-     592.54
+     100.499,
+     -115.521,
+     592.798
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2439,14 +2439,14 @@
    "label": "Joint 3 ring spacers #31",
    "assembled": {
     "translate": [
-     49.63,
-     -104.51,
-     580.91
+     94.699,
+     -129.936,
+     599.291
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -2458,14 +2458,14 @@
    "label": "Joint 3 ring spacers #32",
    "assembled": {
     "translate": [
-     43.83,
-     -104.51,
-     580.91
+     100.499,
+     -129.936,
+     599.291
     ],
     "rotate_deg": [
-     0.001,
-     -8.892,
-     90.0
+     0.0,
+     -80.5,
+     -90.0
     ]
    },
    "kind": "stock",
@@ -3707,25 +3707,6 @@
    "group": "j5_forearm"
   },
   {
-   "key": "j5_forearm:Forearm/Servo_gripper_plug.STL#1",
-   "file": "/Faze4/STL/Forearm/Servo_gripper_plug.STL",
-   "label": "Servo_gripper_plug #1",
-   "assembled": {
-    "translate": [
-     99.33,
-     -299.26,
-     648.14
-    ],
-    "rotate_deg": [
-     173.456,
-     8.894,
-     -90.0
-    ]
-   },
-   "kind": "stock",
-   "group": "j5_forearm"
-  },
-  {
    "key": "j6:Wrist/Wrist case.STL#1",
    "file": "/Faze4/STL/Wrist/Wrist case.STL",
    "label": "Wrist case #1",
@@ -3762,291 +3743,6 @@
    },
    "kind": "stock",
    "group": "j6"
-  },
-  {
-   "key": "j6:Wrist/Joint 6 output shaft.STL#1",
-   "file": "/Faze4/STL/Wrist/Joint 6 output shaft.STL",
-   "label": "Joint 6 output shaft #1",
-   "assembled": {
-    "translate": [
-     123.09,
-     -437.8,
-     632.44
-    ],
-    "rotate_deg": [
-     -90.13,
-     -20.325,
-     -178.953
-    ]
-   },
-   "kind": "stock",
-   "group": "j6"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/gripper_holder_FAZE4.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/gripper_holder_FAZE4.stl",
-   "label": "gripper gripper_holder_FAZE4",
-   "assembled": {
-    "translate": [
-     49.4,
-     -451.73,
-     597.04
-    ],
-    "rotate_deg": [
-     179.87,
-     -20.325,
-     -178.953
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_main_body.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Gripper_main_body.stl",
-   "label": "gripper Gripper_main_body",
-   "assembled": {
-    "translate": [
-     74.25,
-     -531.11,
-     598.31
-    ],
-    "rotate_deg": [
-     -69.675,
-     -0.122,
-     91.002
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVE.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Gripper_template_DRIVE.stl",
-   "label": "gripper Gripper_template_DRIVE",
-   "assembled": {
-    "translate": [
-     73.65,
-     -508.16,
-     618.27
-    ],
-    "rotate_deg": [
-     -179.87,
-     20.325,
-     1.047
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVEN.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Gripper_template_DRIVEN.stl",
-   "label": "gripper Gripper_template_DRIVEN",
-   "assembled": {
-    "translate": [
-     48.23,
-     -508.46,
-     549.63
-    ],
-    "rotate_deg": [
-     -179.87,
-     20.325,
-     1.047
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_1.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Gripper_flex_1.stl",
-   "label": "gripper Gripper_flex_1",
-   "assembled": {
-    "translate": [
-     42.57,
-     -454.69,
-     614.73
-    ],
-    "rotate_deg": [
-     69.675,
-     0.122,
-     -88.998
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_2.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Gripper_flex_2.stl",
-   "label": "gripper Gripper_flex_2",
-   "assembled": {
-    "translate": [
-     64.62,
-     -454.26,
-     596.54
-    ],
-    "rotate_deg": [
-     -110.325,
-     0.122,
-     -88.998
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/GEAR_55T.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/GEAR_55T.stl",
-   "label": "gripper GEAR_55T",
-   "assembled": {
-    "translate": [
-     71.77,
-     -485.63,
-     637.32
-    ],
-    "rotate_deg": [
-     -90.13,
-     -20.325,
-     -178.953
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/GEAR_36T.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/GEAR_36T.stl",
-   "label": "gripper GEAR_36T",
-   "assembled": {
-    "translate": [
-     112.18,
-     -484.89,
-     622.35
-    ],
-    "rotate_deg": [
-     -90.13,
-     -20.325,
-     -178.953
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Output_shaft.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Output_shaft.stl",
-   "label": "gripper Output_shaft",
-   "assembled": {
-    "translate": [
-     120.55,
-     -487.37,
-     635.9
-    ],
-    "rotate_deg": [
-     -69.675,
-     -0.122,
-     91.002
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/PLANETS_12T.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/PLANETS_12T.stl",
-   "label": "gripper PLANETS_12T",
-   "assembled": {
-    "translate": [
-     101.28,
-     -487.57,
-     615.84
-    ],
-    "rotate_deg": [
-     -69.675,
-     -0.122,
-     91.002
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/bearing_holder_planetary.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/bearing_holder_planetary.stl",
-   "label": "gripper bearing_holder_planetary",
-   "assembled": {
-    "translate": [
-     112.74,
-     -433.51,
-     639.94
-    ],
-    "rotate_deg": [
-     -69.675,
-     -0.122,
-     91.002
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Planetary_cover.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Planetary_cover.stl",
-   "label": "gripper Planetary_cover",
-   "assembled": {
-    "translate": [
-     118.98,
-     -549.01,
-     638.13
-    ],
-    "rotate_deg": [
-     -69.675,
-     -0.122,
-     91.002
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/cad/reference/compliant-gripper/stl/Bearing_holder_gripper.stl#1",
-   "file": "/cad/reference/compliant-gripper/stl/Bearing_holder_gripper.stl",
-   "label": "gripper Bearing_holder_gripper",
-   "assembled": {
-    "translate": [
-     41.04,
-     -508.71,
-     610.52
-    ],
-    "rotate_deg": [
-     -90.351,
-     69.675,
-     -179.328
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
-  },
-  {
-   "key": "gr:/viewer/assets/mad5010_mock.stl#1",
-   "file": "/viewer/assets/mad5010_mock.stl",
-   "label": "gripper mad5010_mock",
-   "assembled": {
-    "translate": [
-     114.33,
-     -484.85,
-     621.55
-    ],
-    "rotate_deg": [
-     -69.675,
-     -0.122,
-     91.002
-    ]
-   },
-   "kind": "rebuild",
-   "group": "rebuild_gripper"
   },
   {
    "key": "bearing_693#1",
@@ -7415,6 +7111,158 @@
    },
    "kind": "rebuild",
    "group": "base"
+  },
+  {
+   "key": "j6:cad/j5/stl/j5_gripper_coupler.stl#1",
+   "file": "/cad/j5/stl/j5_gripper_coupler.stl",
+   "label": "gripper coupler (J6 cup, integrated encoder)",
+   "assembled": {
+    "translate": [
+     76.79,
+     -438.681,
+     597.137
+    ],
+    "rotate_deg": [
+     90.122,
+     6.465,
+     1.016
+    ]
+   },
+   "kind": "rebuild",
+   "group": "j6"
+  },
+  {
+   "key": "gr:mainbody_5010#1",
+   "file": "/cad/gripper/stl/ssg48_parts/mainbody_5010_urdf.stl",
+   "label": "SSG-48 main body (5010)",
+   "assembled": {
+    "translate": [
+     76.378,
+     -400.878,
+     594.974
+    ],
+    "rotate_deg": [
+     -88.924,
+     -83.534,
+     -0.067
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:Lid#1",
+   "file": "/cad/gripper/stl/ssg48_parts/Lid_urdf.stl",
+   "label": "SSG-48 nose lid",
+   "assembled": {
+    "translate": [
+     76.378,
+     -400.878,
+     594.974
+    ],
+    "rotate_deg": [
+     -88.924,
+     -83.534,
+     -0.067
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:Guide_Cover#1",
+   "file": "/cad/gripper/stl/ssg48_parts/Guide_Cover_urdf.stl",
+   "label": "SSG-48 guide cover",
+   "assembled": {
+    "translate": [
+     57.401,
+     -424.122,
+     551.812
+    ],
+    "rotate_deg": [
+     -89.768,
+     -58.48,
+     0.805
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:jaw1#1",
+   "file": "/cad/gripper/stl/jaw1_65.stl",
+   "label": "SSG-48 jaw 1 (fin-ray, 65mm)",
+   "assembled": {
+    "translate": [
+     76.378,
+     -400.878,
+     594.974
+    ],
+    "rotate_deg": [
+     -88.924,
+     -83.534,
+     -0.067
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:jaw2#1",
+   "file": "/cad/gripper/stl/jaw2_65.stl",
+   "label": "SSG-48 jaw 2 (fin-ray, 65mm)",
+   "assembled": {
+    "translate": [
+     76.378,
+     -400.878,
+     594.974
+    ],
+    "rotate_deg": [
+     -88.924,
+     -83.534,
+     -0.067
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:pinion_5010#1",
+   "file": "/cad/gripper/stl/ssg48_parts/pinion_5010.stl",
+   "label": "pinion (5010 rebore)",
+   "assembled": {
+    "translate": [
+     78.127,
+     -500.862,
+     594.763
+    ],
+    "rotate_deg": [
+     91.076,
+     -83.534,
+     -0.067
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
+  },
+  {
+   "key": "gr:motor_5010#1",
+   "file": "/cad/gripper/stl/ssg48_parts/motor_5010_real.stl",
+   "label": "MAD 5010 (gripper)",
+   "assembled": {
+    "translate": [
+     77.795,
+     -481.865,
+     594.803
+    ],
+    "rotate_deg": [
+     -88.924,
+     -83.534,
+     -0.067
+    ]
+   },
+   "kind": "rebuild",
+   "group": "rebuild_gripper"
   }
  ],
  "steps": [
@@ -7937,15 +7785,26 @@
    "text": "2x M10 nuts into the motor shell's hex pockets, then the shell over the top and M10 bolts through the floor. BEFORE closing: every wire from the arm must come out of the hole Petar marks in RED on p.55. Close it with one routed wrong and it all comes apart again."
   },
   {
-   "title": "J3: elbow cyclo",
+   "title": "J3: motor into the housing",
+   "pdf": "p.44",
+   "parts": [
+    "j3:Elbow/J3 cyclo/Joint 3 cover.STL#1"
+   ],
+   "text": "OURS: the printed housing here is the stock J3 cover stand-in - on the bench use j3_housing_v10_body. 8318 drops in and seats on the integral stator floor, hub toward the case, leads out the wire slot. Same J1-family docking face; the second J1 cage kit covers the motor mount."
+  },
+  {
+   "title": "J3: eccentric on the rotor",
+   "pdf": "p.44",
+   "parts": [
+    "j3:Elbow/J3 cyclo/Joint 3 eccentric shaft.STL#1"
+   ],
+   "text": "OURS: stock eccentric shaft shown; the real part is the printed j3 eccentric set (flange + cartridge + cap). Flange bolts to the 8318 bell (countersunk M3s into heat-set inserts), cartridge registers on the flange boss. Journals are 15.06 for 6902 bearings - press one 6902 into each disc BEFORE the discs go on."
+  },
+  {
+   "title": "J3: main case + ring pins",
+   "pdf": "p.48",
    "parts": [
     "j3:Elbow/J3 cyclo/Joint 3 main case.STL#1",
-    "j3:Elbow/J3 cyclo/Joint 3 cover.STL#1",
-    "j3:Elbow/J3 cyclo/Joint 3 eccentric shaft.STL#1",
-    "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#1",
-    "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#2",
-    "j3:Elbow/J3 cyclo/Joint 3 output shaft.STL#1",
-    "j3:Elbow/J3 cyclo/Joint 3 top cover.STL#1",
     "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#1",
     "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#2",
     "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#3",
@@ -7979,26 +7838,60 @@
     "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#31",
     "j3:Elbow/J3 cyclo/Joint 3 ring spacers.STL#32"
    ],
-   "pdf": "p.18-30",
-   "text": "COARSE PASS. Elbow 15:1 cyclo: same recipe as J1 (15x28x7 disc bearings, roller ring pins). Our rotor eccentric replaces the stock set-screw shaft; third 8318 drives it."
+   "text": "14x M3x30 ring pins into the main case: bearing-spacer-bearing-spacer-bearing per pin, 693ZZ (3x8x4) bearings, 42 bearings + 28 spacers total. Same stack recipe as J2's ring (p.48). Case docks onto the housing's J1-style face."
   },
   {
-   "title": "J3: elbow structure",
+   "title": "J3: disc 1 on",
+   "pdf": "p.49",
    "parts": [
-    "j3:Cosmetic/Elbow lid.STL#1"
+    "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#1"
    ],
-   "pdf": "p.18-30",
-   "text": "COARSE PASS. Elbow housing + covers around the cyclo. The J3/J4 combined shell (one coordinated part per the fit plan) replaces the stock cover - CAD pending."
+   "text": "Disc 1 (15:1, with its 6902 pressed) onto cartridge journal 1. Lobes mesh the ring pins - it should wobble smoothly by hand around the full circle before you proceed."
   },
   {
-   "title": "J4: cyclo + drum",
+   "title": "J3: disc 2 + phasing",
+   "pdf": "p.49",
    "parts": [
-    "j4:Elbow/J4 cyclo/Joint 4 motor case.STL#1",
-    "j4:Elbow/J4 cyclo/Joint 4 top cover.STL#1",
-    "j4:Elbow/J4 cyclo/Joint 4 Output shaft.STL#1",
-    "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#1",
-    "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#2",
-    "j4:Elbow/J4 cyclo/Eccentric shaft J4.STL#1",
+    "j3:Elbow/J3 cyclo/15_1 cyclo disc.STL#2"
+   ],
+   "text": "Cap (journal 2) through disc 2, spigot into journal 1, clocked 180 deg from disc 1 - the spigot + screw holes only line up the correct way. 2x countersunk M3x12/16 down into the cartridge pilots. Petar's p.49 note applies: disc holes may need to sit opposite each other."
+  },
+  {
+   "title": "J3: output shaft + pins",
+   "pdf": "p.50",
+   "parts": [
+    "j3:Elbow/J3 cyclo/Joint 3 output shaft.STL#1"
+   ],
+   "text": "OURS: use j3_output_shaft_pocket21 (stock shaft shown). 8x M3x30 pins, four 623ZZ (3x10x4) bearings each, into the outer holes; pins enter the disc holes snug - press while slowly rotating the input, never force straight in."
+  },
+  {
+   "title": "J3: top cover + bearings",
+   "pdf": "p.51",
+   "parts": [
+    "j3:Elbow/J3 cyclo/Joint 3 top cover.STL#1"
+   ],
+   "text": "Two 50x65x7 bearings onto the output journal, top cover over them, D-profile nests into the main case pocket, 2x M3x10 in the top corners lock the lid (same pattern as J2). The output flange stands proud - that height belongs to the forearm clevis interface (p.37-39)."
+  },
+  {
+   "title": "J4: motor case + drum",
+   "pdf": "",
+   "parts": [
+    "j4:Elbow/J4 cyclo/Joint 4 motor case.STL#1"
+   ],
+   "text": "OURS: 5010 in the printed drum cage (j4_drum_cage_plate parts - drum axis at (38.5,38.5), O27 bore). Stock J4 motor case shown as the stand-in. Leads dress through the cage exit before the case docks."
+  },
+  {
+   "title": "J4: eccentric on the rotor",
+   "pdf": "",
+   "parts": [
+    "j4:Elbow/J4 cyclo/Eccentric shaft J4.STL#1"
+   ],
+   "text": "OURS: printed j4 eccentric set (5010 preset - journals 17.00, ecc 1.5, flange bolts to the 5010 bell M3s at O12/O18; on-axis M4 into the shaft-end tap, verify the tap takes it first). Stock eccentric shaft shown."
+  },
+  {
+   "title": "J4: ring rollers",
+   "pdf": "",
+   "parts": [
     "j4:Elbow/J4 cyclo/J4 ring rollers.STL#1",
     "j4:Elbow/J4 cyclo/J4 ring rollers.STL#2",
     "j4:Elbow/J4 cyclo/J4 ring rollers.STL#3",
@@ -8010,7 +7903,31 @@
     "j4:Elbow/J4 cyclo/J4 ring rollers.STL#9",
     "j4:Elbow/J4 cyclo/J4 ring rollers.STL#10",
     "j4:Elbow/J4 cyclo/J4 ring rollers.STL#11",
-    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#12",
+    "j4:Elbow/J4 cyclo/J4 ring rollers.STL#12"
+   ],
+   "text": "12x printed ring rollers into the case ring - J4 uses printed rollers instead of bearing stacks. Grease lightly; they are wear parts, spares are cheap."
+  },
+  {
+   "title": "J4: disc 1 on",
+   "pdf": "",
+   "parts": [
+    "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#1"
+   ],
+   "text": "11:1 disc onto journal 1 (bearing pressed first). Hand-wobble check against the rollers before disc 2."
+  },
+  {
+   "title": "J4: disc 2 + phasing",
+   "pdf": "",
+   "parts": [
+    "j4:Elbow/J4 cyclo/11_1 cyclo disc.STL#2"
+   ],
+   "text": "Disc 2 on the cap journal, 180 deg opposed - spigot enforces the clocking. Countersunk M3s down into the cartridge."
+  },
+  {
+   "title": "J4: output shaft + spacers",
+   "pdf": "",
+   "parts": [
+    "j4:Elbow/J4 cyclo/Joint 4 Output shaft.STL#1",
     "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#1",
     "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#2",
     "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#3",
@@ -8022,8 +7939,23 @@
     "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#9",
     "j4:Elbow/J4 cyclo/Joint 4 Output spacers.STL#10"
    ],
-   "pdf": "p.18-30",
-   "text": "COARSE PASS. Forearm-roll 11:1 cyclo in its drum: 17x23x4 disc bearings, rebuilt drum floor for the 5010 cage (CAD pending), our rotor eccentric replaces the shaft-drive."
+   "text": "Output shaft pins through the disc holes with the 10 printed output spacers setting bearing planes. Same snug-entry rule: rotate the input while pressing."
+  },
+  {
+   "title": "J4: top cover",
+   "pdf": "",
+   "parts": [
+    "j4:Elbow/J4 cyclo/Joint 4 top cover.STL#1"
+   ],
+   "text": "Top cover + output bearings close the drum. The 26T/28T belt side comes next step - leave the shaft clocking free until the belt is on."
+  },
+  {
+   "title": "J4: forearm + roll shaft",
+   "parts": [
+    "j5_forearm:Forearm/Forearm main case.STL#1",
+    "j5_forearm:Forearm/Joint 4 shaft.STL#1"
+   ],
+   "text": "The forearm mounts to the elbow and its hollow Joint 4 (roll) shaft drops into the offset bearing tube - this is what J4 turns. It MUST be on before the belt, or the J4 belt has nothing to drive."
   },
   {
    "title": "J4: belt side",
@@ -8037,14 +7969,31 @@
    "text": "COARSE PASS. J4's pulleys + offset + covers; belt drawn when this joint gets its detail pass."
   },
   {
-   "title": "J5: forearm",
+   "title": "Elbow lid (closes over J4)",
    "parts": [
-    "j5_forearm:Forearm/Forearm main case.STL#1",
-    "j5_forearm:Cosmetic/Forearm motor lid.STL#1",
-    "j5_forearm:Forearm/Forearm top cover.STL#1",
-    "j5_forearm:Forearm/Eccentric shaft J5.STL#1",
-    "j5_forearm:Forearm/11_1 cyclo disc.STL#1",
-    "j5_forearm:Forearm/11_1 cyclo disc.STL#2",
+    "j3:Cosmetic/Elbow lid.STL#1"
+   ],
+   "pdf": "p.18-30",
+   "text": "Elbow lid goes on LAST, after the J4 cartridge is mounted and wired - it caps the motor bay, so it cannot precede the J4 install."
+  },
+  {
+   "title": "J5: motor set into the forearm",
+   "pdf": "",
+   "parts": [],
+   "text": "Forearm case + roll shaft already placed in the J4 stage; here the J5 pitch motor seats into the forearm."
+  },
+  {
+   "title": "J5: eccentric on the rotor",
+   "pdf": "",
+   "parts": [
+    "j5_forearm:Forearm/Eccentric shaft J5.STL#1"
+   ],
+   "text": "Printed j5 eccentric set (5010 preset, journals 17.00). Same flange/cartridge/cap dance as J4."
+  },
+  {
+   "title": "J5: ring rollers",
+   "pdf": "",
+   "parts": [
     "j5_forearm:Forearm/J5 ring rollers.STL#1",
     "j5_forearm:Forearm/J5 ring rollers.STL#2",
     "j5_forearm:Forearm/J5 ring rollers.STL#3",
@@ -8056,7 +8005,24 @@
     "j5_forearm:Forearm/J5 ring rollers.STL#9",
     "j5_forearm:Forearm/J5 ring rollers.STL#10",
     "j5_forearm:Forearm/J5 ring rollers.STL#11",
-    "j5_forearm:Forearm/J5 ring rollers.STL#12",
+    "j5_forearm:Forearm/J5 ring rollers.STL#12"
+   ],
+   "text": "12x printed rollers into the case ring, light grease."
+  },
+  {
+   "title": "J5: discs + phasing",
+   "pdf": "",
+   "parts": [
+    "j5_forearm:Forearm/11_1 cyclo disc.STL#1",
+    "j5_forearm:Forearm/11_1 cyclo disc.STL#2"
+   ],
+   "text": "11:1 discs, bearings pressed first; disc 2 clocked 180 deg on the cap. Hand-wobble between discs."
+  },
+  {
+   "title": "J5: output shaft + spacers",
+   "pdf": "",
+   "parts": [
+    "j5_forearm:Forearm/Joint 5 Output shaft.STL#1",
     "j5_forearm:Forearm/Joint 5 Output spacers.STL#1",
     "j5_forearm:Forearm/Joint 5 Output spacers.STL#2",
     "j5_forearm:Forearm/Joint 5 Output spacers.STL#3",
@@ -8066,47 +8032,52 @@
     "j5_forearm:Forearm/Joint 5 Output spacers.STL#7",
     "j5_forearm:Forearm/Joint 5 Output spacers.STL#8",
     "j5_forearm:Forearm/Joint 5 Output spacers.STL#9",
-    "j5_forearm:Forearm/Joint 5 Output spacers.STL#10",
-    "j5_forearm:Forearm/Joint 5 Output shaft.STL#1",
-    "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#1",
-    "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#2",
-    "j5_forearm:Forearm/Joint 4 shaft.STL#1",
-    "j5_forearm:Forearm/Joint 5 switch trigger.STL#1",
-    "j5_forearm:Forearm/Servo_gripper_plug.STL#1"
+    "j5_forearm:Forearm/Joint 5 Output spacers.STL#10"
    ],
-   "pdf": "p.8-17",
-   "text": "COARSE PASS. Forearm case (reprint planned: O60 bay for the 5010), J5 cyclo (15:1 upgrade decision pending), pulleys, wrist pivot bits. 5010 #2 lives here."
+   "text": "Output shaft pins through disc holes, 10 printed spacers setting planes. Snug entry - rotate while pressing."
+  },
+  {
+   "title": "J5: belt drive (to the wrist)",
+   "pdf": "",
+   "parts": [
+    "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#1",
+    "j5_forearm:Forearm/Joint 5 28 teeth pulley.STL#2"
+   ],
+   "text": "Both 28T pulleys + the Joint 4 shaft through the forearm - J4's drive reaches its joint through here. Belt tension set BEFORE the covers close."
+  },
+  {
+   "title": "J5: covers + trigger",
+   "pdf": "",
+   "parts": [
+    "j5_forearm:Forearm/Forearm top cover.STL#1",
+    "j5_forearm:Cosmetic/Forearm motor lid.STL#1",
+    "j5_forearm:Forearm/Joint 5 switch trigger.STL#1"
+   ],
+   "text": "Top cover + motor lid close the forearm; switch trigger rides the output; servo plug caps the gripper port (unused - SSG-48 goes there)."
   },
   {
    "title": "J6: wrist",
    "parts": [
     "j6:Wrist/Wrist case.STL#1",
     "j6:Wrist/Wrist cover.STL#1",
-    "j6:Wrist/Joint 6 output shaft.STL#1"
+    "j6:cad/j5/stl/j5_gripper_coupler.stl#1"
    ],
    "pdf": "p.4-7",
-   "text": "COARSE PASS. Stock wrist case + cover + J6 output flange. The entire wrist housing gets replaced (measured hopeless for the 5010 can) - the largest new-CAD item on the books."
+   "text": "Stock wrist case + cover (J6 roll is gone). The gripper COUPLER drops into the J6 cup (4x M4 flat-head @BCD13 into the cup floor); it carries the gripper's AS5047P pocket reading the 5010's rear magnet. Wires route through the hollow pivot."
   },
   {
    "title": "Gripper",
    "parts": [
-    "gr:/cad/reference/compliant-gripper/stl/gripper_holder_FAZE4.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Gripper_main_body.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVE.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Gripper_template_DRIVEN.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_1.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Gripper_flex_2.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/GEAR_55T.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/GEAR_36T.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Output_shaft.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/PLANETS_12T.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/bearing_holder_planetary.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Planetary_cover.stl#1",
-    "gr:/cad/reference/compliant-gripper/stl/Bearing_holder_gripper.stl#1",
-    "gr:/viewer/assets/mad5010_mock.stl#1"
+    "gr:mainbody_5010#1",
+    "gr:Lid#1",
+    "gr:Guide_Cover#1",
+    "gr:jaw1#1",
+    "gr:jaw2#1",
+    "gr:pinion_5010#1",
+    "gr:motor_5010#1"
    ],
    "pdf": "hackaday/PCrnjak",
-   "text": "The compliant gripper onto the J6 flange: Petar's own FAZE4 mount, jaw pair on the measured pivots, 7th motor (5010 240KV) + 4th S1 + AS5047P when the parts land. Grip force = current limit."
+   "text": "SSG-48 converted to direct-drive 5010: plain main body bolts to the coupler's 46.6 square (4x M4); 5010 stator from the dome back, pinion on the bell (far pair), fin-ray jaws on the racks, nose lid + guide cover. Gripper S1 lives up at the forearm/J4 bay. Jaws open along the wrist pitch axis."
   },
   {
    "title": "Full arm first light",
