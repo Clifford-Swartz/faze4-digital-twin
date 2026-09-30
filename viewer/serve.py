@@ -101,6 +101,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # Default static file handling
         super().do_GET()
 
+    def do_POST(self):
+        # twin.html posts IK logs (/iklog) and real-arm jog commands (/drive/cmd); standalone there is no
+        # drive bridge, so accept and drop them quietly instead of answering 501 on every jog
+        n = int(self.headers.get("Content-Length") or 0)
+        if n:
+            self.rfile.read(n)
+        self.send_response(204)
+        self.end_headers()
+
     def end_headers(self):
         # the viewer cache-busts with query strings; let everything else cache
         self.send_header("Access-Control-Allow-Origin", "*")

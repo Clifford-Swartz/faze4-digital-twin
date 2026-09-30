@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARM live twin</title>
+<link rel="icon" href="data:,">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; overflow:hidden; background:#16181d; }
+  #hud { position:fixed; top:10px; left:12px; color:#12151b; width:300px;
+         font:13px/1.5 "Segoe UI",system-ui,sans-serif;
+         background:rgba(246,248,250,0.85); padding:10px 12px; border-radius:10px;
+         box-shadow:0 2px 10px rgba(0,0,0,0.25); }
+  #hud .dim { color:#5a6470; font-size:11.5px; }
+  #hud button { background:#262a33; color:#d6dae2; border:1px solid #343a46;
+                border-radius:6px; padding:5px 11px; font:inherit; cursor:pointer; margin:0 6px 6px 0; }
+  #src { color:#5dbb7a; } #src.off { color:#ff6b6b; }
+  #hudhead { cursor:pointer; user-select:none; }
+  #hud.collapsed #hudbody { display:none; }
+  #hud.collapsed { width:auto; max-width:300px; }
+  .jrow { font:12px monospace; color:#8b93a3; }
+  .jrow b { color:#d6dae2; } .jrow .live { color:#5dbb7a; } .jrow .dead { color:#6b7280; }
+</style>
+<script type="importmap">{ "imports": { "three": "./lib/three.module.js", "three-mesh-bvh": "./lib/three-mesh-bvh.module.js" } }</script>
+</head>
+<body>
+<div id="hud">
+  <div id="hudhead"><b>ARM live twin</b> <span id="hudtog" class="dim">&#9662; hide</span></div>
+  <div class="dim">source: <span id="src">HTTP /drive/status</span> · <span id="rate">—</span></div>
+  <div class="dim">prizes in the chute: <b id="prizes">0</b></div>
+  <div id="hudbody">
+  <div style="margin-top:6px">
+    <button id="v3q">3/4</button><button id="vfront">front</button><button id="vtop">top</button>
+    <button id="test">test sweep</button>
+  </div>
+  <div style="margin-top:4px">
+    <button id="ble">Connect PyKit (BLE)</button><button id="recenter">re-center / zero</button><button id="scheme">PyKit: arm controls</button><button id="mode">mode: pose</button><button id="collide">collision: off</button><button id="enc">enclosure</button><button id="frame">frame: on</button><button id="ik">IK: off</button><button id="drivej1">drive real J1: off</button><button id="same70">Connect SAME70 (BLE)</button>
+  </div>
+  <div style="margin-top:4px" class="dim">gripper close <input id="grip" type="range" min="0" max="1" step="0.01" value="0" style="width:130px;vertical-align:middle"></div>
+  <div class="dim" id="blestat" style="margin-top:4px; word-break:break-all">BLE: idle</div>
+  <div class="dim" id="reach" style="margin-top:4px">reach: — mm · play-field wall 545 mm</div>
+  <div class="dim" id="gate" style="margin-top:4px">gate: —</div>
+  <div style="margin-top:6px" class="dim">mount cal — hold the pose, click:
+    <button id="cal_neutral">neutral</button><button id="cal_up">up</button><button id="cal_down">down</button><button id="cal_left">left</button><button id="cal_right">right</button>
+    <button id="cal_invp">inv U/D</button><button id="cal_invr">inv L/R</button><button id="cal_clear">clear</button></div>
+  <div class="dim" id="calstat" style="margin-top:2px">cal: —</div>
+  <div class="dim" id="ikstat" style="margin-top:4px">IK: off</div>
+  <div style="margin-top:6px" class="dim">claw:
+    <button id="jog_left">&#9664; left</button><button id="jog_right">right &#9654;</button>
+    <button id="jog_out">out (away)</button><button id="jog_in">in (to base)</button>
+    <button id="jog_up">up</button><button id="jog_down">down</button>
+    &nbsp;<button id="grip_close"><b>CLOSE</b></button><button id="grip_open">open</button>
+    &nbsp;<button id="do_drop"><b>GRAB</b> (lower &rarr; close &rarr; lift)</button>
+    <button id="go_home"><b>HOME</b> (lift &rarr; chute &rarr; drop &rarr; park)</button>
+    <button id="auto_home">auto-home: on</button></div>
+  <div class="dim" id="seqstat" style="margin-top:2px">seq: idle</div>
+  <div class="dim" style="margin-top:6px">joints (drive→URDF):</div>
+  <div id="joints"></div>
+  </div>
+  <div class="dim" id="note" style="margin-top:8px">poses live from the drives; absolute accuracy needs homing. BLE source drops in here later.</div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+// collapsible HUD (click the title); remembered per browser
+{ const hud=document.getElementById('hud'), tog=document.getElementById('hudtog');
+  const set=c=>{ hud.classList.toggle('collapsed',c); tog.innerHTML=c?'&#9656; show':'&#9662; hide';
+                 try{ localStorage.setItem('twin_hud_collapsed', c?'1':'0'); }catch(e){} };
+  let c=false; try{ c=localStorage.getItem('twin_hud_collapsed')==='1'; }catch(e){}
+  set(c); document.getElementById('hudhead').onclick=()=>set(!hud.classList.contains('collapsed')); }
+import { OrbitControls } from './lib/OrbitControls.js';
+import { STLLoader } from './lib/STLLoader.js';
+import { MeshBVH } from 'three-mesh-bvh';
+
+const MESHES = '/Faze4/Faze4-Robotic-arm-master/URDF_FAZE4/meshes/';   // full-fidelity STLs; served gzipped (~4.5MB on the wire, lossless)
+// drive CAN node -> URDF joint name (extend as joints get drives)
+const NODE_TO_JOINT = { 0: 'rotary_base', 1: 'nadlaktica' };
+const RAD = Math.PI / 180;
+
+const scene = new THREE.Scene();
+// light outdoor sky gradient (beach/mountain-top vibe)
+(function(){
+  const c=document.createElement('canvas'); c.width=4; c.height=256; const x=c.getContext('2d');
+  const g=x.createLinearGradient(0,0,0,256);
+  g.addColorStop(0,'#5bb8e6');   // sky blue up top
+  g.addColorStop(0.55,'#bfe6f2');// pale blue
+  g.addColorStop(1,'#f5ecd6');   // warm sandy horizon
+  x.fillStyle=g; x.fillRect(0,0,4,256);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; scene.background=t;
+})();
+const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 1, 20000); camera.up.set(0,0,1);
+const renderer = new THREE.WebGLRenderer({ antialias:true }); renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(devicePixelRatio); document.body.appendChild(renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true;
+// bright, all-around lighting so the arm reads clearly (no black faces)
+scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+scene.add(new THREE.HemisphereLight(0xffffff, 0x556677, 1.3));
+[[1,-1.2,1.6, 1.5],[-1,1,1.2, 0.7],[1,1,0.8, 0.6],[-1,-1,0.9, 0.6],[0,0,2, 0.6]].forEach(p=>{
+  const L=new THREE.DirectionalLight(0xffffff, p[3]); L.position.set(p[0],p[1],p[2]); scene.add(L);
+});
+
+// URDF rpy is fixed-axis XYZ: R = Rz(yaw)*Ry(pitch)*Rx(roll)
+function rpyQuat(rpyDeg) {
+  const [r,p,y] = rpyDeg.map(d => d*RAD);
+  const qx = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0), r);
+  const qy = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0), p);
+  const qz = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,0,1), y);
+  return qz.multiply(qy).multiply(qx);   // qz*qy*qx
+}
+
+const jointGroups = {};   // name -> {group, base(rpyQuat), axis(Vector3)}
+const angles = {};        // name -> radians (live)
+let gridAdded = false, userMoved = false, ctr = new THREE.Vector3(), rad = 500;
+let meshTotal = 0, meshLoaded = 0;
+controls.addEventListener('start', () => { userMoved = true; });
+
+const loader = new STLLoader();
+function addMesh(parent, file, color, name) {
+  loader.load(MESHES + file + '?v4', g => {
+    g.scale(1000,1000,1000);            // meshes are in meters; chain is in mm
+    g.computeVertexNormals();
+    const mesh = new THREE.Mesh(g, new THREE.MeshStandardMaterial({color, metalness:0.1, roughness:0.6, side:THREE.DoubleSide}));
+    parent.add(mesh);
+    if(name) linkMesh[name] = mesh;     // handle for positioning its collision proxy
+    meshLoaded++;
+    reframe();                          // re-center as each part loads (14 MB total)
+    maybeBaseline();                    // once visual + proxy meshes are all in, baseline collisions
+  });
+}
+
+// --- real gripper: SSG-48 5010 replaces the stock hvataljka end link ---
+// SSG-48 STL is already in mm (URDF meshes are meters), so do NOT scale it x1000.
+// GM_POS/GM_ROT is the mount transform into the hvataljka link frame - a FIRST
+// placement (centroid-aligned); dial these to seat it on the wrist flange.
+const B = '/cad/gripper/stl/ssg48_parts/';   // SSG-48 part meshes (same frame as the assembly)
+let GM_POS = [-1.65, 0.61, -59.11], GM_ROT = [180, 0, 0];   // mm, deg — mount face on the wrist flange plane, centered on wrist axis
+function applyMount(g){                        // bake the mount transform into a geometry (used for the collision proxy)
+  g.rotateX(GM_ROT[0]*RAD); g.rotateY(GM_ROT[1]*RAD); g.rotateZ(GM_ROT[2]*RAD);
+  g.translate(GM_POS[0], GM_POS[1], GM_POS[2]);
+}
+// J6 is nixed; the freed DOF is the gripper's 5010 direct-drive jaw open/close.
+// Rack-and-pinion PARALLEL gripper: the 5010 spins the pinion about the motor
+// axis (Z); two racks convert that to opposite Y-slides of the jaws. So one
+// input (motor angle) drives BOTH the pinion spin and the jaw travel, locked by
+// the pinion pitch radius -> it moves like the real mechanism.
+const SLIDE_AXIS = [0,1,0];        // jaws slide along Y (gripper width)
+const JAW_SLIDE_MM = 18;           // each jaw's travel, open(0) -> closed(1); dial to real stroke
+const R_PITCH = 10.5;              // pinion pitch radius (mm); jaw_travel = pinion_angle * R_PITCH
+const PINION_POS = [0,0,-96], PINION_ROT = [180,0,0];   // on the motor axis; +4mm back to mesh the jaw racks
+const MOTOR_POS  = [0,0,-81];
+let gripClose = 0, gripTarget = 0; const jawGroups = []; let pinion = null;   // gripTarget: 0 open .. 1 closed (button/slider)
+function applyGrip(){
+  const d = gripClose*JAW_SLIDE_MM;                        // jaw travel this frame
+  for(const {grp,sign} of jawGroups)
+    grp.position.set(SLIDE_AXIS[0]*d*sign, SLIDE_AXIS[1]*d*sign, SLIDE_AXIS[2]*d*sign);
+  if(pinion){                                              // spin pinion the amount that produces d
+    const th = d / R_PITCH;                                // rad, locked to jaw travel
+    pinion.grp.quaternion.copy(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,0,1), th).multiply(pinion.base));
+  }
+  const el=document.getElementById('gripclose'); if(el) el.textContent=Math.round(gripClose*100)+'%';
+}
+function gripPart(parent, file, color){
+  new STLLoader().load(B+file+'?v1', g=>{ g.computeVertexNormals();
+    parent.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({color, metalness:0.12, roughness:0.6, side:THREE.DoubleSide})));
+    if(file.indexOf('mainbody')===0){ meshLoaded++; reframe(); }   // count the gripper as one link
+    maybeBaseline();
+  });
+}
+function gripJaw(parent, file, sign, color){
+  new STLLoader().load(B+file+'?v1', g=>{ g.computeVertexNormals();   // jaw stays in place; group slides it
+    const jg=new THREE.Group();
+    jg.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({color, metalness:0.15, roughness:0.55, side:THREE.DoubleSide})));
+    parent.add(jg); jawGroups.push({grp:jg, sign}); applyGrip(); maybeBaseline();
+  });
+}
+function gripFixed(parent, file, pos, rotDeg, color){     // statically-placed part (e.g. the 5010)
+  new STLLoader().load(B+file+'?v1', g=>{ g.computeVertexNormals();
+    const m=new THREE.Mesh(g, new THREE.MeshStandardMaterial({color, metalness:0.2, roughness:0.5, side:THREE.DoubleSide}));
+    m.position.set(pos[0],pos[1],pos[2]); m.rotation.set(rotDeg[0]*RAD,rotDeg[1]*RAD,rotDeg[2]*RAD);
+    parent.add(m); maybeBaseline();
+  });
+}
+function gripPinion(parent, file, pos, rotDeg, color){    // spins about the motor axis (Z) with the drive
+  new STLLoader().load(B+file+'?v1', g=>{ g.computeVertexNormals();
+    const jg=new THREE.Group(); jg.position.set(pos[0],pos[1],pos[2]);
+    const base=new THREE.Quaternion().setFromEuler(new THREE.Euler(rotDeg[0]*RAD,rotDeg[1]*RAD,rotDeg[2]*RAD));
+    jg.quaternion.copy(base);
+    jg.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({color, metalness:0.3, roughness:0.4, side:THREE.DoubleSide})));
+    parent.add(jg); pinion={grp:jg, base}; applyGrip(); maybeBaseline();
+  });
+}
+function addGripper(grp){
+  linkMesh['hvataljka'] = grp;                  // collision anchor (proxy is GM-baked into this frame)
+  const root = new THREE.Group();               // carries the dialed mount transform
+  root.position.set(GM_POS[0],GM_POS[1],GM_POS[2]);
+  root.quaternion.copy(rpyQuat(GM_ROT));        // rpyQuat = Rz*Ry*Rx, matches applyMount's rotate order
+  grp.add(root);
+  toolTip.position.fromArray(TOOL_TIP); root.add(toolTip);   // IK's claw-tip anchor rides with the gripper
+  gripPart(root, 'mainbody_5010_encoder_urdf.stl', 0x1c1c1c);   // body (fixed) - black
+  gripPart(root, 'Lid_urdf.stl', 0x1c1c1c);                     // nose lid (fixed) - black
+  gripFixed(root, 'motor_5010_real.stl', MOTOR_POS, [0,0,0], 0x2a2a2a);   // the 5010 (dark grey)
+  gripPinion(root, 'pinion_5010.stl', PINION_POS, PINION_ROT, 0x555555);  // pinion (grey so its spin still reads)
+  gripJaw(root, 'jaw1_urdf.stl', +1, 0x1c1c1c);                 // parallel sliding jaws - black
+  gripJaw(root, 'jaw2_urdf.stl', -1, 0x1c1c1c);
+}
+
+fetch('/viewer/data/urdf_assembly.json').then(r=>r.json()).then(urdf => {
+  const linkByName = Object.fromEntries(urdf.links.map(l => [l.name, l]));
+  const jointByChild = Object.fromEntries(urdf.joints.map(j => [j.child, j]));
+  // real arm is printed black — near-black so the good lighting still reveals form
+  const COLORS = [0x1c1c1c,0x1c1c1c,0x1c1c1c,0x1c1c1c,0x1c1c1c,0x1c1c1c,0x1c1c1c];
+  chainNames = urdf.chain.filter(n => linkByName[n] && linkByName[n].mesh_file);
+  meshTotal = chainNames.length;
+  loadProxies();                        // start loading decimated collision proxies + building BVHs
+  // walk the chain, nesting a group per link at its joint origin
+  let parent = scene; let i = 0;
+  for (const name of urdf.chain) {
+    const link = linkByName[name];
+    const joint = jointByChild[name];         // null for base_link (root)
+    const grp = new THREE.Group();
+    if (joint) {
+      grp.position.fromArray(joint.origin_xyz_mm);
+      const base = rpyQuat(joint.origin_rpy_deg);
+      grp.quaternion.copy(base);
+      if (name === 'hvataljka' || name === 'podlaktica') {
+        // J6 (gripper mount) and J4 (forearm roll) are NIXED: fixed links, not driven joints.
+        // Keep the group (positions the mesh) but don't register it as a DOF.
+      } else {
+        const axis = new THREE.Vector3().fromArray(joint.axis_child_frame).normalize();
+        jointGroups[name] = { group: grp, base, axis };
+        angles[name] = 0; angTarget[name] = 0;
+      }
+    }
+    parent.add(grp);
+    if (link && link.mesh_file) {
+      if (name === 'hvataljka') addGripper(grp);                          // real SSG-48 gripper
+      else addMesh(grp, link.mesh_file, COLORS[i % COLORS.length], name);
+    }
+    parent = grp; i++;
+  }
+  buildJointRows(urdf.joints);
+});
+
+function applyAngles(src) {
+  src = src || angles;
+  for (const name in jointGroups) {
+    const { group, base, axis } = jointGroups[name];
+    const q = base.clone().multiply(new THREE.Quaternion().setFromAxisAngle(axis, src[name] || 0));
+    group.quaternion.copy(q);
+  }
+}
+// smoothing: render eases `angles` toward `angTarget` every frame, decoupling
+// the 60fps view from the ~13Hz data so motion is fluid. IN_ALPHA lightly
+// filters incoming sensor jitter; SMOOTH_TAU sets the ease time constant.
+const angTarget = {}, fRaw = {p:0,r:0,y:0};
+const SMOOTH_TAU = 0.08, IN_ALPHA = 0.3;   // 0.5->0.3: raw accel carries motion transients; more smoothing so a quick tilt can't trip the axis gate
+const JOINT_VMAX = 90;                     // deg/s per joint: caps big transitions (park->READY ~50 deg takes ~0.6 s) - what real hardware needs too
+function reframe() {
+  const box = new THREE.Box3().setFromObject(scene);
+  if (box.isEmpty()) return;
+  box.getCenter(ctr); rad = box.getSize(new THREE.Vector3()).length()/2 || 500;
+  if (!userMoved) view('3q');          // keep centering until the user grabs the view
+  if (!gridAdded && meshTotal > 0 && meshLoaded >= meshTotal) { gridAdded = true;
+    const grid = new THREE.GridHelper(Math.max(rad*3, 1200), 24, 0x343a46, 0x23262e);
+    grid.rotation.x = Math.PI/2; grid.position.set(ctr.x, ctr.y, box.min.z); scene.add(grid);
+  }
+}
+function view(d){ controls.target.copy(ctr); camera.up.set(0,0,1); const r = rad*2.2;
+  if (d==='top'){ camera.position.set(ctr.x, ctr.y, ctr.z+r); camera.up.set(0,1,0); }
+  else if (d==='front') camera.position.set(ctr.x, ctr.y-r, ctr.z);
+  else camera.position.set(ctr.x-r*0.8, ctr.y-r*0.9, ctr.z+r*0.6);
+  camera.updateProjectionMatrix();
+}
+
+// --- joint status rows ---
+function buildJointRows(joints){
+  const el = document.getElementById('joints');
+  el.innerHTML = joints.filter(j=>j.name!=='hvataljka' && j.name!=='podlaktica').map((j,idx)=>{   // J6 + J4 nixed
+    const node = Object.keys(NODE_TO_JOINT).find(n=>NODE_TO_JOINT[n]===j.name);
+    return `<div class="jrow" id="jr_${j.name}"><b>J${idx+1}</b> ${j.name} `+
+           (node!==undefined?`<span class="live">n${node}</span>`:`<span class="dead">no drive</span>`)+
+           ` <span id="ja_${j.name}">0.0&deg;</span></div>`;
+  }).join('')
+  + `<div class="jrow"><b>tool</b> SSG-48 gripper <span class="live">5010 close</span> <span id="gripclose">0%</span></div>`;
+}
+
+// ---- data source (pluggable): HTTP now, Web Bluetooth later ----
+let testMode = false, bleOn = false, t0 = performance.now(), lastRate = performance.now(), frames = 0;
+async function pollHTTP(){
+  try {
+    const r = await fetch('/drive/status'); if(!r.ok) throw new Error('no drive server');   // standalone serve.py: no /drive/status
+    const j = await r.json();
+    document.getElementById('src').classList.remove('off');
+    for (const node in NODE_TO_JOINT) {
+      const name = NODE_TO_JOINT[node];
+      const d = j.nodes[node];
+      if (d && d.joint_deg !== undefined && !testMode && !bleOn) {
+        angTarget[name] = d.joint_deg * RAD;
+        const a = document.getElementById('ja_'+name);
+        if (a) a.innerHTML = d.joint_deg.toFixed(1)+'&deg;'+(d.homed?'':' <span class="dead">(unhomed)</span>');
+      }
+    }
+  } catch(e){ document.getElementById('src').classList.add('off'); setTimeout(pollHTTP, 3000); return; }   // no drive server: back off
+  setTimeout(pollHTTP, 100);
+}
+pollHTTP();
+
+document.getElementById('test').onclick = ()=>{ testMode=!testMode; document.getElementById('test').textContent = testMode?'stop test':'test sweep'; };
+document.getElementById('v3q').onclick=()=>view('3q');
+document.getElementById('vfront').onclick=()=>view('front');
+document.getElementById('vtop').onclick=()=>view('top');
+
+// ---- PyKit BLE source: tilt -> velocity -> integrated joint angles ----
+const PYKIT_SVC = '49535343-fe7d-4ae5-8fa9-9fafd205e455';   // Microchip Transparent UART service
+const PYKIT_TX  = '49535343-1e4d-4bd9-ba61-23c647249616';   // TX characteristic (notify, peripheral->central)
+const JMAP = { J1:'rotary_base', J2:'nadlaktica', J3:'lakat', J5:'saka' };   // PyKit axis -> URDF joint
+const P_DEAD = 5, P_MAXT = 45, P_MAXV = 5000, DEG_PER_S = 60, JLIM = 135;    // visual gain + travel clamp
+const jdeg = { rotary_base:0, nadlaktica:0, lakat:0, saka:0 };               // joint angles (deg)
+const POSE_MAX = 90;                                                          // pose mode: joint deg at full tilt
+const IN_CLAMP = 50;                                                          // clamp raw tilt short of the atan2 vertical fold (stops rollover-to-opposite-extreme)
+const AXIS_ENTER = 1.7, AXIS_EXIT = 1.25, AXIS_MIN = 8;                       // dominant-axis gate: ratio to lock / release + min deg to engage
+let axisLock = 0;                                                             // 0 none (both pass), 1 vertical(pitch) wins, 2 horizontal(roll) wins
+// --- mount calibration: learn the IMU's rotation from gravity samples, so any re-mount = re-record, no board redeploy ---
+// neutral -> "down" (ez); up-down difference -> pitch axis (ex); right-left sign -> roll axis (ey = ez x ex, sign fixed).
+let CAL = null;                                    // {ex,ey,ez,invP,invR} or null (fall back to the streamer's pitch/roll)
+let calSamples = {}, calRec = null, calAcc = [];   // pose -> averaged raw gravity; pose being recorded; accumulator
+let lastG = null;                                  // latest raw gravity [gx,gy,gz] from the streamer
+try{ const s=localStorage.getItem('pykit_cal'); if(s) CAL=JSON.parse(s); }catch(e){}
+try{ const s=localStorage.getItem('pykit_cal_samples'); if(s) calSamples=JSON.parse(s); }catch(e){}
+const dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2], sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],
+      norm=a=>{const n=Math.hypot(a[0],a[1],a[2])||1; return [a[0]/n,a[1]/n,a[2]/n];},
+      cross=(a,b)=>[a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
+function calCompute(){
+  const S=calSamples; if(!(S.neutral&&S.up&&S.right)) return null;           // down/left optional (improve robustness)
+  const ez=norm(S.neutral);                                                   // "down" at neutral
+  let dp=sub(S.up, S.down||S.neutral); const k=dot(dp,ez); dp=sub(dp,[ez[0]*k,ez[1]*k,ez[2]*k]);
+  const ex=norm(dp);                                                          // gravity moves along +ex when tilting UP
+  let ey=cross(ez,ex);                                                        // orthonormal; sign from right-left samples
+  if(dot(sub(S.right, S.left||S.neutral), ey)<0) ey=[-ey[0],-ey[1],-ey[2]];
+  return {ex,ey,ez, invP:!!(CAL&&CAL.invP), invR:!!(CAL&&CAL.invR)};
+}
+function calApply(g){                                                         // raw gravity -> calibrated [pitch,roll] deg
+  const x=dot(g,CAL.ex), y=dot(g,CAL.ey), z=dot(g,CAL.ez);
+  let p=Math.atan2(x,Math.hypot(y,z))/RAD, r=Math.atan2(y,Math.hypot(x,z))/RAD;   // +p = tilt UP, +r = tilt RIGHT
+  if(CAL.invP) p=-p; if(CAL.invR) r=-r;
+  return [p,r];
+}
+function calSave(){ try{ localStorage.setItem('pykit_cal',JSON.stringify(CAL)); localStorage.setItem('pykit_cal_samples',JSON.stringify(calSamples)); }catch(e){} calUI(); }
+function calRecord(pose){ if(!lastG){ calUI('no gravity data yet - connect + new streamer'); return; } calRec=pose; calAcc=[]; calUI('hold '+pose.toUpperCase()+' still...'); }
+function calUI(msg){
+  const el=document.getElementById('calstat'); if(!el) return;
+  const have=['neutral','up','down','left','right'].filter(k=>calSamples[k]).join(' ')||'none';
+  el.textContent=(msg?msg+' | ':'')+'recorded: '+have+(CAL?' | CAL ACTIVE'+(CAL.invP?' invU/D':'')+(CAL.invR?' invL/R':''):' | need neutral+up+right');
+}
+let poseMode = true, zeroed = false, pOff = 0, rOff = 0, yOff = 0;            // IMU zero reference; pose = default (tilt maps to angle)
+const lastRaw = { p:0, r:0, y:0 };
+let bleLastT = performance.now(), rxbuf = '';
+function a2v(a){ if(Math.abs(a)<P_DEAD) return 0; const s=a>0?1:-1; const m=Math.abs(a)-P_DEAD; return s*Math.min(m/(P_MAXT-P_DEAD)*P_MAXV, P_MAXV); }
+// Per-joint travel limits [min,max] deg. The URDF exports NO limits (all
+// continuous) — these are editable placeholders; correct them to the real
+// FAZE4 mechanical stops when known.
+const JLIMITS = { rotary_base:[-180,180], nadlaktica:[-95,95], lakat:[-155,155],
+                  podlaktica:[-180,180], saka:[-125,125], hvataljka:[-180,180] };
+function clampDeg(name,d){ const L=JLIMITS[name]||[-JLIM,JLIM]; return Math.max(L[0],Math.min(L[1],d)); }
+const linkMesh = {};              // link name -> visual Mesh (its matrixWorld positions the proxy)
+let collideOn = false, chainNames = [];
+// --- full-fidelity self-collision (BVH mesh-vs-mesh on decimated proxies) ---
+const proxyGeom = {}, proxyBVH = {};          // link -> collision geometry + its BVH
+let proxyLoaded = 0, proxyTotal = 0, baselineDone = false;
+const BASELINE = new Set();                    // pairs already touching at the neutral pose -> ignored
+const _rel = new THREE.Matrix4();
+const cnote = t => { const e=document.getElementById('note'); if(e) e.textContent=t; };
+function pairKey(a,b){ return a+'|'+b; }
+function collidePairs(){                        // every non-adjacent link pair (skip |i-k|<=1)
+  const out=[], c=chainNames;
+  for(let i=0;i<c.length;i++) for(let k=i+2;k<c.length;k++)
+    if(proxyBVH[c[i]] && proxyBVH[c[k]]) out.push([c[i],c[k]]);
+  return out;
+}
+function pairIntersects(a,b){                    // B's proxy geometry vs A's BVH, in A's local frame
+  _rel.copy(linkMesh[a].matrixWorld).invert().multiply(linkMesh[b].matrixWorld);
+  return proxyBVH[a].intersectsGeometry(proxyGeom[b], _rel);
+}
+function computeBaseline(){                       // parts modeled touching at joints -> don't flag them
+  scene.updateMatrixWorld(true);
+  for(const [a,b] of collidePairs()) if(pairIntersects(a,b)) BASELINE.add(pairKey(a,b));
+  baselineDone=true;
+  cnote('self-collision ready: '+collidePairs().length+' link pairs guarded ('+BASELINE.size+' resting contacts ignored).');
+}
+function maybeBaseline(){ if(!baselineDone && proxyTotal>0 && proxyLoaded>=proxyTotal && meshLoaded>=meshTotal) computeBaseline(); }
+function selfCollides(){                          // true if any non-adjacent pair newly intersects
+  if(!baselineDone) return false;
+  for(const [a,b] of collidePairs()){
+    if(BASELINE.has(pairKey(a,b))) continue;
+    if(pairIntersects(a,b)) return true;
+  }
+  return false;
+}
+function loadProxies(){
+  proxyTotal = chainNames.length;
+  const L = new STLLoader();
+  for(const name of chainNames){
+    const isGrip = name==='hvataljka';
+    const url = isGrip ? '/viewer/data/collision/gripper_ssg48.stl?v1'
+                       : '/viewer/data/collision/'+name+'.stl?v1';
+    L.load(url, g=>{
+      if(isGrip) applyMount(g);                   // SSG-48 proxy: mm, same mount transform as visual
+      else g.scale(1000,1000,1000);               // URDF proxies: meters -> mm
+      if(!g.index) g.setIndex(Array.from({length:g.attributes.position.count},(_,i)=>i));
+      proxyGeom[name]=g; proxyBVH[name]=new MeshBVH(g);
+      g.boundsTree = proxyBVH[name];   // so intersectsGeometry runs BVH-vs-BVH (fast even when overlapping)
+      proxyLoaded++; maybeBaseline();
+    }, undefined, e=>{ proxyTotal--; });          // missing proxy: drop it from the count
+  }
+}
+// wall containment: keep the swinging links inside the play-field interior (X/Y).
+// base_link + rotary_base (indices 0,1) are the fixed tower at the mount - skip them.
+const _bb = new THREE.Box3();
+function boundsViolated(){
+  const x0=ENC_POS[0]-ENC.W/2, x1=ENC_POS[0]+ENC.W/2, y0=ENC_POS[1]-ENC.D/2, y1=ENC_POS[1]+ENC.D/2;
+  for(let i=2;i<chainNames.length;i++){ const n=chainNames[i]; if(!linkMesh[n]) continue;
+    _bb.setFromObject(linkMesh[n]);
+    if(_bb.min.x<x0 || _bb.max.x>x1 || _bb.min.y<y0 || _bb.max.y>y1) return true;
+  }
+  return false;
+}
+// --- button gestures: HOLD = clutch (engage & move), DOUBLE-TAP = drop process ---
+let btnPrev=0, lastPressT=0, engaged=false, tapCount=0, tapTimer=null;
+function handleButton(b){
+  const now=performance.now();
+  if(b && !btnPrev){                       // press (rising edge)
+    tapCount = (now-lastPressT < 400) ? tapCount+1 : 1;             // count quick presses
+    lastPressT=now;
+    zeroed=false;                          // re-reference the tilt on each engage (clutch)
+    clearTimeout(tapTimer);
+    tapTimer=setTimeout(()=>{ const n=tapCount; tapCount=0;        // act once the tapping stops
+      if(n===2) doDrop(); else if(n>=3) goHome(); }, 420);         // double-tap = GRAB, triple-tap = HOME
+  }
+  engaged=(b===1); btnPrev=b;
+  const n=document.getElementById('note');
+  if(n) n.textContent = engaged ? 'ENGAGED — hold + tilt = jog (nose-up = out, nose-down = in, right = right, twist = up/down); double-tap = GRAB, triple = HOME'
+                                : 'released — HOLD the button and tilt to jog the claw';
+}
+async function doDrop(){                   // GRAB: lower onto the prize -> close -> lift back to hover (-> auto-home if on)
+  if(seqBusy) return; seqBusy=true; ensureIK();
+  try{
+    const p=tipNow();
+    seqStat('grab: lower'); if(ikGoto(p.x,p.y,GRAB_Z)) await settle(); else { seqStat('grab: cannot lower here (see IK line)'); return; }
+    seqStat('grab: close'); gripTarget=1; await new Promise(r=>setTimeout(r,600));
+    seqStat('grab: lift');  if(ikGoto(p.x,p.y,HOVER_Z)) await settle();
+    seqStat('grabbed'+(AUTO_HOME?' - homing':''));
+  } finally { seqBusy=false; }
+  if(AUTO_HOME) goHome();                   // full arcade cycle: carry to the chute, release, park
+}
+// --- drive the REAL J1 from the twin's own left/right signal (so physical == twin) ---
+let driveReal=false, _j1t=0, _j1v=null;
+const J1_VMAX=1000;     // motor milli-rev/s cap (~14 deg/s at the base through 25:1)
+const J1_SIGN=+1;       // flip if the real base turns opposite the twin's base
+let same70Char=null;   // SAME70 RNBD transparent-UART WRITE characteristic (BLE, no USB)
+function driveCmd(c){
+  if(same70Char){ try{ same70Char.writeValueWithoutResponse(new TextEncoder().encode(c+'\n')); }catch(e){} return; }
+  try{ fetch('/drive/cmd',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({cmd:c})}); }catch(e){}   // USB fallback
+}
+function sendJ1(mvel){ const now=performance.now(); mvel=Math.round(mvel);
+  if(mvel===_j1v && now-_j1t<200) return;                    // dedupe, but refresh at 5Hz min
+  if(now-_j1t<50) return;                                    // throttle to 20Hz
+  _j1t=now; _j1v=mvel; driveCmd('V0,'+mvel); }
+function j1Arm(){ driveCmd('C0'); setTimeout(()=>driveCmd('M0,2,2'),120); setTimeout(()=>driveCmd('S0,8'),260); }
+function j1Disarm(){ driveCmd('V0,0'); setTimeout(()=>driveCmd('S0,1'),120); _j1v=null; }
+document.getElementById('drivej1').onclick = ()=>{ driveReal=!driveReal;
+  document.getElementById('drivej1').textContent='drive real J1: '+(driveReal?'ON':'off');
+  if(driveReal) j1Arm(); else j1Disarm(); };
+const PYKIT_RX = '49535343-8841-43f4-a8d4-ecbe34729bb3';   // RNBD transparent UART WRITE char (central->peripheral)
+async function connectSame70(){
+  const b=document.getElementById('same70'); if(b) b.textContent='SAME70: connecting…';
+  try{
+    const dev = await navigator.bluetooth.requestDevice({ filters:[{name:'CLAW_SAME70'}], optionalServices:[PYKIT_SVC] });
+    const gatt = await dev.gatt.connect();
+    const svc = await gatt.getPrimaryService(PYKIT_SVC);
+    const chars = await svc.getCharacteristics();
+    same70Char = chars.find(c=>c.uuid===PYKIT_RX) || chars.find(c=>c.properties.write||c.properties.writeWithoutResponse);
+    dev.addEventListener('gattserverdisconnected', ()=>{ same70Char=null; const e=document.getElementById('same70'); if(e) e.textContent='SAME70: disconnected'; });
+    if(b) b.textContent = same70Char ? 'SAME70: connected (BLE)' : 'SAME70: no write char';
+  }catch(e){ if(b) b.textContent='SAME70: '+e.message.slice(0,30); }
+}
+document.getElementById('same70').onclick = connectSame70;
+window.addEventListener('pagehide', ()=>{ if(driveReal) j1Disarm(); });
+// ---- PyKit ARM-CONTROLLER scheme (09-27): obey the same fields the SAME70 obeys ----
+// code_arm_controller.py sends $seq,pitch,roll,yaw,g,gx,gy,gz,mode,swing,reach,height,grip
+// mode 0 IDLE 1 DRIVE(swing) 2 HEIGHT 3 REACH 4 HOME(hold both) | swing/reach/height -100..100 | grip 0/1.
+// Works in cylinder coordinates about the J1 axis, like the real arm: swing turns the claw target about the
+// base, REACH moves it in/out, HEIGHT up/down; ikGoto() refuses unsafe/unreachable steps (target stays put).
+const ARM_VCART = 60, ARM_J1_DEG_S = 30;     // mm/s and deg/s at full tilt (firmware VCART = 60 mm/s)
+const ARM_SWING_SIGN = -1, ARM_REACH_SIGN = +1;   // swing>0 = claw to the operator's RIGHT, reach>0 = AWAY (flip here if swapped)
+let armScheme = true, armLastT = 0, armGrip = -1;
+function onArmLine(f){                        // f = [mode, swing, reach, height, grip]
+  const mode=f[0], swing=f[1], reach=f[2], height=f[3], grip=f[4];
+  const now=performance.now(), dt=armLastT ? Math.min(0.2,(now-armLastT)/1000) : 0; armLastT=now;
+  if(grip!==armGrip){ armGrip=grip; gripTarget = grip ? 1 : 0; }
+  const n=document.getElementById('note');
+  if(n) n.textContent='PyKit arm controls: '+(['IDLE','DRIVE','HEIGHT','REACH','HOME'][mode]||mode)+' swing '+swing+' reach '+reach+' height '+height+' grip '+grip;
+  if(mode===0 || seqBusy || !dt) return;
+  ensureIK();
+  if(!ikTgt){ ikGoto(READY_XY[0],READY_XY[1],HOVER_Z); return; }           // first control entry: go to the ready point
+  let r=Math.hypot(ikTgt.x-J1XY[0], ikTgt.y-J1XY[1]), th=Math.atan2(ikTgt.y-J1XY[1], ikTgt.x-J1XY[0]), z=ikTgt.z;
+  if(mode===1)      th += ARM_SWING_SIGN*swing/100*ARM_J1_DEG_S*RAD*dt;
+  else if(mode===2) z  += height/100*ARM_VCART*dt;
+  else if(mode===3) r  += ARM_REACH_SIGN*reach/100*ARM_VCART*dt;
+  else if(mode===4){                                                         // HOME: glide to the ready point, dead-man
+    const rt=Math.hypot(READY_XY[0]-J1XY[0], READY_XY[1]-J1XY[1]), tht=Math.atan2(READY_XY[1]-J1XY[1], READY_XY[0]-J1XY[0]);
+    const step=ARM_VCART*dt; let dth=tht-th; while(dth>Math.PI) dth-=2*Math.PI; while(dth<-Math.PI) dth+=2*Math.PI;
+    r += Math.max(-step,Math.min(step,rt-r)); z += Math.max(-step,Math.min(step,HOVER_Z-z));
+    th += Math.max(-ARM_J1_DEG_S*RAD*dt, Math.min(ARM_J1_DEG_S*RAD*dt, dth));
+  }
+  z=Math.max(TIP_Z_MIN,Math.min(TIP_Z_MAX,z)); r=Math.max(60,r);
+  ikQuiet=true; try{ ikGoto(J1XY[0]+r*Math.cos(th), J1XY[1]+r*Math.sin(th), z); } finally{ ikQuiet=false; }   // commits ikTgt only if accepted
+}
+function onPykitLine(line){
+  { const f=line.split(','); if(armScheme && f.length===13 && line[0]==='$'){ onArmLine(f.slice(8).map(Number)); return; } }
+  const m = line.match(/^\$\d+,(-?[\d.]+),(-?[\d.]+),(-?[\d.]+)(?:,(\d+))?(?:,(-?[\d.]+),(-?[\d.]+),(-?[\d.]+))?/);   // $seq,pitch,roll,yaw[,grip[,gx,gy,gz]]
+  if(!m) return;
+  let rp=+m[1], rr=+m[2], ry=+m[3];
+  if(m[5]!==undefined){ lastG=[+m[5],+m[6],+m[7]];                 // raw gravity from the streamer
+    if(calRec){ calAcc.push(lastG);                                 // recording a pose: average ~12 packets, then rebuild CAL
+      if(calAcc.length>=12){ const n=calAcc.length; calSamples[calRec]=[0,1,2].map(i=>calAcc.reduce((s,g)=>s+g[i],0)/n);
+        calRec=null; CAL=calCompute(); calSave(); } }
+    if(CAL){ const pr=calApply(lastG); rp=pr[0]; rr=pr[1]; }        // mount-calibrated pitch/roll override the streamer's
+  }
+  if(m[4]!==undefined) handleButton(+m[4] ? 1 : 0);               // HOLD=clutch, DOUBLE-TAP=drop
+  if(!zeroed){ pOff=rp; rOff=rr; yOff=ry; fRaw.p=rp; fRaw.r=rr; fRaw.y=ry; zeroed=true; } // re-reference on engage
+  fRaw.p+=(rp-fRaw.p)*IN_ALPHA; fRaw.r+=(rr-fRaw.r)*IN_ALPHA; fRaw.y+=(ry-fRaw.y)*IN_ALPHA;  // EMA de-jitter
+  lastRaw.p=fRaw.p; lastRaw.r=fRaw.r; lastRaw.y=fRaw.y;
+  if(!engaged){ if(driveReal) sendJ1(0); return; }                 // CLUTCH: released -> stop the real base too, then arm only moves while held
+  let pitch=fRaw.p-pOff, roll=fRaw.r-rOff, yawr=fRaw.y-yOff;       // relative to the press. yaw = heading since the press:
+  pitch=Math.max(-IN_CLAMP,Math.min(IN_CLAMP,pitch));              //   drift-free over a few-second hold even though absolute yaw drifts
+  roll =Math.max(-IN_CLAMP,Math.min(IN_CLAMP,roll));
+  yawr =Math.max(-IN_CLAMP,Math.min(IN_CLAMP,yawr));
+  // dominant-axis gate, 3 ways: 1 = pitch (in/out), 2 = roll (left/right), 3 = twist (up/down). One wins, the rest hold.
+  const ap=Math.abs(pitch), ar=Math.abs(roll), ay=Math.abs(yawr);
+  const mag=[0,ap,ar,ay], oth=k=> k===1?Math.max(ar,ay) : k===2?Math.max(ap,ay) : Math.max(ap,ar);   // the other two axes' max
+  // release when the locked axis drops back to neutral OR stops dominating. (Ratio-only release
+  // latched the lock forever at level, freezing the other axes on the next tilt.)
+  if(axisLock && (mag[axisLock]<AXIS_MIN || mag[axisLock]<oth(axisLock)*AXIS_EXIT)) axisLock=0;
+  if(axisLock===0){                                                // acquire a lock only on a clear winner
+    if(ap>AXIS_MIN && ap>Math.max(ar,ay)*AXIS_ENTER) axisLock=1;
+    else if(ar>AXIS_MIN && ar>Math.max(ap,ay)*AXIS_ENTER) axisLock=2;
+    else if(ay>AXIS_MIN && ay>Math.max(ap,ar)*AXIS_ENTER) axisLock=3;
+  }
+  // a gated axis HOLDS its joints. (Zeroing it was a bug: in pose mode angle 0 = "go home",
+  // so a stray roll-lock sent J2/J3 back down mid-lift.)
+  const pGated=(axisLock===2||axisLock===3), rGated=(axisLock===1||axisLock===3);   // a twist-lock holds both tilt axes
+  if(driveReal){                                                    // real J1 from the SAME calibrated/relative/clamped roll the twin's base uses
+    const lr = (axisLock===2) ? roll : 0;                          // only when left/right is the dominant axis
+    sendJ1(J1_SIGN * Math.max(-1,Math.min(1, lr/IN_CLAMP)) * J1_VMAX);
+  }
+  let blocked=false;                                                // set below if the collision guard reverts this move
+  if(ikOn){                                                         // CLAW MODE: tilt is a gated 4-way jog selector, clutch held = go
+    if(!seqBusy){
+      if(axisLock===1 && Math.abs(pitch)>JOG_DEAD) jog(0, (pitch<0?1:-1)*JOG_STEP, 0);   // nose-down (-pitch) = in (+Y), nose-up = out (flipped per Cliff)
+      else if(axisLock===2 && Math.abs(roll)>JOG_DEAD) jog((roll>0?1:-1)*JOG_STEP, 0, 0); // tilt right (+roll) = right (+X)
+      else if(axisLock===3 && Math.abs(yawr)>JOG_DEAD) jog(0, 0, (yawr>0?1:-1)*JOG_STEP); // twist about vertical = up/down
+    }
+    return;                                                         // joints belong to IK in this mode
+  }
+  const now=performance.now(), dt=Math.min(0.25,(now-bleLastT)/1000); bleLastT=now;
+  const src = { J1:[roll,rGated], J2:[pitch,pGated], J3:[pitch,pGated], J5:[0,false] };  // roll->base; wrist frozen
+  const prev = Object.assign({}, jdeg);                            // rollback point if a move collides
+  for(const j in JMAP){ const name=JMAP[j], [ang,gated]=src[j];
+    if(gated) continue;                                            // hold current angle (pose AND velocity)
+    if(poseMode) jdeg[name] = clampDeg(name, ang/P_MAXT*POSE_MAX);              // tilt -> angle (mirror), joint-limited
+    else         jdeg[name] = clampDeg(name, jdeg[name] + (a2v(ang)/P_MAXV)*DEG_PER_S*dt);  // tilt -> rate, joint-limited
+  }
+  if(collideOn){                                                   // reject targets that self-collide (test target pose)
+    const tgt = Object.assign({}, angles); for(const j in JMAP) tgt[JMAP[j]] = jdeg[JMAP[j]]*RAD;
+    applyAngles(tgt); scene.updateMatrixWorld(true);
+    if(selfCollides() || boundsViolated()){ Object.assign(jdeg, prev); blocked=true; }   // block self- AND wall-collisions
+  }
+  { const g=document.getElementById('gate'); if(g) g.textContent =                 // one-line "why isn't it moving" readout
+      'gate: p='+pitch.toFixed(1)+' r='+roll.toFixed(1)+' lock='+(['none','V','H','TWIST'][axisLock])+' eng='+(engaged?1:0)
+      +' | J2='+jdeg.nadlaktica.toFixed(0)+' J3='+jdeg.lakat.toFixed(0)+' | collide='+(collideOn?'ON':'off')+(blocked?' BLOCKED':''); }
+  for(const j in JMAP){ const name=JMAP[j];
+    angTarget[name] = jdeg[name]*RAD;                              // render loop eases toward this
+    const a=document.getElementById('ja_'+name); if(a) a.innerHTML = jdeg[name].toFixed(1)+'&deg;';
+  }
+}
+document.getElementById('recenter').onclick = ()=>{
+  pOff=lastRaw.p; rOff=lastRaw.r; yOff=lastRaw.y; zeroed=true;       // current hold becomes neutral
+  for(const k in jdeg){ jdeg[k]=0; angles[k]=0; }
+  for(const k in JMAP){ const a=document.getElementById('ja_'+JMAP[k]); if(a) a.innerHTML='0.0&deg;'; } };
+document.getElementById('mode').onclick = ()=>{ poseMode=!poseMode;
+  document.getElementById('mode').textContent = 'mode: '+(poseMode?'pose':'velocity');
+  for(const k in jdeg){ jdeg[k]=0; angles[k]=0; } };
+document.getElementById('collide').onclick = ()=>{ collideOn=!collideOn;
+  document.getElementById('collide').textContent = 'collision: '+(collideOn?'on':'off'); };
+// mount-calibration buttons
+for(const k of ['neutral','up','down','left','right']){ const b=document.getElementById('cal_'+k); if(b) b.onclick=()=>calRecord(k); }
+document.getElementById('cal_invp').onclick = ()=>{ if(CAL){ CAL.invP=!CAL.invP; calSave(); } };
+document.getElementById('cal_invr').onclick = ()=>{ if(CAL){ CAL.invR=!CAL.invR; calSave(); } };
+document.getElementById('cal_clear').onclick = ()=>{ CAL=null; calSamples={}; calRec=null;
+  try{ localStorage.removeItem('pykit_cal'); localStorage.removeItem('pykit_cal_samples'); }catch(e){} calUI('cleared'); };
+calUI();
+document.getElementById('scheme').onclick=()=>{ armScheme=!armScheme; armLastT=0;
+  document.getElementById('scheme').textContent='PyKit: '+(armScheme?'arm controls':'twin gestures'); };
+document.getElementById('grip').oninput = e=>{ gripTarget=+e.target.value; };   // slider sets the target; render loop eases
+document.getElementById('enc').onclick = ()=>{ if(encGroup) encGroup.visible=!encGroup.visible; };
+function setFrame(v){ if(frameGroup) frameGroup.visible=v; document.getElementById('frame').textContent='frame: '+(v?'on':'off');
+  try{ localStorage.setItem('twin_frame', v?'1':'0'); }catch(e){} }
+document.getElementById('frame').onclick=()=>setFrame(!(frameGroup&&frameGroup.visible));
+let rxCount = 0, lastPayload = '', connecting = false, bleDev = null;
+// disconnect cleanly on refresh/close so the PyKit isn't left in a ghost
+// connection (which stops it advertising -> "no compatible device").
+addEventListener('pagehide', ()=>{ try{ if(bleDev && bleDev.gatt && bleDev.gatt.connected) bleDev.gatt.disconnect(); }catch(e){} });
+// More reliable: on load, drop any connection this origin still holds from a
+// previous tab/refresh (unload cleanup often doesn't finish before the tab dies).
+if(navigator.bluetooth && navigator.bluetooth.getDevices){
+  navigator.bluetooth.getDevices().then(ds=>ds.forEach(dv=>{
+    try{ if(dv.gatt && dv.gatt.connected){ dv.gatt.disconnect(); console.log('[BLE] dropped ghost connection to', dv.name); } }catch(e){}
+  })).catch(()=>{});
+}
+const dbg = m => { const e=document.getElementById('blestat'); if(e) e.textContent='BLE: '+m; console.log('[BLE]',m); };
+async function gattConnect(dev){
+  for(let i=0;i<5;i++){
+    try{ if(dev.gatt.connected) return; await dev.gatt.connect(); return; }
+    catch(e){
+      if(/in progress|already/i.test(e.message||'')){ dbg('connect busy, retrying ('+(i+1)+')...'); await new Promise(r=>setTimeout(r,900)); }
+      else throw e;
+    }
+  }
+  throw new Error('GATT stayed "in progress" — refresh the tab and click once.');
+}
+document.getElementById('ble').onclick = async ()=>{
+  if(!navigator.bluetooth){ dbg('Web Bluetooth NOT available here — open twin.html in real Chrome/Edge (desktop), not the VSCode Simple Browser.'); return; }
+  if(bleOn){ dbg('already connected.'); return; }
+  if(connecting){ dbg('connect already running — one moment...'); return; }
+  connecting = true;
+  try{
+    dbg('requesting device (pick PYKIT_IMU)...');
+    const dev = await navigator.bluetooth.requestDevice({ filters:[{name:'CLIFF_ARM'},{name:'PYKIT_IMU'}], optionalServices:[PYKIT_SVC] });   // 09-26: Cliff's PyKit renamed CLIFF_ARM (strangers' PyKits say PYKIT_IMU)
+    bleDev = dev;
+    dbg('selected '+dev.name+' — connecting GATT...');
+    await gattConnect(dev);
+    const gatt = dev.gatt;
+    dbg('GATT connected — finding transparent-UART service...');
+    let svc;
+    try { svc = await gatt.getPrimaryService(PYKIT_SVC); }
+    catch(e){
+      const all = await gatt.getPrimaryServices();
+      dbg('expected service missing. Found: '+all.map(s=>s.uuid).join(' | ')+'  — tell Claude these.');
+      return;
+    }
+    const chars = await svc.getCharacteristics();
+    const tag = c => c.uuid.slice(4,8)+'['+(c.properties.notify?'N':'')+(c.properties.write?'W':'')+(c.properties.writeWithoutResponse?'w':'')+']';
+    dbg('chars: '+chars.map(tag).join(' '));
+    const tx = chars.find(c=>c.properties.notify);
+    if(!tx){ dbg('no NOTIFY characteristic on this service — tell Claude the char list above.'); return; }
+    await tx.startNotifications();
+    tx.addEventListener('characteristicvaluechanged', e=>{
+      rxCount++;
+      rxbuf += new TextDecoder().decode(e.target.value);
+      let nl; while((nl=rxbuf.indexOf('\n'))>=0){ const ln=rxbuf.slice(0,nl).replace(/\r$/,''); rxbuf=rxbuf.slice(nl+1); if(ln){ lastPayload=ln; onPykitLine(ln); } }
+    });
+    // some transparent-UART stacks only start streaming once the central writes once
+    const rx = chars.find(c=>(c.properties.write||c.properties.writeWithoutResponse) && c!==tx);
+    if(rx){ try{ await rx.writeValue(new TextEncoder().encode('\n')); }catch(e){} }
+    dev.addEventListener('gattserverdisconnected', ()=>{ bleOn=false; dbg('disconnected');
+      document.getElementById('src').textContent='HTTP /drive/status';
+      document.getElementById('ble').textContent='Connect PyKit (BLE)'; });
+    bleOn = true; bleLastT = performance.now(); zeroed = false;   // auto-zero to orientation at connect
+    document.getElementById('src').textContent = 'BLE '+(dev.name||'PYKIT_IMU'); document.getElementById('src').classList.remove('off');
+    document.getElementById('ble').textContent = 'PyKit connected';
+    dbg('subscribed — jiggle it (watching for data)...');
+    // live rx indicator so you can SEE data arriving even before the arm moves
+    setInterval(()=>{ if(bleOn) dbg('rx '+rxCount+' pkts · last: '+(lastPayload||'(none yet)')); }, 700);
+  }catch(e){ dbg('ERROR: '+(e.message||e)); }
+  finally{ connecting = false; }
+};
+
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+
+// ---- Claw-machine enclosure (Claw Machine V2 drawing; inches -> mm) ----
+const IN = 25.4;
+const ENC = { W:44*IN, D:36*IN, H:30*IN, wall:2*IN, baseH:14*IN, chute:6*IN };
+let ENC_POS = [75.6, -400, 0], ENC_YAW = 0;   // between too-forward(-210) and too-back(-568)
+let encGroup = null, frameGroup = null;   // frameGroup: the 12 corner/rim bars (toggle: 'frame' button)
+function encBox(w,d,h,color,op){
+  return new THREE.Mesh(new THREE.BoxGeometry(w,d,h),
+    new THREE.MeshStandardMaterial({color, transparent:op<1, opacity:op, metalness:0.05, roughness:0.7, side:THREE.DoubleSide}));
+}
+function buildEnclosure(){
+  encGroup = new THREE.Group();
+  encGroup.position.set(ENC_POS[0],ENC_POS[1],ENC_POS[2]);
+  encGroup.rotation.z = ENC_YAW*RAD;
+  const {W,D,H,wall,baseH}=ENC, glass=0x9fd3e0, op=0.09, gt=0.4*IN;   // gt = acrylic wall thickness
+  let m;
+  m=encBox(W,D,wall,0xf2f2f2,1);        m.position.set(0,0,-wall/2);            encGroup.add(m);  // white floor (top at z=0)
+  // silver frame: 4 vertical corner bars + top & bottom rims
+  const silver=new THREE.MeshStandardMaterial({color:0xcccccc, metalness:0.9, roughness:0.3});
+  const bar=1.2*IN;
+  frameGroup = new THREE.Group(); encGroup.add(frameGroup);   // 09-27: own group so it can hide (renders near-black, blocks the arm)
+  const sb=(w,d,h,x,y,z)=>{ const b=new THREE.Mesh(new THREE.BoxGeometry(w,d,h),silver); b.position.set(x,y,z); frameGroup.add(b); };
+  for(const sx of [-1,1]) for(const sy of [-1,1]) sb(bar,bar,H, sx*W/2, sy*D/2, H/2);   // vertical corners
+  for(const rz of [0,H]){                                                                // bottom & top rims
+    sb(W+bar,bar,bar, 0,-D/2,rz); sb(W+bar,bar,bar, 0,D/2,rz);
+    sb(bar,D+bar,bar, -W/2,0,rz); sb(bar,D+bar,bar,  W/2,0,rz);
+  }
+  m=encBox(W,gt,H,glass,op);            m.position.set(0,-D/2+gt/2,H/2);        encGroup.add(m);  // back acrylic
+  m=encBox(W,gt,H,glass,op);            m.position.set(0, D/2-gt/2,H/2);        encGroup.add(m);  // front acrylic
+  m=encBox(gt,D,H,glass,op);            m.position.set( W/2-gt/2,0,H/2);        encGroup.add(m);  // right(+X) acrylic
+  // NOTE: the -X acrylic wall is rebuilt with a chute hole in buildReach()
+  m=encBox(W+2*wall,D+2*wall,baseH,0x2a3550,1); m.position.set(0,0,-wall-baseH/2); encGroup.add(m); // base cabinet
+  scene.add(encGroup);
+}
+buildEnclosure();
+{ let v=true; try{ v=localStorage.getItem('twin_frame')!=='0'; }catch(e){} setFrame(v); }   // remembered frame toggle
+
+// ---- reach envelope + retaining wall (from the real machine) ----
+const J1XY = [75.629, -212.66];      // world XY of the vertical J1 axis (reach-circle center)
+const WALL_FROM_LEFT = 93;           // mm, wall start in from the LEFT outer frame edge
+const WALL_FROM_BASE = 148;          // mm, and in from the outer edge the base is nearest (+Y)
+let WALL_H = 4*IN, WALL_SWEEP = 180; // wall height; degrees of arc from the start point
+let reachGroup = null;
+let CHUTE_BOX = null, FIELD = null;   // 09-27 teddy bears: chute bin box + play-field arc (set in buildReach)
+let CHUTE_DROP = null;               // [x,y] drop point over the chute's field-side half (set in buildReach)
+function buildReach(){
+  reachGroup = new THREE.Group(); reachGroup.position.z = 1.5;   // just above floor
+  // anchor: WALL_FROM_LEFT in from the left outer edge, WALL_FROM_BASE in from the base-side outer edge
+  const armLeftOuter = ENC_POS[0]+(ENC.W/2+ENC.wall);  // arm's LEFT = +X (its own perspective), mirror of viewer-left
+  const baseOuter = ENC_POS[1]+(ENC.D/2+ENC.wall);     // +Y, the edge the base sits nearest
+  const ax = armLeftOuter-WALL_FROM_LEFT, ay = baseOuter-WALL_FROM_BASE;
+  const dx = ax-J1XY[0], dy = ay-J1XY[1];
+  const R = Math.hypot(dx,dy), start = Math.atan2(dy,dx);
+  let sweep = WALL_SWEEP*RAD;
+  if(Math.sin(start+sweep/2) > 0) sweep = -sweep;      // keep the arc sweeping through the field (-Y)
+  // curved retaining wall along the arc
+  const seg=80, pos=[], idx=[];
+  for(let i=0;i<=seg;i++){ const a=start+sweep*i/seg, x=J1XY[0]+R*Math.cos(a), y=J1XY[1]+R*Math.sin(a);
+    pos.push(x,y,0, x,y,WALL_H); }
+  for(let i=0;i<seg;i++){ const b=i*2; idx.push(b,b+1,b+2, b+1,b+3,b+2); }
+  const wg=new THREE.BufferGeometry();
+  wg.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); wg.setIndex(idx); wg.computeVertexNormals();
+  const wall=new THREE.Mesh(wg, new THREE.MeshStandardMaterial({color:0xf2f2f2, transparent:true, opacity:0.8, metalness:0.05, roughness:0.75, side:THREE.DoubleSide}));
+  reachGroup.add(wall);
+  scene.add(reachGroup);
+  console.log('[REACH] anchor',ax.toFixed(1),ay.toFixed(1),'R',R.toFixed(1),'start',(start/RAD).toFixed(1),'deg');
+
+  // --- toy drop chute: an open-top bin straddling the -X acrylic wall (inside half + outside half joined) ---
+  const CHUTE_W=155+8, CHUTE_L=155+152, CHUTE_H=132, T=8;   // per-side width, length, height, wall thickness
+  const ey=J1XY[1]+R*Math.sin(start+sweep);          // arc end Y (where the chute starts)
+  const wallX=ENC_POS[0]-ENC.W/2;                     // -X acrylic plane
+  const cx0=wallX-CHUTE_W, cx1=wallX+CHUTE_W;         // X span: through the wall, ±CHUTE_W
+  const cy0=ey, cy1=ey+CHUTE_L, cx=(cx0+cx1)/2, cy=(cy0+cy1)/2;
+  CHUTE_BOX={x0:cx0, x1:cx1, y0:cy0, y1:cy1, floor:T}; FIELD={R, start, sweep};
+  CHUTE_DROP=[wallX+CHUTE_W-30, cy];                    // HOME drop point: 30 mm inside the chute's field-side lip (bin center was outside the wrist-down reach)
+  const cmat=new THREE.MeshStandardMaterial({color:0x333842, metalness:0.15, roughness:0.65, side:THREE.DoubleSide});
+  const slab=(px,py,pz,w,d,h)=>{ const s=new THREE.Mesh(new THREE.BoxGeometry(w,d,h),cmat); s.position.set(px,py,pz); scene.add(s); };
+  slab(cx,cy, T/2,          cx1-cx0, cy1-cy0, T);     // floor
+  slab(cx0+T/2,cy, CHUTE_H/2, T, cy1-cy0, CHUTE_H);  // outer wall
+  slab(cx1-T/2,cy, CHUTE_H/2, T, cy1-cy0, CHUTE_H);  // field-side wall
+  slab(cx,cy0+T/2, CHUTE_H/2, cx1-cx0, T, CHUTE_H);  // -Y wall
+  slab(cx,cy1-T/2, CHUTE_H/2, cx1-cx0, T, CHUTE_H);  // +Y wall
+  // rebuild the -X acrylic wall around the chute opening (hole = chute Y-span x 0..CHUTE_H)
+  const gt=0.4*IN, wx=ENC_POS[0]-ENC.W/2+gt/2, gy0=ENC_POS[1]-ENC.D/2, gy1=ENC_POS[1]+ENC.D/2, gH=ENC.H;
+  const gmat=new THREE.MeshStandardMaterial({color:0x9fd3e0, transparent:true, opacity:0.09, side:THREE.DoubleSide});
+  const glass=(px,py,pz,w,d,h)=>{ if(d<=0||h<=0) return; const s=new THREE.Mesh(new THREE.BoxGeometry(w,d,h),gmat); s.position.set(px,py,pz); scene.add(s); };
+  glass(wx,(gy0+gy1)/2, (CHUTE_H+gH)/2, gt, gy1-gy0, gH-CHUTE_H);   // above the hole
+  glass(wx,(gy0+cy0)/2, CHUTE_H/2,      gt, cy0-gy0, CHUTE_H);       // -Y side of the hole
+  glass(wx,(cy1+gy1)/2, CHUTE_H/2,      gt, gy1-cy1, CHUTE_H);       // +Y side of the hole
+  console.log('[CHUTE] x',cx0.toFixed(0),cx1.toFixed(0),'y',cy0.toFixed(0),cy1.toFixed(0));
+}
+buildReach();
+
+// --- live claw-footprint ring: the OUTPUT cone's base circle, drawn against the play-field wall ---
+const PLAYR = 544.7;                                   // reach-wall arch radius from J1 axis (computed)
+const _tip = new THREE.Vector3();
+const reachRing = new THREE.Mesh(new THREE.RingGeometry(0.985,1.0,96),
+  new THREE.MeshBasicMaterial({color:0xffcc33, transparent:true, opacity:0.9, side:THREE.DoubleSide}));
+reachRing.position.set(J1XY[0], J1XY[1], 2);           // flat on the floor (RingGeometry lies in XY), centered on J1
+scene.add(reachRing);
+const wallRing = new THREE.Mesh(new THREE.RingGeometry(PLAYR-1.2,PLAYR,120),   // fixed reference: the play-field edge
+  new THREE.MeshBasicMaterial({color:0x33d17a, transparent:true, opacity:0.6, side:THREE.DoubleSide}));
+wallRing.position.set(J1XY[0], J1XY[1], 1.8); scene.add(wallRing);
+const INNER_R = 150;                                   // base-clearance GUIDE only (log: clean forward reaches down to ~190 mm) - the vetting is the truth, not this ring
+const innerRing = new THREE.Mesh(new THREE.RingGeometry(INNER_R-1.2,INNER_R,120),
+  new THREE.MeshBasicMaterial({color:0x33d17a, transparent:true, opacity:0.6, side:THREE.DoubleSide}));
+innerRing.position.set(J1XY[0], J1XY[1], 1.8); scene.add(innerRing);   // tap between the two green rings
+
+// ===================== IK: tap-to-target (numerical, off the twin's own FK) =====================
+// Solve J1/J2/J3 so the claw TIP lands on a tapped floor point at HOVER_Z. Damped least squares on a
+// finite-difference Jacobian of applyAngles() -> it can never disagree with the model or the URDF offsets.
+const TOOL_TIP = [0, 0, -172];        // claw FINGERTIPS in the gripper root frame (mm): jaws span z -97..-172 (measured). Was -110 = mid-jaw,
+                                      // which put the real tips 62 mm lower than the target (through the floor at GRAB_Z)
+const HOVER_Z  = 120;                 // tip hover height above the floor when aiming (mm)
+const ALLOW_FOLDED = false;           // the folded-over-the-back reach only ever appears at the base ring / back wall - treat those spots as unreachable
+let ikOn = false;
+const toolTip = new THREE.Object3D();  // the claw-tip anchor; parented under the gripper root in addGripper()
+const IK_NAMES = ['rotary_base','nadlaktica','lakat','saka'];   // + J5 wrist pitch: keeps the claw pointing straight down
+const ORI_W = 80;                     // mm of residual per unit pointing-vector error (~1.4 mm per degree off vertical)
+const _tipW = new THREE.Vector3(), _wrW = new THREE.Vector3();
+function ikFK(q){                      // q: rad[4] -> {p: tip world pos, d: unit pointing dir wrist->tip} (transient: render loop re-applies `angles`)
+  const t = Object.assign({}, angles); IK_NAMES.forEach((n,i)=>t[n]=q[i]);
+  applyAngles(t); scene.updateMatrixWorld(true);
+  toolTip.getWorldPosition(_tipW); linkMesh['hvataljka'].getWorldPosition(_wrW);
+  return {p:_tipW.clone(), d:_tipW.clone().sub(_wrW).normalize()};
+}
+function solveN(A,b){                  // Gaussian elimination, n x n (the DLS normal equations)
+  const n=b.length, M=A.map((r,i)=>[...r,b[i]]);
+  for(let c=0;c<n;c++){ let p=c; for(let r=c+1;r<n;r++) if(Math.abs(M[r][c])>Math.abs(M[p][c])) p=r; [M[c],M[p]]=[M[p],M[c]];
+    const d=M[c][c]||1e-9; for(let k=c;k<=n;k++) M[c][k]/=d;
+    for(let r=0;r<n;r++) if(r!==c){ const f=M[r][c]; for(let k=c;k<=n;k++) M[r][k]-=f*M[c][k]; } }
+  return M.map(r=>r[n]);
+}
+function ikSolveFrom(target, seed){    // target: Vector3 world, seed: rad[4] -> {q:rad[4], err:pos mm, ori:deg off straight-down}
+  let q = seed.slice(); const N=IK_NAMES.length;
+  const lam2 = 25;                                 // damping (mm^2): stable through singularities
+  let err=1e9, ori=180;
+  const resid = qq => { const {p,d}=ikFK(qq);     // 6 residuals: tip position + weighted pointing-down error
+    return [p.x-target.x, p.y-target.y, p.z-target.z, ORI_W*d.x, ORI_W*d.y, ORI_W*(d.z+1)]; };
+  for(let it=0; it<40; it++){
+    const r=resid(q);
+    err=Math.hypot(r[0],r[1],r[2]);
+    ori=Math.acos(Math.max(-1,Math.min(1, 1-r[5]/ORI_W)))/RAD;   // d.z = r5/W - 1 ; angle to down = acos(-d.z)
+    if(err<0.5 && ori<1) break;
+    const h=1e-3, J=Array.from({length:6},()=>new Array(N).fill(0));
+    for(let j=0;j<N;j++){ const qq=q.slice(); qq[j]+=h; const rj=resid(qq); for(let k=0;k<6;k++) J[k][j]=(rj[k]-r[k])/h; }
+    const JtJ=[], Jtr=[];                            // dq = (JᵀJ + λ²I)⁻¹ Jᵀ(-r)
+    for(let i=0;i<N;i++){ JtJ.push([]); for(let j=0;j<N;j++){ let s=0; for(let k=0;k<6;k++) s+=J[k][i]*J[k][j]; JtJ[i].push(s+(i===j?lam2:0)); }
+      let s=0; for(let k=0;k<6;k++) s+=J[k][i]*(-r[k]); Jtr.push(s); }
+    const dq=solveN(JtJ,Jtr);
+    for(let j=0;j<N;j++){ q[j]+=Math.max(-0.35,Math.min(0.35,dq[j]));           // step cap ~20 deg
+      const L=JLIMITS[IK_NAMES[j]]; q[j]=Math.max(L[0]*RAD, Math.min(L[1]*RAD, q[j])); }
+  }
+  return {q, err, ori};
+}
+// vet a candidate pose: nothing dips into the floor, stays in the play field, no self-collision.
+// (This is what stops the elbow-down "guillotine" branch: it's a valid math solution that folds under.)
+const FLOOR_MARGIN = 15;                          // mm: no moving link may dip below this above the floor
+const _ikBB = new THREE.Box3(), _ikV = new THREE.Vector3();
+function ikPoseOK(q){                             // applies q, returns {ok, why, elbowZ}
+  const t = Object.assign({}, angles); IK_NAMES.forEach((n,i)=>t[n]=q[i]);
+  applyAngles(t); scene.updateMatrixWorld(true);
+  let why='';
+  for(let i=2;i<chainNames.length;i++){ const n=chainNames[i]; if(!linkMesh[n]) continue;   // skip the two base links (they live on the floor)
+    _ikBB.setFromObject(linkMesh[n]); if(_ikBB.min.z < FLOOR_MARGIN){ why='floor: '+n; break; } }
+  if(!why && boundsViolated()) why='out of play field';
+  if(!why && Object.keys(proxyBVH).length && selfCollides()) why='self-collision';
+  const elbowZ = jointGroups['lakat'] ? jointGroups['lakat'].group.getWorldPosition(_ikV).z : 0;
+  return {ok:!why, why, elbowZ};
+}
+const ikMarker = new THREE.Mesh(new THREE.RingGeometry(14,18,48),        // red ring = tapped target on the floor
+  new THREE.MeshBasicMaterial({color:0xff4d4d, side:THREE.DoubleSide, transparent:true, opacity:0.9}));
+ikMarker.position.z=2.5; ikMarker.visible=false; scene.add(ikMarker);
+const tipMarker = new THREE.Mesh(new THREE.SphereGeometry(6,16,12), new THREE.MeshBasicMaterial({color:0xffcc33}));
+scene.add(tipMarker);                              // yellow dot = where IK thinks the claw tip is (tune TOOL_TIP against it)
+let ikQuiet = false;   // 09-27: PyKit arm controls solve 20x/s - don't POST every one
+function ikLog(o){ if(ikQuiet) return; try{ fetch('/iklog',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o)}); }catch(e){} }
+function ikGoto(x,y,z){ z=(z===undefined)?HOVER_Z:z;               // returns true if the move was accepted
+  const target=new THREE.Vector3(x,y,z);
+  // several seeds: current pose, two arched (elbow-up) guesses in either sign convention, and neutral.
+  // Each solve walks to ITS nearby branch; vetting + the elbow-height tiebreak pick the safe, arched one.
+  const q1=angles.rotary_base||0;
+  // Two families both pass vetting with the elbow high: FORWARD (J2 ~ +65, J3 ~ +20) and FOLDED over the
+  // back (J2 ~ -35, J3 ~ +140, J1 spun ~180). Elbow height can't separate them, so rank forward first,
+  // then residual, then J1 continuity (no needless base swings). Folded stays only as a last resort.
+  // Seed J1 at the target's own azimuth (J1 = atan2 + 90 deg in this URDF, verified from the log) so the
+  // solver finds the FORWARD reach even when the base must swing. Seeding from the current J1 let DLS take
+  // the folded-over-the-back shortcut instead, which faked an "unreachable" ring around the base.
+  let J1n = Math.atan2(y-J1XY[1], x-J1XY[0]) + Math.PI/2; J1n = Math.atan2(Math.sin(J1n), Math.cos(J1n));
+  const q5=angles.saka||0;                                             // wrist seeds from where it is
+  const seeds=[ IK_NAMES.map(n=>angles[n]||0), [J1n, 65*RAD, 20*RAD, q5], [J1n, 45*RAD,-10*RAD, q5], [J1n, 70*RAD, 110*RAD, q5] ];
+  const fwd = q => (q[1] > 0);                                          // over-the-back = shoulder pitched BACK (J2 < 0)
+  const dJ1 = q => { const d=Math.abs(q[0]-q1)%(2*Math.PI); return Math.min(d, 2*Math.PI-d); };
+  const better = (c,b) => {                                             // is candidate c better than best b?
+    if(c.ok !== b.ok) return c.ok;
+    if(fwd(c.q) !== fwd(b.q)) return fwd(c.q);
+    if(Math.abs(c.err-b.err) > 1) return c.err < b.err;
+    if(Math.abs(dJ1(c.q)-dJ1(b.q)) > 5*RAD) return dJ1(c.q) < dJ1(b.q); // smaller base swing wins
+    return c.elbowZ > b.elbowZ;
+  };
+  let best=null; const cands=[];                                        // every candidate goes to the log
+  for(const s of seeds){
+    const sol=ikSolveFrom(target, s), v=ikPoseOK(sol.q), c={q:sol.q, err:sol.err, ori:sol.ori, ok:v.ok, why:v.why, elbowZ:v.elbowZ};
+    cands.push({seedJ1:+(s[0]/RAD).toFixed(0), J1:+(c.q[0]/RAD).toFixed(1), J2:+(c.q[1]/RAD).toFixed(1), J3:+(c.q[2]/RAD).toFixed(1), J5:+(c.q[3]/RAD).toFixed(1),
+                err:+c.err.toFixed(1), ori:+c.ori.toFixed(0), ok:c.ok, why:c.why, fam:fwd(c.q)?'fwd':'FOLDED'});
+    if(!best || better(c,best)) best=c;
+  }
+  best.fam = fwd(best.q) ? 'fwd' : 'FOLDED';
+  if(best.ok && best.fam==='FOLDED' && !ALLOW_FOLDED){                  // edge spots: don't do the ugly reach, call it unreachable
+    best.ok=false; best.why='only the folded-over-the-back pose reaches it (inside the base ring or against the back wall)'; }
+  applyAngles();                                   // restore the live pose for this frame
+  const deg={}; IK_NAMES.forEach((n,i)=>deg[n]=+(best.q[i]/RAD).toFixed(2));
+  const s=document.getElementById('ikstat');
+  ikMarker.position.set(x,y,2.5); ikMarker.visible=true;
+  if(!best.ok){
+    if(s) s.textContent='IK: NO SAFE SOLUTION for ('+x.toFixed(0)+', '+y.toFixed(0)+') - '+best.why+' - arm NOT moved';
+    ikLog({x:+x.toFixed(1), y:+y.toFixed(1), z:+z.toFixed(0), deg, err:+best.err.toFixed(1), ok:false, why:best.why, fam:best.fam, ori:+best.ori.toFixed(0), elbowZ:+best.elbowZ.toFixed(0), cands});
+    return false;
+  }
+  for(const n of IK_NAMES){ jdeg[n]=clampDeg(n,deg[n]); angTarget[n]=jdeg[n]*RAD;
+    const a=document.getElementById('ja_'+n); if(a) a.innerHTML=jdeg[n].toFixed(1)+'&deg;'; }
+  if(s) s.textContent='IK: ('+x.toFixed(0)+', '+y.toFixed(0)+') z '+z.toFixed(0)+' - '+best.fam+' - residual '+best.err.toFixed(1)+' mm, wrist '+best.ori.toFixed(0)+' deg off-down, elbow z '+best.elbowZ.toFixed(0)+(best.err>5?'  (at joint limit)':'');
+  ikLog({x:+x.toFixed(1), y:+y.toFixed(1), z:+z.toFixed(0), deg, err:+best.err.toFixed(1), ok:true, fam:best.fam, ori:+best.ori.toFixed(0), elbowZ:+best.elbowZ.toFixed(0), cands});
+  ikTgt={x,y,z}; return true;                                           // accepted: this is now the claw target the jog buttons nudge
+}
+{ // tap = pointerdown+up with < 6px travel (a drag is an orbit). Raycast the floor plane z=0.
+  const ray=new THREE.Raycaster(), ndc=new THREE.Vector2(), floorPlane=new THREE.Plane(new THREE.Vector3(0,0,1),0), hit=new THREE.Vector3();
+  let down=null;
+  renderer.domElement.addEventListener('pointerdown', e=>{ down=[e.clientX,e.clientY]; });
+  renderer.domElement.addEventListener('pointerup', e=>{
+    if(!ikOn||!down) return; const moved=Math.hypot(e.clientX-down[0], e.clientY-down[1]); down=null; if(moved>6) return;
+    ndc.set((e.clientX/innerWidth)*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(ndc,camera);
+    if(ray.ray.intersectPlane(floorPlane,hit)) ikGoto(hit.x,hit.y);
+  });
+}
+document.getElementById('ik').onclick = ()=>{ ikOn=!ikOn; document.getElementById('ik').textContent='IK: '+(ikOn?'tap floor':'off');
+  const s=document.getElementById('ikstat'); if(s) s.textContent = ikOn?'IK: tap anywhere on the floor to send the claw there':'IK: off'; };
+
+// ===================== claw-machine controls: jog / close / home =====================
+// The player lines up with Cartesian jogs (each one re-solves IK with the same vetting, so a jog that would
+// guillotine is refused and the target stays put), times the CLOSE, then HOME runs the drop sequence.
+const JOG_STEP = 10, TIP_Z_MIN = 20, TIP_Z_MAX = 420, CARRY_Z = 200;   // mm; 10 mm per tick. carry 200: clears the 132 mm chute walls, stays inside the wrist-down reach
+const HOLD_MS = 60;                                                     // press-and-hold repeat -> ~170 mm/s glide
+const GRAB_Z = 25, JOG_DEAD = 12;                                       // grab height (tip, mm); IMU tilt deadzone (deg) before a jog fires
+let AUTO_HOME = true;                                                   // after a GRAB, carry to the chute + park automatically (arcade cycle)
+const HOME_POSE_DEG = { rotary_base:0, nadlaktica:0, lakat:0, saka:0 };  // joint-space fallback park (URDF rest) if the ready point won't solve
+const READY_XY = [J1XY[0], J1XY[1]-300];                                // READY: 300 mm out in front of the base (proven forward-reach zone) at HOVER_Z,
+                                                                        // gripper down + open. HOME parks here; a jog from parked goes here first.
+                                                                        // (Parking at the URDF zero pose put the tip up at z~263 by the back wall -> every
+                                                                        //  jog from there was refused "out of play field" and the arm never moved.)
+let ikTgt = null;                                                        // current claw-tip target {x,y,z}
+let seqBusy = false;
+function seqStat(m){ const s=document.getElementById('seqstat'); if(s) s.textContent='seq: '+m; }
+function ensureIK(){ if(!ikOn){ ikOn=true; const b=document.getElementById('ik'); if(b) b.textContent='IK: tap floor'; } }
+function tipNow(){ const v=new THREE.Vector3(); if(toolTip.parent){ scene.updateMatrixWorld(true); toolTip.getWorldPosition(v); } return v; }
+function jog(dx,dy,dz){
+  if(seqBusy) return; ensureIK();
+  if(!ikTgt){ ikGoto(READY_XY[0],READY_XY[1],HOVER_Z); return; }        // no target yet (parked): first go to the ready point, then jog from there
+  ikGoto(ikTgt.x+dx, ikTgt.y+dy, Math.max(TIP_Z_MIN, Math.min(TIP_Z_MAX, ikTgt.z+dz)));   // commits ikTgt only if accepted
+}
+function settle(maxMs=4000){ return new Promise(res=>{ const t0=performance.now(); (function chk(){   // wait for the eased joints to arrive (4 s: a 180 deg J1 swing at JOINT_VMAX is ~2 s)
+  let m=0; for(const n in jointGroups) m=Math.max(m, Math.abs((angles[n]||0)-(angTarget[n]||0)));
+  if(m<0.01 || performance.now()-t0>maxMs) res(); else requestAnimationFrame(chk); })(); }); }
+async function goHome(){
+  if(seqBusy) return; seqBusy=true; ensureIK();
+  try{
+    const p=tipNow();
+    seqStat('lift');     if(ikGoto(p.x,p.y,CARRY_Z)) await settle(); else seqStat('lift refused here - going straight to the chute');   // best-effort
+    if(!CHUTE_DROP){ seqStat('no chute point - aborted'); return; }
+    // chute leg: nominal drop point, then step inward (+X, toward the field) if the wrist-down reach can't make it
+    let got=false;
+    for(const dx of [0,40,80,120]){ seqStat('to chute'+(dx?' (+'+dx+' mm in)':''));
+      if(ikGoto(CHUTE_DROP[0]+dx, CHUTE_DROP[1], CARRY_Z)){ got=true; break; } }
+    if(!got){ seqStat('chute unreachable even 120 mm inward - aborted (see IK line)'); return; }  await settle();
+    seqStat('drop');     gripTarget=0; await new Promise(r=>setTimeout(r,700));
+    seqStat('park');     for(const n in HOME_POSE_DEG){ jdeg[n]=HOME_POSE_DEG[n]; angTarget[n]=jdeg[n]*RAD;   // true default pose (URDF rest)
+                           const a=document.getElementById('ja_'+n); if(a) a.innerHTML=jdeg[n].toFixed(1)+'&deg;'; }
+    ikTgt=null;                                                                       // next jog routes through READY first (see jog())
+    await settle(); ikMarker.visible=false; seqStat('idle (home)');
+  } finally { seqBusy=false; }
+}
+function holdJog(id, dx,dy,dz){                       // press-and-hold: jog on press, repeat while held (mouse or touch), stop on release
+  const b=document.getElementById(id); if(!b) return; let tm=null;
+  const stop=()=>{ if(tm){ clearInterval(tm); tm=null; } };
+  b.addEventListener('pointerdown', e=>{ e.preventDefault(); try{ b.setPointerCapture(e.pointerId); }catch(_){}
+    stop(); jog(dx,dy,dz); tm=setInterval(()=>jog(dx,dy,dz), HOLD_MS); });
+  for(const ev of ['pointerup','pointercancel','pointerleave','lostpointercapture']) b.addEventListener(ev, stop);
+}
+holdJog('jog_left',  -JOG_STEP,0,0);
+holdJog('jog_right', +JOG_STEP,0,0);
+holdJog('jog_out',   0,-JOG_STEP,0);                 // away from the base = -Y
+holdJog('jog_in',    0,+JOG_STEP,0);
+holdJog('jog_up',    0,0,+JOG_STEP);
+holdJog('jog_down',  0,0,-JOG_STEP);
+document.getElementById('grip_close').onclick= ()=>{ gripTarget=1; };
+document.getElementById('grip_open').onclick = ()=>{ gripTarget=0; };
+document.getElementById('go_home').onclick   = ()=>goHome();
+document.getElementById('do_drop').onclick   = ()=>doDrop();
+document.getElementById('auto_home').onclick = ()=>{ AUTO_HOME=!AUTO_HOME; document.getElementById('auto_home').textContent='auto-home: '+(AUTO_HOME?'on':'off'); };
+
+// ===================== teddy bears: grab with the claw, carry to the chute, drop (09-27) =====================
+// No physics engine: CLOSE (rising edge) latches the nearest bear under the claw tip, which then follows the tip
+// (NOT parented to the gripper: the IK floor/bounds checks box each link WITH its children, so a bear with its
+// feet on the floor made every pose read 'floor: hvataljka' and froze the arm),
+// OPEN (falling edge) lets it fall. Landing inside the chute bin = prize (it vanishes, a new one spawns).
+const bears = []; let prizes = 0, prevGrip = 0;
+const BEAR_COLORS = [0x8b5a2b, 0xe58fb4, 0x6fa8dc, 0xe6c35c, 0x9fc5a8];
+function makeBear(color){
+  const g = new THREE.Group();
+  const fur = new THREE.MeshStandardMaterial({color, roughness:0.9, metalness:0});
+  const light = new THREE.MeshStandardMaterial({color:0xf1dcc0, roughness:0.9});
+  const dark = new THREE.MeshStandardMaterial({color:0x111111, roughness:0.4});
+  const ball = (r,x,y,z,m) => { const s = new THREE.Mesh(new THREE.SphereGeometry(r,18,14), m); s.position.set(x,y,z); g.add(s); };
+  ball(30, 0, 0, 34, fur);                                   // body
+  ball(15, 0,-16, 30, light);                                // tummy
+  ball(23, 0, 0, 80, fur);                                   // head
+  ball(9,-15, 0, 99, fur); ball(9, 15, 0, 99, fur);          // ears
+  ball(10, 0,-19, 75, light);                                // muzzle
+  ball(3.2, 0,-28, 78, dark);                                // nose
+  ball(3,-8,-19, 86, dark); ball(3, 8,-19, 86, dark);        // eyes
+  ball(11,-30,-4, 44, fur); ball(11, 30,-4, 44, fur);        // arms
+  ball(13,-17,-10, 12, fur); ball(13, 17,-10, 12, fur);      // legs
+  g.userData = { state:'floor', vz:0, t:0 };                 // floor | held | falling | scored
+  return g;
+}
+function bearSpot(){                                         // random free spot inside the play-field arc
+  for(let k=0;k<80;k++){
+    const a = FIELD.start + FIELD.sweep*(0.1+0.8*Math.random()), r = 170 + Math.random()*(FIELD.R-230);
+    const x = J1XY[0]+r*Math.cos(a), y = J1XY[1]+r*Math.sin(a);
+    if(CHUTE_BOX && x>CHUTE_BOX.x0-70 && x<CHUTE_BOX.x1+70 && y>CHUTE_BOX.y0-70 && y<CHUTE_BOX.y1+70) continue;
+    if(bears.some(b => b.userData.state==='floor' && Math.hypot(b.position.x-x, b.position.y-y) < 110)) continue;
+    return [x,y];
+  }
+  return null;
+}
+function spawnBear(){
+  const p = bearSpot(); if(!p) return;
+  const b = makeBear(BEAR_COLORS[Math.floor(Math.random()*BEAR_COLORS.length)]);
+  b.position.set(p[0], p[1], 0); b.rotation.z = Math.random()*Math.PI*2;
+  scene.add(b); bears.push(b);
+}
+function bearsStep(dt){
+  if(!FIELD) return;                                         // buildReach() hasn't run yet
+  if(!bears.length){ for(let i=0;i<5;i++) spawnBear(); }
+  if(gripTarget>0.5 && prevGrip<=0.5 && toolTip.parent){      // CLOSE: grab the nearest bear under the tip
+    const tp = tipNow(); let best = null, bd = 50;
+    for(const b of bears){ if(b.userData.state!=='floor') continue;
+      const d = Math.hypot(tp.x-b.position.x, tp.y-b.position.y);
+      if(d<bd && tp.z < b.position.z+115){ bd=d; best=b; } }
+    if(best){ best.userData.state='held'; best.userData.off=best.position.clone().sub(tp); seqStat('got a bear!'); }
+  }
+  if(gripTarget<=0.5 && prevGrip>0.5){                        // OPEN: drop what it holds
+    for(const b of bears) if(b.userData.state==='held'){ b.userData.state='falling'; b.userData.vz=0; }
+  }
+  prevGrip = gripTarget;
+  let tpHeld=null;
+  for(let i=bears.length-1;i>=0;i--){ const b=bears[i], u=b.userData;
+    if(u.state==='held'){ tpHeld=tpHeld||tipNow(); b.position.copy(tpHeld).add(u.off); if(b.position.z<0) b.position.z=0; continue; }   // rides with the claw, upright
+    if(u.state==='falling'){
+      u.vz -= 9810*dt; b.position.z += u.vz*dt;
+      const inChute = CHUTE_BOX && b.position.x>CHUTE_BOX.x0 && b.position.x<CHUTE_BOX.x1 && b.position.y>CHUTE_BOX.y0 && b.position.y<CHUTE_BOX.y1;
+      const ground = inChute ? CHUTE_BOX.floor : 0;
+      if(b.position.z <= ground){ b.position.z=ground; b.rotation.x=0; b.rotation.y=0;
+        if(inChute){ u.state='scored'; u.t=0; prizes++; const el=document.getElementById('prizes'); if(el) el.textContent=prizes; seqStat('PRIZE! bear #'+prizes); }
+        else u.state='floor'; }
+    } else if(u.state==='scored'){ u.t+=dt; if(u.t>1.5){ scene.remove(b); bears.splice(i,1); spawnBear(); } }
+  }
+}
+// scripting/demo hook (console or headless recorder): feed PyKit lines, inspect bears, the claw target and the chute
+window.twin = { feed:onPykitLine, bears, tip:tipNow, ik:(x,y,z)=>ikGoto(x,y,z), get target(){ return ikTgt; },
+                get chute(){ return CHUTE_DROP; }, get chuteBox(){ return CHUTE_BOX; }, get prizes(){ return prizes; }, J1XY, RAD, camera, controls };
+let lastFrame=performance.now();
+(function loop(){
+  requestAnimationFrame(loop);
+  const now=performance.now(), fdt=Math.min(0.1,(now-lastFrame)/1000); lastFrame=now;
+  if (testMode){                          // sweep every joint so you can see articulation
+    const t=(now-t0)/1000;
+    let i=0; for (const name in jointGroups){ angTarget[name]=Math.sin(t*0.6 + i)*0.6; i++; }
+  }
+  const k=1-Math.exp(-fdt/SMOOTH_TAU);    // ease each joint toward its target -> fluid 60fps from ~13Hz data
+  const maxStep=JOINT_VMAX*RAD*fdt;       // velocity cap: a big transition (park -> READY, the chute swing) glides instead of lunging;
+  for (const name in jointGroups){        // jog ticks are ~1-2 deg and never touch the cap
+    const cur=angles[name]||0, tg=angTarget[name]||0; let d=(tg-cur)*k;
+    angles[name]=cur+Math.max(-maxStep, Math.min(maxStep, d)); }
+  applyAngles();
+  if(Math.abs(gripTarget-gripClose)>0.002){ gripClose+=(gripTarget-gripClose)*Math.min(1,k*2); applyGrip(); }  // ease jaws to target
+  bearsStep(fdt);
+  if(linkMesh['hvataljka']){                            // live reach: claw radius from the J1 axis
+    linkMesh['hvataljka'].getWorldPosition(_tip);
+    if(toolTip.parent) toolTip.getWorldPosition(tipMarker.position);   // yellow dot follows the IK claw tip
+    const rr = Math.hypot(_tip.x-J1XY[0], _tip.y-J1XY[1]);
+    reachRing.scale.set(rr, rr, 1);
+    const rel=document.getElementById('reach');
+    if(rel) rel.textContent = 'reach: '+rr.toFixed(0)+' mm · play-field wall '+PLAYR.toFixed(0)+' mm'
+      + (rr>PLAYR?'  (past wall)':'');
+  }
+  frames++;
+  if (now-lastRate>1000){ document.getElementById('rate').textContent=frames+' fps'; frames=0; lastRate=now; }
+  controls.update(); renderer.render(scene,camera);
+})();
+</script>
+</body>
+</html>

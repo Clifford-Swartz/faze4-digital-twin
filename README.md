@@ -17,6 +17,10 @@ metal moved, not because we assumed it would.
 - `viewer/index.html` + `app.js` — the twin: full-arm assembly viewer, per-joint
   sliders, gear-ratio-faithful live mode, BLE teleop (Web Bluetooth), markup
   pins (Shift+click a spot on the model to flag it).
+- `viewer/twin.html` — the claw-machine twin: the arm with its SSG-48 gripper in
+  the Maker Faire enclosure, claw IK that keeps the gripper pointing down,
+  PyKit IMU control over Web Bluetooth, and teddy bears to grab and drop in the
+  prize chute (see below).
 - `viewer/build.html` / `part.html` / `cyclo.html` / `encoder.html` — assembly
   explorer, single-part viewer, cycloidal-drive visualizer, encoder bench page.
 - `viewer/serve.py` — static server + slicer/print pipeline (Bambu P1S over
@@ -42,6 +46,40 @@ No dependencies, no configuration, no accounts — stdlib Python only.
 
 BLE teleop needs the bench hardware (RNBD451 module + SAME70 + ODrive S1) and a
 Web-Bluetooth-capable browser.
+
+## Claw-machine twin
+
+`viewer/twin.html` puts the arm in the claw-machine enclosure it runs in at
+Maker Faire. Grab a teddy bear, carry it over the chute, open the claw, and it
+counts as a prize.
+
+![GRAB: lower, close, lift, carry to the chute, drop](docs/media/twin_grab_drop.gif)
+
+It takes the same PyKit commands as the real arm. The PyKit sends
+`$seq,pitch,roll,yaw,g,gx,gy,gz,mode,swing,reach,height,grip` lines, and the twin
+reads the mode fields like the SAME70 does:
+
+| PyKit | Claw |
+|---|---|
+| double-tap D3 | enter / leave control (first entry goes to the ready point) |
+| tilt left / right | swing around the base |
+| hold D3 + tilt | up / down |
+| hold D5 + tilt | out / in |
+| double-tap D5 | close / open |
+| hold D3 + D5 | glide back to the ready point |
+
+![Scripted PyKit input: line up, lower, grip, lift, swing to the chute, release (1.6x speed)](docs/media/twin_pykit_controls.gif)
+
+To run it: start `python viewer/serve.py`, open
+`http://localhost:8347/viewer/twin.html` in Chrome or Edge (Web Bluetooth),
+click **Connect PyKit (BLE)** and pick the PyKit (`CLIFF_ARM` or `PYKIT_IMU`).
+Without a PyKit, the on-screen jog buttons, **GRAB** and **HOME** drive it too.
+Moves the IK can't make safely (out of reach, self-collision, into the floor)
+are refused and the claw stays put. **frame** hides the enclosure's corner bars,
+and clicking the panel title collapses it.
+
+For scripting, `window.twin.feed(line)` takes the same PyKit lines from the
+browser console; the GIFs above were recorded that way.
 
 ## Run it on a Raspberry Pi (or any always-on box)
 
@@ -79,4 +117,6 @@ fine from any device either way.
 The FAZE4 arm is by Petar Crnjak / [Source Robotics](https://github.com/Source-Robotics/Faze4-Robotic-arm),
 licensed **CERN-OHL-S-2.0**. All mesh assets and assembly-instruction images
 derived from that project remain under CERN-OHL-S-2.0 — see `LICENSE`.
+The gripper meshes in `cad/gripper/` are derived from Source Robotics' SSG-48
+gripper and stay under that project's license.
 The viewer/pipeline code in this repo is MIT.
